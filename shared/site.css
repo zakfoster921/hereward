@@ -431,5 +431,5 @@ body:has(.gate.closing:not([hidden])) { padding-bottom: 32rem; }
   .seq, .gate p.ask, .ask .q, .quad, .quad-row, .gate .quad-slot p.invite { animation: none; }
 }
 /* Landing: prompt number label and the no-link message */
-.title-main .prompt-tag { margin: 1.3rem 0 0; }
+.title-main .prompt-tag { margin: 1.3rem 0 0; font-size: 1.5rem; letter-spacing: 0.12em; padding: 0.6rem 1.25rem; border-radius: 0.3rem; }
 .nolink { max-width: 22rem; margin: 1.5rem auto 0; text-align: center; color: var(--muted); }
