@@ -43,7 +43,7 @@
     pink:   { name: "Pink (personal, faint):",     text: "a small, private piece, close and soft",                label: "Pink: personal and faint" }
   };
   var MATRIX = '<div class="matrix-wrap">' +
-    '<img class="matrix" src="' + ROOT + 'shared/matrix.png" width="877" height="938" alt="Matrix. Universal to Personal from left to right, Faint to Strong from bottom to top. Four colored corners: blue, green, orange and pink.">' +
+    '<img class="matrix" src="' + ROOT + 'shared/matrix.png?v=b2f525e8" width="877" height="938" alt="Matrix. Universal to Personal from left to right, Faint to Strong from bottom to top. Four colored corners: blue, green, orange and pink.">' +
     ['blue', 'green', 'orange', 'pink'].map(function (k) {
       return '<button type="button" class="quad quad-' + k + '" data-q="' + k + '" aria-pressed="false" aria-label="' + QUADS[k].label + '"><span class="quad-text" aria-hidden="true">' + QUADS[k].text.charAt(0).toUpperCase() + QUADS[k].text.slice(1) + '</span></button>';
     }).join('') + '</div>' +

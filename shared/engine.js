@@ -2,6 +2,15 @@
   var QA = window.QA, G = QA.G, MODE = QA.mode, HAS_INTRO = MODE === "landing";
   var GATE_ART = QA.GATE_ART, QUADS = QA.QUADS;
   document.body.classList.add("is-" + MODE);
+  document.addEventListener("error", function (e) {
+    var t = e.target;
+    if (!t || t.tagName !== "IMG") return;
+    var n = +(t.getAttribute("data-retry") || 0);
+    if (n >= 3) return;
+    t.setAttribute("data-retry", n + 1);
+    var base = t.getAttribute("src").split("&r=")[0];
+    setTimeout(function () { t.setAttribute("src", base + (base.indexOf("?") < 0 ? "?" : "&") + "r=" + Date.now()); }, 1200 * (n + 1));
+  }, true);
   var cascade = document.getElementById("cascade");
   var gatesEl = document.getElementById("gates");
 
@@ -355,7 +364,14 @@
           // and a flick to the right. Control points are measured from where the thread leaves the card, and joined with a smooth curve.
           var CPR = [[0, 4], [29, 23], [32, 50], [4, 74], [-42, 120], [-56, 167], [-51, 217], [-23, 260], [17, 270], [72, 264], [114, 239], [123, 205], [110, 175], [80, 168], [55, 167], [45, 196], [46, 255], [55, 289], [80, 319], [123, 324]];
           var cp = [[px, py]], ci, cx0 = px;
-          for (ci = 0; ci < CPR.length; ci++) cp.push([Math.min(w - 20, Math.max(20, cx0 + CPR[ci][0])), cEnd + CPR[ci][1]]);
+          var rMin = 0, rMax = 0, lo = w * 0.14, hi = w * 0.86, shiftX = 0, ramp;
+          for (ci = 0; ci < CPR.length; ci++) { rMin = Math.min(rMin, CPR[ci][0]); rMax = Math.max(rMax, CPR[ci][0]); }
+          if (cx0 + rMax > hi) shiftX = hi - (cx0 + rMax);
+          if (cx0 + rMin + shiftX < lo) shiftX = lo - (cx0 + rMin);
+          for (ci = 0; ci < CPR.length; ci++) {
+            ramp = Math.min(1, (ci + 1) / 6); ramp = ramp * ramp * (3 - 2 * ramp);
+            cp.push([Math.min(w - 20, Math.max(20, cx0 + CPR[ci][0] + shiftX * ramp)), cEnd + CPR[ci][1]]);
+          }
           var seg, cu, cs, cN, cP0, cP1, cP2, cP3, cu2, cu3, cqx, cqy, sp = [[px, py]], si, sj, sk, ax, ay, sq;
           for (seg = 0; seg < cp.length - 1; seg++) {
             cP0 = cp[Math.max(0, seg - 1)]; cP1 = cp[seg]; cP2 = cp[seg + 1]; cP3 = cp[Math.min(cp.length - 1, seg + 2)];
