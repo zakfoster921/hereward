@@ -102,9 +102,9 @@
     return {
       eyebrow: "All gates completed", name: "Time to sew", closing: true,
       steps: [
-        '<p class="big">Now take your ' + P.subject + ' image you came up with and add it to your quilt.</p>' +
+        '<p class="big">Take your ' + P.subject + ' image you came up with and add it to your quilt.</p>' +
         '<p>Keep your charge in mind as you sew, and look for chances to heighten the charge even more.</p>' +
-        '<p>Your writing will always be here if you want to come back to it.</p>'
+        '<p>You can always return to your writing for more details if you’d like.</p>'
       ]
     };
   }
