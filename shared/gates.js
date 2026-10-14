@@ -98,13 +98,16 @@
     };
   }
 
-  var closing = {
+  function closing(P) {
+    return {
       eyebrow: "All gates completed", name: "Time to sew", closing: true,
       steps: [
-        '<p class="big">You’ve done the thinking, and now you have something to make.</p>' +
+        '<p class="big">Now take your ' + P.subject + ' image you came up with and add it to your quilt.</p>' +
+        '<p>Keep your charge in mind as you sew, and look for chances to heighten the charge even more.</p>' +
         '<p>Your writing will always be here if you want to come back to it.</p>'
       ]
     };
+  }
 
   QA.buildGates = function (P) {
     if (P.placeholder) {
@@ -113,6 +116,6 @@
         steps: ['<p>This prompt has not been written yet. This page is a placeholder.</p>']
       }];
     }
-    return [gate1(P), gate2, gate3, gate4(P), closing];
+    return [gate1(P), gate2, gate3, gate4(P), closing(P)];
   };
 })();
