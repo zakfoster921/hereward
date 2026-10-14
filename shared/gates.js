@@ -62,11 +62,13 @@
       ]
     };
 
-  var gate3 = {
+  function gate3(P) {
+    return {
       eyebrow: "Gate 3", name: "Visualize the charge",
       steps: [
         '<h3>Choose a way in</h3>' +
         '<p>Your free-write is full of specific words and images that can carry your charge.</p>' +
+        (P.g3 && P.g3.note ? '<p>' + P.g3.note + '</p>' : '') +
         '<div class="ways">' +
         '<details class="seq" style="--d:0.5s" name="way"><summary>Start with a thing</summary><p>Which one in your writing holds your charge best? Sketch it or imagine it.</p></details>' +
         '<details class="seq" style="--d:1.1s" name="way"><summary>Start with your fabrics</summary><p>Look through what you have. Which one feels like it can carry your charge? What about it: color, texture, pattern?</p></details>' +
@@ -78,6 +80,7 @@
         GATE_ART
       ]
     };
+  }
 
   function gate4(P) {
     return {
@@ -89,7 +92,8 @@
 
         '<h3>Does your image want to move to another part of the matrix?</h3>' +
         '<div class="reserve">' +
-        '<ul class="iconlist">' + '<li class="seq" data-t="1" hidden style="--d:0s">To move toward <strong>Personal</strong>, add a detail only you would know</li>' + '<li class="seq" data-t="2" hidden style="--d:0s">To move toward <strong>Strong</strong>, return to your <a href="#" class="steplink" data-g="0" data-s="1">sensory writing</a> and find a detail that holds more of your charge</li>' + '<li class="seq" data-t="3" hidden style="--d:0s">If it holds up where it is, it’s time to start sewing</li>' + '</ul>' +
+        '<ul class="iconlist">' + '<li class="seq" data-t="1" hidden style="--d:0s">To move toward <strong>Personal</strong>, add a detail only you would know</li>' + '<li class="seq" data-t="2" hidden style="--d:0s">To move toward <strong>Strong</strong>, return to your <a href="#" class="steplink" data-g="0" data-s="1">sensory writing</a> and find a detail that holds more of your charge</li>' + (P.g4.sizeNote ? '<li class="seq" data-t="3" hidden style="--d:0s">' + P.g4.sizeNote + '</li>' : '') +
+        '<li class="seq" data-t="3" hidden style="--d:0s">If it holds up where it is, it’s time to start sewing</li>' + '</ul>' +
         '<div class="seq example-card" data-t="4" hidden style="--d:0s"><div class="ex-top"><p class="ex-label">Example</p><p>' + P.g4.exampleTop + '</p></div><div class="ex-bottom"><p>' + P.g4.exampleBottom + '</p></div></div>' +
         '<div class="seq" data-t="4" hidden style="--d:0.8s">' + stuck("s-g4", P.g4.stuck) + '</div>' +
         '</div>' +
@@ -103,7 +107,7 @@
       eyebrow: "All gates completed", name: "Time to sew", closing: true,
       steps: [
         '<p class="big">Take your ' + P.subject + ' image and add it to your quilt.</p>' +
-        '<p>Keep your charge in mind as you sew, and look for chances to heighten the charge even more.</p>'
+        '<p>' + (P.closing && P.closing.note ? P.closing.note + ' ' : '') + 'Keep your charge in mind as you sew, and look for chances to heighten the charge even more.</p>'
       ]
     };
   }
@@ -115,6 +119,6 @@
         steps: ['<p>This prompt has not been written yet. This page is a placeholder.</p>']
       }];
     }
-    return [gate1(P), gate2, gate3, gate4(P), closing(P)];
+    return [gate1(P), gate2, gate3(P), gate4(P), closing(P)];
   };
 })();
