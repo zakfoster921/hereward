@@ -59,7 +59,7 @@
     });
   }
   // Size every drawing to the room its screen has: as big as will fit with everything else on that screen
-  // (text, questions, the continue arrow) inside the viewport. Never smaller than 6.5rem or bigger than 20rem.
+  // (text, questions, the continue arrow) inside the viewport. Never smaller than 4.5rem or bigger than 20rem.
   // Call after reserveSpace so the room held for the questions is counted.
   function artRatio(svg) {
     var vb = (svg.getAttribute("viewBox") || "").split(/[\s,]+/).map(Number);
@@ -76,13 +76,34 @@
     if (svg) ratio = artRatio(svg);
     else { var im = mx.querySelector("img"); ratio = (im && +im.getAttribute("height")) ? +im.getAttribute("width") / +im.getAttribute("height") : 1; }
     var rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-    var minW = (svg ? 6.5 : 15) * rem, maxW = Math.min((svg ? 24 : 30) * rem, st.clientWidth);
+    var minW = (svg ? 4.5 : 15) * rem, maxW = Math.min((svg ? 24 : 30) * rem, st.clientWidth);
     // the first screen of a gate also carries the gate's title above it
     var head = (gate && gate.querySelector(".step") === st) ? pageY(st) - pageY(gate) : 0;
     var avail = window.innerHeight - 48 - 84 - head; // scroll margin above, continue arrow below
     var other = st.offsetHeight - wrap.offsetHeight; // everything on the screen except the graphic
     var w = Math.max(minW, Math.min(maxW, (avail - other) * ratio));
     if (svg) svg.style.width = w + "px"; else mx.style.maxWidth = w + "px";
+    checkFit(st, wrap, head);
+  }
+  // Drafting check: a screen is too long when its drawing, already at its smallest, would still end under the
+  // phone's bottom toolbar once the screen is scrolled into place. Add ?check to any prompt URL to see a note
+  // on the screen itself; the warning is also logged to the console.
+  var SAFE_BOTTOM = 84; // room kept below the screen for the continue arrow and Safari's floating toolbar
+  function checkFit(st, wrap, head) {
+    var old = st.querySelector(".fit-warn"); if (old) old.remove();
+    var bottom = 48 + head + (wrap.getBoundingClientRect().bottom - st.getBoundingClientRect().top);
+    var over = Math.round(bottom - (window.innerHeight - SAFE_BOTTOM));
+    if (over <= 0) return;
+    var lines = Math.max(1, Math.ceil(over / 28));
+    var msg = "Too long: even with the smallest drawing, this screen runs about " + lines + " line" + (lines > 1 ? "s" : "") + " (" + over + "px) past the safe area on this device. Shorten the text.";
+    try { console.warn("[fit] " + msg, st); } catch (e) {}
+    if (/[?&]check\b/.test(location.search)) {
+      var n = document.createElement("p");
+      n.className = "fit-warn";
+      n.style.cssText = "margin:0;padding:.5rem .7rem;border:2px dashed #c0392b;color:#c0392b;font:600 .85rem/1.3 sans-serif;border-radius:4px";
+      n.textContent = msg;
+      st.insertBefore(n, st.firstChild);
+    }
   }
   // The title screen has no arrow or scrolling: its drawing fills what is left of the viewport
   function fitTitle() {
