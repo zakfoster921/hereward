@@ -441,6 +441,9 @@ body.aim-only .cascade { flex: 1; justify-content: center; }
 body.aim-only .gate { padding-bottom: 4rem; }
 body.aim-only .gate-title, body.aim-only h1.gate-title { font-size: 3rem; }
 body.aim-only .steps { margin-top: 1.25rem; }
+/* When a new screen scrolls into place, the screen before it must be fully out of view */
+.step + .step { margin-top: 3.4rem; }
+.gate { padding-bottom: 3.2rem; }
 .ex-fold summary { cursor: pointer; list-style: none; font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--muted); display: inline-block; border-bottom: 1px dashed var(--muted); padding: 0.1rem 0; }
 .ex-fold summary::-webkit-details-marker { display: none; }
 .ex-fold summary:hover { border-bottom-style: solid; color: var(--ink); }
