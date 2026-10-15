@@ -22,7 +22,42 @@
 <script src="../shared/art.js?v=481825fa"></script>
 <script src="../shared/gates.js?v=481825fa"></script>
 <script>
-window.PROMPT = { n: 12, placeholder: true };
+window.PROMPT = {
+  "n": 12,
+  "name": "What Your Body Knows",
+  "subject": "",
+  "g1": {
+    "title": "Free-Write",
+    "aim": "Bring something your body knows by heart into your quilt.",
+    "lead": "Choose something your body knows without having to think: a movement, a rhythm, a way of standing, a skill your hands never forgot. It can be graceful, clumsy, hard to explain, or from a body that has since changed.",
+    "asks": [
+      "When does it show up most?",
+      "When your body leads, what does it do?",
+      "How has it shifted over the years?"
+    ],
+    "stuck": "If nothing arrives, list things your body knows without being told. Stop when one stays with you."
+  },
+  "g1c": {
+    "title": "What it keeps",
+    "intro": "Let\u2019s see what more your body has to say. Start with the line below that it answers first.",
+    "starters": [
+      "My body has known how to\u2026",
+      "It knows me as someone who\u2026",
+      "It changes when I\u2026"
+    ],
+    "stuck": "Sketch a rough outline of your body and mark where this lives. Describe the marks."
+  },
+  "g4": {
+    "exampleTop": "\u201cA set of stairs\u201d sits near Universal and Faint.",
+    "exampleBottom": "Adding \u201cthe step I skip without looking,\u201d for the charge \u201cmy feet know this house better than I do,\u201d moves it toward Strong or Personal.",
+    "stuck": "What small detail of this would only someone who knows you notice?",
+    "collapse": true
+  },
+  "closing": {
+    "line": "Add what your body knows to your quilt.",
+    "guide": "Let the first few stitches follow whatever your body leads with, then check in."
+  }
+};
 </script>
 <script>window.QA.mode = 'prompt'; window.QA.G = window.QA.buildGates(window.PROMPT);</script>
 <script src="../shared/engine.js?v=481825fa"></script>

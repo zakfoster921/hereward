@@ -22,7 +22,42 @@
 <script src="../shared/art.js?v=481825fa"></script>
 <script src="../shared/gates.js?v=481825fa"></script>
 <script>
-window.PROMPT = { n: 11, placeholder: true };
+window.PROMPT = {
+  "n": 11,
+  "name": "A Lesson Learned",
+  "subject": "",
+  "g1": {
+    "title": "Free-Write",
+    "aim": "Add someone to your quilt who showed you something important about life.",
+    "lead": "Choose someone who showed you something important. It might be a teacher, a relative, or a stranger you only crossed paths with once. What they showed you can be big or small.",
+    "asks": [
+      "What did they do or say that you can still picture?",
+      "How did you understand the lesson at the time?",
+      "How do you feel about them now?"
+    ],
+    "stuck": "If nothing arrives, list the people who taught you something, on purpose or not. Stop when one stays with you."
+  },
+  "g1c": {
+    "title": "What it taught",
+    "intro": "Let\u2019s look at what they actually handed you. Start with the line below that grabs you first.",
+    "starters": [
+      "Because of them, I notice\u2026",
+      "What I didn\u2019t expect them to show me was\u2026",
+      "I still use what they showed me when\u2026"
+    ],
+    "stuck": "Write the moment as a short scene with two lines of dialogue, one theirs and one yours."
+  },
+  "g4": {
+    "exampleTop": "\u201cA pair of hands\u201d sits near Universal and Faint.",
+    "exampleBottom": "Adding \u201cthe thumb pressing the stitch flat,\u201d for the charge \u201cI learned to slow down by watching,\u201d moves it toward Strong or Personal.",
+    "stuck": "What is one small thing about them you\u2019d recognize anywhere?",
+    "collapse": true
+  },
+  "closing": {
+    "line": "Add what they showed you to your quilt.",
+    "guide": "Stay with whichever you reach for first: the person, the moment, or what it left in you."
+  }
+};
 </script>
 <script>window.QA.mode = 'prompt'; window.QA.G = window.QA.buildGates(window.PROMPT);</script>
 <script src="../shared/engine.js?v=481825fa"></script>
