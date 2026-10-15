@@ -41,6 +41,7 @@
   var nn = /^[0-9]{1,2}$/.test(n) ? parseInt(n, 10) : 0;
   var tag = document.getElementById('title-tag');
   if (ok && nn >= 1) { tag.textContent = 'Prompt ' + nn; tag.hidden = false; document.getElementById('title-sub').hidden = true; }
+  else if (ok && n.toLowerCase() === 'test') { tag.textContent = 'TEST PROMPT'; tag.hidden = false; document.getElementById('title-sub').hidden = true; }
   var pl = document.getElementById('past');
   if (ok && nn >= 2 && pl) { pl.href = 'i/' + p + '.html'; pl.hidden = false; }
   if (!ok) {
