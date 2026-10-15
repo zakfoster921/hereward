@@ -109,7 +109,7 @@
       eyebrow: "All gates completed", name: "Time to sew!", closing: true,
       steps: [
         '<p class="big">' + (P.closing && P.closing.line ? P.closing.line : 'Add your ' + P.subject + ' image to your quilt.') + '</p>' +
-        '<p>' + (P.closing && P.closing.note ? P.closing.note + ' ' : '') + 'Also keep your charge in mind as you sew, and look for chances to heighten the charge even more.</p>'
+        '<p>' + (P.closing && P.closing.note ? P.closing.note + ' ' : '') + (P.closing && P.closing.guide ? P.closing.guide : 'Keep your charge in mind as you sew, and look for chances to heighten the charge even more.') + '</p>'
       ]
     };
   }
