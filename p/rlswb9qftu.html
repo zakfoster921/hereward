@@ -22,7 +22,42 @@
 <script src="../shared/art.js?v=481825fa"></script>
 <script src="../shared/gates.js?v=481825fa"></script>
 <script>
-window.PROMPT = { n: 10, placeholder: true };
+window.PROMPT = {
+  "n": 10,
+  "name": "Still Me",
+  "subject": "",
+  "g1": {
+    "title": "Free-Write",
+    "aim": "Find the part of you that was there since you were young and give it a place in your quilt.",
+    "lead": "Choose a part of your younger self that still shows up in you today: a habit, a way of seeing, a knack, a stubborn streak. It can be something you were praised for or told to outgrow.",
+    "asks": [
+      "How old are you in the first picture that comes to mind?",
+      "Where does it show up in your days now?",
+      "Who has noticed it, then or now?"
+    ],
+    "stuck": "If nothing arrives, list your obsessions when you were younger. Stop when one still sounds like you."
+  },
+  "g1c": {
+    "title": "What stayed",
+    "intro": "Let\u2019s follow that part of you across the years. Start with any line below that feels true.",
+    "starters": [
+      "This part of me has always\u2026",
+      "The grown-up version of it looks like\u2026",
+      "What it still wants from me is\u2026"
+    ],
+    "stuck": "Imagine catching up with a friend from back then. What do they notice about you?"
+  },
+  "g4": {
+    "exampleTop": "\u201cA pair of rain boots\u201d sits near Universal and Faint.",
+    "exampleBottom": "Adding \u201cthe puddle you always aim for,\u201d for the charge \u201cI still choose the long way through,\u201d moves it toward Strong or Personal.",
+    "stuck": "What object from that age could you still describe with your eyes closed?",
+    "collapse": true
+  },
+  "closing": {
+    "line": "Add that part of your younger self to your quilt.",
+    "guide": "Choose fabric the way you would have then: fast, and by feel."
+  }
+};
 </script>
 <script>window.QA.mode = 'prompt'; window.QA.G = window.QA.buildGates(window.PROMPT);</script>
 <script src="../shared/engine.js?v=481825fa"></script>
