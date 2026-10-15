@@ -180,9 +180,8 @@
         '<p>' + gate2b(P).p + '</p>' +
         '<div class="reserve">' +
         asks([gate2b(P).a, '<em>' + gate2b(P).q + '</em>']) +
-        withTap(2, stuck("s-g2", "Finish this sentence: " + gate2b(P).s)) +
-        '</div>' +
-        '<p class="chart-note">' + gate2note(P) + '</p>'
+        withTap(3, '<p>' + gate2note(P) + '</p>' + stuck("s-g2", "Finish this sentence: " + gate2b(P).s)) +
+        '</div>'
       ]
     };
   }
@@ -294,7 +293,6 @@
         '<ul class="iconlist">' + '<li class="seq" data-t="1" hidden style="--d:0s">' + g4pick(GATE4_PERSONAL, P, 1) + '</li>' + '<li class="seq" data-t="2" hidden style="--d:0s">' + g4pick(GATE4_STRONG, P, 3).replace('{link}', '<a href="#" class="steplink" data-g="0" data-s="' + (P.g1.aim ? 2 : 1) + '">sensory writing</a>') + '</li>' + (P.g4.sizeNote ? '<li class="seq" data-t="3" hidden style="--d:0s">' + P.g4.sizeNote + '</li>' : '') +
         '<li class="seq" data-t="3" hidden style="--d:0s">' + g4pick(GATE4_DONE, P, 1) + '</li>' + '</ul>' +
         (P.g4.collapse ? '<details class="seq ex-fold" data-t="4" hidden style="--d:0s"><summary>Want to see an example?</summary>' : '<div class="seq" data-t="4" hidden style="--d:0s">') + '<div class="example-card"><div class="ex-top"><p>' + P.g4.exampleTop + '</p></div><div class="ex-bottom"><p>' + P.g4.exampleBottom + '</p></div></div>' + (P.g4.collapse ? '</details>' : '</div>') +
-        '<div class="seq" data-t="4" hidden style="--d:0.8s">' + stuck("s-g4", P.g4.stuck) + '</div>' +
         '</div>' +
         GATE_ART
       ]
