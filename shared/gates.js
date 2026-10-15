@@ -180,43 +180,43 @@
   var GATE3H = [
   {
     "h": "Choose a way in",
-    "p": "Your free-write is full of specific words and images that can carry your charge."
+    "p": "Now turn your charge into an image for your quilt. Pick any starting point below."
   },
   {
     "h": "Pick a place to start",
-    "p": "Your writing has plenty of words and images that could hold your charge."
+    "p": "Now turn your charge into an image for your quilt. Your writing has plenty to work from."
   },
   {
     "h": "Where do you want to begin?",
-    "p": "Somewhere in your writing is something that can carry your charge."
+    "p": "Now shape your charge into an image for your quilt. Somewhere in your writing is something to start with."
   },
   {
     "h": "Find a way in",
-    "p": "Your free-write is full of details that could hold your charge. Choose one way to begin."
+    "p": "Now turn your charge into an image for your quilt. Choose one way to begin."
   },
   {
     "h": "Start with what you have",
-    "p": "The words, images and details in your writing can all carry your charge."
+    "p": "Now build an image of your charge for your quilt. Use the words, images and details in your writing."
   },
   {
     "h": "Which way feels right today?",
-    "p": "Any of these can carry your charge into cloth."
+    "p": "Now turn your charge into an image for your quilt. Any of these can get you started."
   },
   {
     "h": "Three ways to start",
-    "p": "Your writing already holds what you need. Pick the one that feels easiest."
+    "p": "Now turn your charge into an image for your quilt. Pick the one that feels easiest."
   },
   {
     "h": "Choose a way in",
-    "p": "Your writing can carry your charge."
+    "p": "Turn your charge into an image for your quilt."
   },
   {
     "h": "Pick a place to start",
-    "p": "Choose whichever feels easiest."
+    "p": "Shape your charge into an image for your quilt. Choose whichever feels easiest."
   },
   {
     "h": "Where to begin?",
-    "p": "Start with whatever your writing gives you."
+    "p": "Build an image of your charge for your quilt. Start with whatever your writing gives you."
   }
 ];
 
