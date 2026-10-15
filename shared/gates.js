@@ -161,7 +161,7 @@
   }
 
   var GATE2_NOTES = [
-    "Jot your answers down with the rest of your writing.",
+    "Jot your ideas down with the rest of your writing.",
     "Add this to the same page as your other writing.",
     "Write this beneath what you already have, so it all stays together.",
     "Keep it with your writing so far. You\u2019ll want it all in one place.",
