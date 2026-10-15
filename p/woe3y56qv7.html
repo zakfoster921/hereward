@@ -22,7 +22,42 @@
 <script src="../shared/art.js?v=481825fa"></script>
 <script src="../shared/gates.js?v=481825fa"></script>
 <script>
-window.PROMPT = { n: 9, placeholder: true };
+window.PROMPT = {
+  "n": 9,
+  "name": "A Moment in History",
+  "subject": "",
+  "g1": {
+    "title": "Free-Write",
+    "aim": "Bring a moment from history that you lived through into your quilt.",
+    "lead": "Choose a moment from history that you lived through. It can be something that impacted your life personally or something you watched from a distance.",
+    "asks": [
+      "What was going on when you first learned about it?",
+      "What did you want to do, and what did you actually do?",
+      "How does it sit with you now?"
+    ],
+    "stuck": "If nothing arrives, just list the news or events you\u2019ve lived through as they come to mind. It\u2019s okay if they don\u2019t feel like the one you\u2019ll work with. But stop when one stays with you."
+  },
+  "g1c": {
+    "title": "What it changed",
+    "intro": "Things can turn on a dime. Let\u2019s unpack that a little further. Start with the line below that hits closest to home.",
+    "starters": [
+      "What nobody said out loud at the time was\u2026",
+      "I knew this would be remembered when\u2026",
+      "Since then, I\u2019ve never again\u2026"
+    ],
+    "stuck": "Write the moment as a weather front crossing your life: where it came from, how fast it moved, what it left behind."
+  },
+  "g4": {
+    "exampleTop": "\u201cA newspaper front page\u201d sits near Universal and Faint.",
+    "exampleBottom": "Adding \u201cthe coffee cup left cooling on the table,\u201d for the charge \u201cthe morning nothing was normal after,\u201d moves it toward Strong or Personal.",
+    "stuck": "What was the smallest ordinary thing happening around you that day?",
+    "collapse": true
+  },
+  "closing": {
+    "line": "Add your historic moment to your quilt.",
+    "guide": "Take your time. The quilt will wait."
+  }
+};
 </script>
 <script>window.QA.mode = 'prompt'; window.QA.G = window.QA.buildGates(window.PROMPT);</script>
 <script src="../shared/engine.js?v=481825fa"></script>
