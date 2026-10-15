@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Solitreo&display=swap">
-<link rel="stylesheet" href="shared/site.css?v=4901982a">
+<link rel="stylesheet" href="shared/site.css?v=f89c2f09">
 </head>
 <body>
 <svg class="noodle" id="noodle" aria-hidden="true" focusable="false"><g id="noodle-bits"></g><path id="noodle-path" d=""/></svg>
@@ -21,7 +21,7 @@
       <p class="prompt-tag seq" id="title-tag" style="--d:0.55s" hidden></p>
       <p class="nolink seq" id="nolink" style="--d:0.7s" hidden>This page opens from your weekly link. Check the message with this week’s prompt and use the link there.</p>
     </div>
-    <div class="title-foot seq" style="--d:1.1s"><button class="toggle" id="skip" type="button">Skip intro</button></div>
+    <div class="title-foot seq" style="--d:1.1s"><button class="toggle" id="skip" type="button">Skip intro</button><a class="toggle" id="past" href="#" hidden>Past prompts</a></div>
   </section>
   <div id="flow" hidden>
     <div class="top"><ol class="gates" id="gates" aria-label="Progress"></ol></div>
@@ -41,14 +41,16 @@
   var nn = /^[0-9]{1,2}$/.test(n) ? parseInt(n, 10) : 0;
   var tag = document.getElementById('title-tag');
   if (ok && nn >= 1) { tag.textContent = 'Prompt ' + nn; tag.hidden = false; document.getElementById('title-sub').hidden = true; }
+  var pl = document.getElementById('past');
+  if (ok && nn >= 2 && pl) { pl.href = 'i/' + p + '.html'; pl.hidden = false; }
   if (!ok) {
     document.getElementById('nolink').hidden = false;
     var sk = document.getElementById('skip'); if (sk) sk.hidden = true;
   }
 })();
 </script>
-<script src="shared/art.js?v=4901982a"></script>
-<script src="shared/intro.js?v=4901982a"></script>
+<script src="shared/art.js?v=f89c2f09"></script>
+<script src="shared/intro.js?v=f89c2f09"></script>
 <script>window.QA.G = [window.QA.introGate];</script>
-<script src="shared/engine.js?v=4901982a"></script>
+<script src="shared/engine.js?v=f89c2f09"></script>
 </body></html>

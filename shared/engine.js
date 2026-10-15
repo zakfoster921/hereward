@@ -229,7 +229,7 @@
   // Tap anywhere to continue. Skips controls, text selection, and the last card (so a stray tap never restarts).
   document.addEventListener("click", function (e) {
     if (stage === "title") {
-      if (!QA.dest || e.target.closest("#skip")) return;
+      if (!QA.dest || e.target.closest("#skip, #past")) return;
       enter(false);
       return;
     }
