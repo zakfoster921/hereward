@@ -160,6 +160,15 @@
     return GATE2B[i];
   }
 
+  var GATE2_NOTES = [
+    "Jot your answers down with the rest of your writing.",
+    "Add this to the same page as your other writing.",
+    "Write this beneath what you already have, so it all stays together.",
+    "Keep it with your writing so far. You\u2019ll want it all in one place.",
+    "Put this down with your writing from Gate 1."
+  ];
+  function gate2note(P) { var n = (P && P.n) || 1; return GATE2_NOTES[(n - 1) % GATE2_NOTES.length]; }
+
   function gate2(P) {
     return {
       eyebrow: "Gate 2", name: "Deepen the charge",
@@ -172,7 +181,8 @@
         '<div class="reserve">' +
         asks([gate2b(P).a, '<em>' + gate2b(P).q + '</em>']) +
         withTap(2, stuck("s-g2", "Finish this sentence: " + gate2b(P).s)) +
-        '</div>'
+        '</div>' +
+        '<p class="chart-note">' + gate2note(P) + '</p>'
       ]
     };
   }
