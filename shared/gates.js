@@ -19,7 +19,7 @@
       prompt: P.n, eyebrow: "", name: P.name, aim: !!a.aim,
       steps: [
         (a.aim ? '<p class="lead rule">' + a.aim + '</p>' + (a.aimNote ? '<p>' + a.aimNote + '</p>' : '') : null),
-        (a.title ? '<div><p class="eyebrow">Gate 1</p><h3 class="step-title">' + a.title + '</h3></div>' : '') +
+        (a.title ? '<div><p class="eyebrow">Gate 1</p><h3 class="step-title">' + a.title + ' <span class="time-hint">suggested time: 10 minutes</span></h3></div>' : '') +
         '<p class="lead rule">' + a.lead + '</p>' +
         '<div class="reserve">' +
         '<div class="asklist" data-t="1" hidden><ul>' + lis + '</ul></div>' +
@@ -32,14 +32,14 @@
         '</div>' +
         GATE_ART,
 
-        '<h3>' + (b.title || 'What You Sense') + '</h3>' +
+        '<h3>' + (b.title || 'What You Sense') + ' <span class="time-hint">5 min</span></h3>' +
         '<p>' + (b.intro || 'Fill each column with what you sense as you picture it.') + '</p>' +
         '<table class="sense-chart"><thead><tr>' + ths + '</tr></thead><tbody>' + row + row + row + '</tbody></table>' +
         '<p class="chart-note">' + (b.note || 'List at least three in each. Add anything else you’d like.') + '</p>' +
         SENSES_ART,
 
         DOODLE_ART +
-        '<h3>' + (c.title || 'What remains') + '</h3>' +
+        '<h3>' + (c.title || 'What remains') + ' <span class="time-hint">2 min</span></h3>' +
         '<p>' + c.intro + '</p>' +
         '<div class="reserve">' +
         asks(c.starters) +
