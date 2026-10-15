@@ -42,6 +42,7 @@
   var tag = document.getElementById('title-tag');
   if (ok && nn >= 1) { tag.textContent = 'Prompt ' + nn; tag.hidden = false; document.getElementById('title-sub').hidden = true; }
   else if (ok && n.toLowerCase() === 'test') { tag.textContent = 'TEST PROMPT'; tag.hidden = false; document.getElementById('title-sub').hidden = true; }
+  if (ok && (nn === 1 || n.toLowerCase() === 'test')) { var sk1 = document.getElementById('skip'); if (sk1) sk1.hidden = true; }
   var pl = document.getElementById('past');
   if (ok && nn >= 2 && pl) { pl.href = 'i/' + p + '.html'; pl.hidden = false; }
   if (!ok) {
