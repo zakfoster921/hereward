@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Solitreo&display=swap">
-<link rel="stylesheet" href="../shared/site.css?v=d1161a5b">
+<link rel="stylesheet" href="../shared/site.css?v=0b466e47">
 </head>
 <body>
 <svg class="noodle" id="noodle" aria-hidden="true" focusable="false"><g id="noodle-bits"></g><path id="noodle-path" d=""/></svg>
@@ -19,11 +19,45 @@
   </div>
 </div>
 <script>window.QA_ROOT = '../';</script>
-<script src="../shared/art.js?v=d1161a5b"></script>
-<script src="../shared/gates.js?v=d1161a5b"></script>
+<script src="../shared/art.js?v=0b466e47"></script>
+<script src="../shared/gates.js?v=0b466e47"></script>
 <script>
-window.PROMPT = { n: 5, placeholder: true };
+window.PROMPT = {
+  "n": 5,
+  "name": "Your People",
+  "subject": "",
+  "g1": {
+    "title": "Free-Write",
+    "aim": "Make room in your quilt for the people who make room for you.",
+    "lead": "Choose a community that matters to you. It can be big or small, formal or loose: a neighborhood, a congregation, a team, a family you chose. Your community can also be a handful of people who may have never met each other.",
+    "asks": [
+      "What does it feel like when you\u2019re with them?",
+      "Where do you usually find them, or where do they find you?",
+      "What small ritual do you share, even if you\u2019ve never named it?"
+    ],
+    "stuck": "If nothing arrives, list the people you\u2019d text first with good news, or bad. Stop when one name, or a few, feels like yours."
+  },
+  "g1c": {
+    "title": "What holds you",
+    "intro": "What is it about these people? Start with the line below that pulls at you most.",
+    "starters": [
+      "With these people, I get to be\u2026",
+      "What they understand about me without being told is\u2026",
+      "If I lost them, I\u2019d lose\u2026"
+    ],
+    "stuck": "Picture them all together in one frame. Who stands closest to you, and who stands at the edge?"
+  },
+  "g4": {
+    "exampleTop": "\u201cA circle of figures\u201d sits near Universal and Faint.",
+    "exampleBottom": "Adding \u201cthe one chair that\u2019s always left a little open,\u201d for the charge \u201croom for whoever comes next,\u201d moves it toward Strong or Personal.",
+    "stuck": "Who would you look for first if you walked in late?",
+    "collapse": true
+  },
+  "closing": {
+    "line": "Add your people to your quilt."
+  }
+};
 </script>
 <script>window.QA.mode = 'prompt'; window.QA.G = window.QA.buildGates(window.PROMPT);</script>
-<script src="../shared/engine.js?v=d1161a5b"></script>
+<script src="../shared/engine.js?v=0b466e47"></script>
 </body></html>

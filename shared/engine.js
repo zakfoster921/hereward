@@ -114,6 +114,7 @@
   function sync() {
     var topBar = document.querySelector(".top");
     if (topBar) topBar.classList.toggle("is-off", MODE === "landing");
+    document.body.classList.toggle("aim-only", MODE === "prompt" && rg === 0 && rs === 1 && !!G[0].aim);
     gateEls.forEach(function (ge, g) {
       ge.hidden = g > rg;
       [].slice.call(ge.querySelectorAll(".step")).forEach(function (st, si) {

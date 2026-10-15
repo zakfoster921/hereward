@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Solitreo&display=swap">
-<link rel="stylesheet" href="../shared/site.css?v=d1161a5b">
+<link rel="stylesheet" href="../shared/site.css?v=0b466e47">
 </head>
 <body>
 <svg class="noodle" id="noodle" aria-hidden="true" focusable="false"><g id="noodle-bits"></g><path id="noodle-path" d=""/></svg>
@@ -19,11 +19,46 @@
   </div>
 </div>
 <script>window.QA_ROOT = '../';</script>
-<script src="../shared/art.js?v=d1161a5b"></script>
-<script src="../shared/gates.js?v=d1161a5b"></script>
+<script src="../shared/art.js?v=0b466e47"></script>
+<script src="../shared/gates.js?v=0b466e47"></script>
 <script>
-window.PROMPT = { n: 2, placeholder: true };
+window.PROMPT = {
+  "n": 2,
+  "name": "A Corner of Your World",
+  "subject": "",
+  "g1": {
+    "title": "Free-Write",
+    "aim": "Choose one small corner of your world and give it room in your quilt.",
+    "lead": "Choose a specific place that holds you right now: a chair, a corner, a room, a bench, a stretch of trail, a spot in your yard. It can be small, ordinary, or hard to explain.",
+    "asks": [
+      "What do you often touch in this space?",
+      "What time of day do you usually find yourself there?",
+      "What are you usually doing, or not doing?"
+    ],
+    "stuck": "If nothing arrives, list the places you spend time in a typical week, from where you wake up to when you come back to bed. Stop when one resonates.",
+    "aimNote": "<strong>Tip:</strong> This is another chance to make a large addition to your quilt. The first prompts are big building blocks, and then come the details."
+  },
+  "g1c": {
+    "title": "What it holds",
+    "intro": "This is where we dive deeper into what makes your spot so special. Start with the question below that feels most intriguing.",
+    "starters": [
+      "Here, I\u2019m allowed to\u2026",
+      "This place asks me to\u2026",
+      "When I walk away, I leave behind\u2026"
+    ],
+    "stuck": "Imagine the place as a person in your life. Describe what they do when you arrive."
+  },
+  "g4": {
+    "exampleTop": "\u201cAn armchair by a window\u201d sits near Universal and Faint.",
+    "exampleBottom": "Adding \u201cthe dent in the left cushion,\u201d for the charge \u201cbeing the one who stays,\u201d moves it toward Strong or Personal.",
+    "stuck": "What would you put back first if someone rearranged this place?",
+    "collapse": true
+  },
+  "closing": {
+    "line": "Add something from your corner of the world to your quilt."
+  }
+};
 </script>
 <script>window.QA.mode = 'prompt'; window.QA.G = window.QA.buildGates(window.PROMPT);</script>
-<script src="../shared/engine.js?v=d1161a5b"></script>
+<script src="../shared/engine.js?v=0b466e47"></script>
 </body></html>

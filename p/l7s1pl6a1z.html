@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Solitreo&display=swap">
-<link rel="stylesheet" href="../shared/site.css?v=d1161a5b">
+<link rel="stylesheet" href="../shared/site.css?v=0b466e47">
 </head>
 <body>
 <svg class="noodle" id="noodle" aria-hidden="true" focusable="false"><g id="noodle-bits"></g><path id="noodle-path" d=""/></svg>
@@ -19,11 +19,45 @@
   </div>
 </div>
 <script>window.QA_ROOT = '../';</script>
-<script src="../shared/art.js?v=d1161a5b"></script>
-<script src="../shared/gates.js?v=d1161a5b"></script>
+<script src="../shared/art.js?v=0b466e47"></script>
+<script src="../shared/gates.js?v=0b466e47"></script>
 <script>
-window.PROMPT = { n: 7, placeholder: true };
+window.PROMPT = {
+  "n": 7,
+  "name": "A Role You've Lived",
+  "subject": "",
+  "g1": {
+    "title": "Free-Write",
+    "aim": "Choose a role you\u2019ve lived and give it a place in your quilt as it feels from the inside.",
+    "lead": "Choose a role you\u2019ve lived or are living: a job, a place in your family, a part you play among friends, something you were handed or took on. It can be one you chose or one that chose you.",
+    "asks": [
+      "What does this role ask you to carry?",
+      "When do you feel most like yourself in it, and when least?",
+      "What does it look like from the outside, and what\u2019s different from the inside?"
+    ],
+    "stuck": "If nothing arrives, list the roles you\u2019ve had, formal or not, starting with the one you\u2019ve held longest. Stop when one clicks."
+  },
+  "g1c": {
+    "title": "Under the title",
+    "intro": "Let\u2019s look under the name of the role. Start with the line below that pulls at you most.",
+    "starters": [
+      "People assume this role means\u2026",
+      "What the role never lets me\u2026",
+      "When I set it down, I\u2026"
+    ],
+    "stuck": "Picture the role as a uniform or a tool kept by the door. What\u2019s the first thing you\u2019d take off, and what would you leave on?"
+  },
+  "g4": {
+    "exampleTop": "\u201cA ring of keys\u201d sits near Universal and Faint.",
+    "exampleBottom": "Adding \u201cthe one worn smooth by my thumb,\u201d for the charge \u201cthe job nobody else remembers is mine,\u201d moves it toward Strong or Personal.",
+    "stuck": "What would someone who has never seen you in this role get wrong about it?",
+    "collapse": true
+  },
+  "closing": {
+    "line": "Add your role to your quilt."
+  }
+};
 </script>
 <script>window.QA.mode = 'prompt'; window.QA.G = window.QA.buildGates(window.PROMPT);</script>
-<script src="../shared/engine.js?v=d1161a5b"></script>
+<script src="../shared/engine.js?v=0b466e47"></script>
 </body></html>

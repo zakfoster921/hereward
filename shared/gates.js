@@ -16,8 +16,10 @@
     var ths = cols.map(function (h) { return '<th scope="col">' + h + '</th>'; }).join('');
     var row = '<tr>' + cols.map(function () { return '<td></td>'; }).join('') + '</tr>';
     return {
-      prompt: P.n, eyebrow: "", name: P.name,
+      prompt: P.n, eyebrow: "", name: P.name, aim: !!a.aim,
       steps: [
+        (a.aim ? '<p class="lead rule">' + a.aim + '</p>' + (a.aimNote ? '<p>' + a.aimNote + '</p>' : '') : null),
+        (a.title ? '<div><p class="eyebrow">Gate 1</p><h3 class="step-title">' + a.title + '</h3></div>' : '') +
         '<p class="lead rule">' + a.lead + '</p>' +
         '<div class="reserve">' +
         '<div class="asklist" data-t="1" hidden><ul>' + lis + '</ul></div>' +
@@ -30,8 +32,8 @@
         '</div>' +
         GATE_ART,
 
-        '<h3>' + (b.title || 'Full body recall') + '</h3>' +
-        '<p>' + b.intro + '</p>' +
+        '<h3>' + (b.title || 'What You Sense') + '</h3>' +
+        '<p>' + (b.intro || 'Fill each column with what you sense as you picture it.') + '</p>' +
         '<table class="sense-chart"><thead><tr>' + ths + '</tr></thead><tbody>' + row + row + row + '</tbody></table>' +
         '<p class="chart-note">' + (b.note || 'List at least three in each. Add anything else you’d like.') + '</p>' +
         SENSES_ART,
@@ -43,7 +45,7 @@
         asks(c.starters) +
         withTap(c.starters.length, stuck("s-g1", c.stuck)) +
         '</div>'
-      ]
+      ].filter(function (x) { return x !== null; })
     };
   }
 
@@ -92,9 +94,9 @@
 
         '<h3>Does your image want to move to another part of the matrix?</h3>' +
         '<div class="reserve">' +
-        '<ul class="iconlist">' + '<li class="seq" data-t="1" hidden style="--d:0s">To move toward <strong>Personal</strong>, add a detail only you would know</li>' + '<li class="seq" data-t="2" hidden style="--d:0s">To move toward <strong>Strong</strong>, return to your <a href="#" class="steplink" data-g="0" data-s="1">sensory writing</a> and find a detail that holds more of your charge</li>' + (P.g4.sizeNote ? '<li class="seq" data-t="3" hidden style="--d:0s">' + P.g4.sizeNote + '</li>' : '') +
+        '<ul class="iconlist">' + '<li class="seq" data-t="1" hidden style="--d:0s">To move toward <strong>Personal</strong>, add a detail only you would know</li>' + '<li class="seq" data-t="2" hidden style="--d:0s">To move toward <strong>Strong</strong>, return to your <a href="#" class="steplink" data-g="0" data-s="' + (P.g1.aim ? 2 : 1) + '">sensory writing</a> and find a detail that holds more of your charge</li>' + (P.g4.sizeNote ? '<li class="seq" data-t="3" hidden style="--d:0s">' + P.g4.sizeNote + '</li>' : '') +
         '<li class="seq" data-t="3" hidden style="--d:0s">If it holds up where it is, it’s time to start sewing</li>' + '</ul>' +
-        '<div class="seq example-card" data-t="4" hidden style="--d:0s"><div class="ex-top"><p class="ex-label">Example</p><p>' + P.g4.exampleTop + '</p></div><div class="ex-bottom"><p>' + P.g4.exampleBottom + '</p></div></div>' +
+        (P.g4.collapse ? '<details class="seq ex-fold" data-t="4" hidden style="--d:0s"><summary>Want to see an example?</summary>' : '<div class="seq" data-t="4" hidden style="--d:0s">') + '<div class="example-card"><div class="ex-top"><p>' + P.g4.exampleTop + '</p></div><div class="ex-bottom"><p>' + P.g4.exampleBottom + '</p></div></div>' + (P.g4.collapse ? '</details>' : '</div>') +
         '<div class="seq" data-t="4" hidden style="--d:0.8s">' + stuck("s-g4", P.g4.stuck) + '</div>' +
         '</div>' +
         GATE_ART
@@ -104,10 +106,10 @@
 
   function closing(P) {
     return {
-      eyebrow: "All gates completed", name: "Time to sew", closing: true,
+      eyebrow: "All gates completed", name: "Time to sew!", closing: true,
       steps: [
-        '<p class="big">Take your ' + P.subject + ' image and add it to your quilt.</p>' +
-        '<p>' + (P.closing && P.closing.note ? P.closing.note + ' ' : '') + 'Keep your charge in mind as you sew, and look for chances to heighten the charge even more.</p>'
+        '<p class="big">' + (P.closing && P.closing.line ? P.closing.line : 'Add your ' + P.subject + ' image to your quilt.') + '</p>' +
+        '<p>' + (P.closing && P.closing.note ? P.closing.note + ' ' : '') + 'Also keep your charge in mind as you sew, and look for chances to heighten the charge even more.</p>'
       ]
     };
   }
