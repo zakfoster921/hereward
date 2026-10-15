@@ -326,7 +326,12 @@
       }
     }
 
+    // Opening or closing "Want to see an example?" resizes the page, which would redraw the line around the shifted drawings.
+    // Hold the line still until the next tap that isn't on the example.
+    var holdLine = false;
+    document.addEventListener("click", function (e) { holdLine = !!(e.target && e.target.closest && e.target.closest(".ex-fold")); }, true);
     function build() {
+      if (holdLine && paths.length) return;
       var w = document.documentElement.clientWidth, need = Math.max(6000, document.body.offsetHeight + 1500);
       var nobs = measure(), cl = document.querySelector(".gate.closing"), cRect = (cl && !cl.hidden) ? cl.getBoundingClientRect() : null;
       cEnd = (cRect && cRect.height > 4) ? Math.round(cRect.bottom + window.scrollY) : null;
