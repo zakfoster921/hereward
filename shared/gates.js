@@ -19,8 +19,7 @@
         '<div class="reserve">' +
         '<div class="asklist" data-t="1" hidden><ul>' + lis + '</ul></div>' +
         '<div data-t="' + n + '" hidden>' +
-        '<details class="note seq" style="--d:0.5s"><summary>New to free-writing?</summary><p>Write by hand or type, and keep writing. Nothing here needs to be polished or shared. It just needs to be true. About one page is a good rhythm.</p></details>' +
-        '<div class="seq" style="--d:1.1s">' +
+        '<div class="seq" style="--d:0.5s">' +
         stuck("s-g1a", a.stuck) +
         '</div>' +
         '</div>' +

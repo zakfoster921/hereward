@@ -39,6 +39,10 @@
         '<p>After that, make it your own. Skip a gate, stay in one longer, or start directly from your fabric. Use whatever gets you to something good that you can sew.</p>' +
         NOTEBOOK_ART,
 
+        '<h3>New to free-writing?</h3>' +
+        '<p class="lead rule">Write by hand or type, and keep writing.</p>' +
+        '<p>Nothing here needs to be polished or shared. It just needs to be true. About one page is a good rhythm.</p>',
+
         '<div class="facts-screen"><p class="begin-text seq" style="--d:0.2s">Let\u2019s begin</p></div>'
       ]
     };
