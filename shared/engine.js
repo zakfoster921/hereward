@@ -69,8 +69,7 @@
   function pageY(el) { var y = 0; while (el) { y += el.offsetTop; el = el.offsetParent; } return y; }
   function fitArt(st) {
     // a screen's graphic is either a line drawing or (on the last gate) the matrix
-    var svg = st.querySelector(".gate-art"), mx = svg ? null : st.querySelector(".matrix-wrap");
-    if (svg && svg.classList.contains("fixed-art")) return;
+    var svg = st.querySelector(".gate-art:not(.fixed-art)"), mx = svg ? null : st.querySelector(".matrix-wrap");
     if ((!svg && !mx) || !st.offsetHeight) return;
     var wrap = svg ? svg.parentNode : mx, gate = st.closest(".gate");
     var ratio = 1;

@@ -154,6 +154,7 @@ h1.gate-title { font-size: 2.3rem; }
 .gate-art.fixed-art { width: 10.88rem; opacity: 0.7; }
 .gate-art.fixed-art.time-art { width: 5.3rem; }
 .gate-art.fixed-art.pic-art { width: 8rem; }
+.gate-art.fixed-art.clock-art { width: 6rem; }
 .gate > .gate-art-wrap { margin-top: 0; margin-bottom: 1rem; }
 .begin-text { font-family: var(--font-display); font-weight: 700; font-size: 2.8rem; line-height: 1.1; margin: 0; text-align: center; color: var(--ink); }
 .facts { position: relative; width: min(100%, 24rem); aspect-ratio: 1261 / 1256; }
