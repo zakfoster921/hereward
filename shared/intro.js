@@ -24,7 +24,7 @@
         '<p class="seq" style="--d:0.5s">For example, two people might each put a tree on their quilt. For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>. For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>',
 
         '<h3>Why we write before we sew</h3>' +
-        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with new questions. Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
+        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong> Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
         '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         '<ol class="gate-list" aria-label="The four gates">' +
