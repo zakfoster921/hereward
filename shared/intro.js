@@ -51,9 +51,9 @@
         '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>',
 
+        '<p>Some people write for a set time, others for a set number of pages. <strong>Handwrite or type</strong>, whichever keeps you going.</p>' +
         MAP_ART +
-        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
-        '<p>Some people write for a set time, others for a set number of pages. <strong>Handwrite or type</strong>, whichever keeps you going.</p>',
+        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>',
 
         '<h3>Try it once, then make it yours</h3>' +
         '<p class="lead rule">Try the full version of all four gates at least once, so you feel what each one does.</p>' +
