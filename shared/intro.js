@@ -33,7 +33,7 @@
         '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>',
 
         '<h3>The four gates</h3>' +
-        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong></p>' +
+        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, with <strong>new questions</strong> each time.</p>' +
         '<p>Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
         '<ol class="gate-list" aria-label="The four gates">' +
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
