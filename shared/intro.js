@@ -37,11 +37,7 @@
         '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
         '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>',
 
-        CLOCK_ART +
-        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
-        '<p>Some people write for a set time, others for a set number of pages. <strong>Handwrite or type</strong>, whichever keeps you going.</p>',
-
-        '<h3>New to free-writing?</h3>' +
+        '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
         '<div class="tips">' +
         '<p>Keep your <strong>hands moving</strong> the whole time.</p>' +
@@ -51,6 +47,10 @@
         '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>' +
         '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>',
+
+        CLOCK_ART +
+        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
+        '<p>Some people write for a set time, others for a set number of pages. <strong>Handwrite or type</strong>, whichever keeps you going.</p>',
 
         '<h3>Try it once, then make it yours</h3>' +
         '<p class="lead rule">Try the full version of all four gates at least once, so you feel what each one does.</p>' +
