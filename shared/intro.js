@@ -39,7 +39,7 @@
         '<div class="tips">' +
         '<p>Keep your <strong>hands moving</strong>, whether you\u2019re writing or typing.</p>' +
         '<p>Don\u2019t worry about <strong>spelling, grammar, or neatness</strong>.</p>' +
-        '<p><strong>Fragments, lists, and sketches</strong> are all fine.</p>' +
+        '<p><strong>Lists and sketches</strong> are also fine.</p>' +
         '<p>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p><strong>Ignore</strong> any question that doesn\u2019t spark anything.</p>' +
         '</div>' +
