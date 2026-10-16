@@ -25,17 +25,17 @@
         '<p class="rule"><strong>A charge is the emotional current inside of a detail.</strong> It is what makes a memory, a place, or an object matter to you, beyond how it might look to others.</p>' +
         '<p class="seq" style="--d:0.5s">For example, two people might each put a tree on their quilt. For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>. For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>',
 
+        NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
         '<h3>Why we write before we sew</h3>' +
-        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong> Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
-        NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"'),
+        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong> Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
-        CLOCK_ART +
-        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         '<ol class="gate-list" aria-label="The four gates">' +
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
         '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
         '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
-        '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>',
+        '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>' +
+        CLOCK_ART +
+        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>',
 
         '<h3>New to free-writing?</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
