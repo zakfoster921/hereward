@@ -24,7 +24,7 @@
         '<p class="seq" style="--d:1s">A charge does not have to be positive. It just has to be true.</p>',
 
         '<h3>Why we write before we sew</h3>' +
-        '<p>To help you find your charge for each prompt, you go through the same <strong>four gates</strong> each time. Your charge will open up a little more each time: a memory, a feeling, an image you can sew.</p>' +
+        '<p>To help you find your charge for each prompt, you go through the same <strong>four gates</strong>. Your charge will open up a little more each time: a memory, a feeling, an image you can sew.</p>' +
         '<p>Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         '<ol class="gate-list" aria-label="The four gates">' +
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
