@@ -215,7 +215,7 @@
   },
   {
     "h": "Three ways to start",
-    "p": "Now <strong>turn your charge into an image</strong> for your quilt. Pick the one that feels easiest."
+    "p": "Now <strong>turn your charge into an image</strong> for your quilt. Pick the one that feels most natural."
   },
   {
     "h": "Choose a way in",
@@ -223,7 +223,7 @@
   },
   {
     "h": "Pick a place to start",
-    "p": "<strong>Shape your charge into an image</strong> for your quilt. Choose whichever feels easiest."
+    "p": "<strong>Shape your charge into an image</strong> for your quilt. Choose whichever feels most natural."
   },
   {
     "h": "Where to begin?",
