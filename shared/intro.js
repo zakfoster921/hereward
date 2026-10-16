@@ -27,7 +27,7 @@
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
         '<h3>Why we write before we sew</h3>' +
-        '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would. That is where the ideas you can only reach by digging come from.</p>',
+        '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would.</p>',
 
         '<h3>The four gates</h3>' +
         '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong> Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
