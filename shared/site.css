@@ -230,7 +230,7 @@ body.is-prompt .gate[data-g="0"], body.is-prompt .gate[data-g="0"] .step[data-s=
 /* "Want more to work with?" on Gate 2: opens to regular text and violet-line starters, not the muted italic of the small notes */
 .gate .note.more { margin-top: 1.1rem; }
 .gate .note.more p { font-style: normal; color: var(--ink); }
-.gate .note.more p.ask { margin-top: 0.9rem; font-size: 1.25rem; }
+.gate .note.more p.ask { margin-top: 0.9rem; font-family: var(--font-body); font-size: inherit; font-weight: 700; line-height: inherit; letter-spacing: normal; }
 .gate .note.more p.stuck-text { font-style: italic; color: var(--muted); }
 .note.more .stuck { margin-top: 0.4rem; }
 
