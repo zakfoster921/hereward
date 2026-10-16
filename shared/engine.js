@@ -22,7 +22,8 @@
       '<div class="steps">' +
       g.steps.map(function (h, si) { return '<div class="step" data-s="' + si + '" hidden>' + h + '</div>'; }).join("") +
       '</div>' +
-      '<div class="go"><button class="cue" type="button"><span class="cue-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span><span class="sr"></span></button></div></section>';
+      '<div class="go"><button class="cue" type="button"><span class="cue-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span><span class="sr"></span></button></div></section>' +
+      (g.afterArt ? '<div class="after-art">' + g.afterArt + '</div>' : '');
   }).join("");
 
   gatesEl.innerHTML = G.map(function (g, i) {
