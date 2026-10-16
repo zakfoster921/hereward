@@ -41,7 +41,7 @@
         '<p>Don\u2019t worry about <strong>spelling, grammar, or neatness</strong>.</p>' +
         '<p><strong>Lists and sketches</strong> are also fine.</p>' +
         '<p>Follow <strong>what pulls you</strong>, even off topic.</p>' +
-        '<p><strong>Ignore</strong> any question that doesn\u2019t spark anything.</p>' +
+        '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>' +
         '<p>Nothing here needs to be polished or shared. It just needs to be true.</p>' +
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"'),
