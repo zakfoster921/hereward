@@ -20,7 +20,7 @@
         '<p class="fact seq" style="--d:0.2s"><span class="num">24</span><span class="what">prompts over the course of a year</span></p>' +
         '<p class="fact seq" style="--d:1s"><span class="num">1</span><span class="what">whole-cloth quilt</span></p></div></div></div>',
 
-        '<div class="facts-screen"><p class="verse seq" style="--d:0.2s">We\u2019ll sort through memories, places and objects, looking for the ones that still hum.</p></div>',
+        '<div class="facts-screen"><p class="verse seq" style="--d:0.2s">We\u2019ll sort through memories, places and objects, looking for the ones that still <span class="hum">hum</span>.</p></div>',
 
         CHARGE_ART +
         '<h3>We\u2019ll use this word a lot <span class="big-word">\u2192 CHARGE</span></h3>' +
