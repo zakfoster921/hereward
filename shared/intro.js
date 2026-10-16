@@ -39,7 +39,8 @@
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
         '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
         '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
-        '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>',
+        '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>' +
+        MAP_ART,
 
         '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
@@ -57,8 +58,7 @@
 
         '<h3>Try it once, then make it yours</h3>' +
         '<p class="lead rule">Try the full version of all four gates at least once, so you feel what each one does.</p>' +
-        '<p>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p>' +
-        MAP_ART,
+        '<p>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p>',
 
         '<div class="facts-screen"><p class="begin-text seq" style="--d:0.2s">Let\u2019s begin</p></div>'
       ]
