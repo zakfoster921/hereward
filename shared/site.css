@@ -154,7 +154,7 @@ h1.gate-title { font-size: 2.3rem; }
 .gate-art.fixed-art { width: 10.88rem; opacity: 0.7; }
 .gate-art.fixed-art.time-art { width: 5.3rem; }
 .gate-art.fixed-art.pic-art { width: 8rem; }
-.step > .gate-art-wrap:first-child + p { margin-top: 1.25rem; }
+.gate > .gate-art-wrap { margin-top: 0; margin-bottom: 1rem; }
 .begin-text { font-family: var(--font-display); font-weight: 700; font-size: 2.8rem; line-height: 1.1; margin: 0; text-align: center; color: var(--ink); }
 .facts { position: relative; width: min(100%, 24rem); aspect-ratio: 1261 / 1256; }
 .facts-frame { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--thread, currentColor); opacity: 0.55; }
@@ -309,7 +309,7 @@ table.sense-chart { width: 100%; border-collapse: collapse; table-layout: fixed;
 .step > .chart-note + .gate-art-wrap { margin-top: 1rem; }
 .reserve { display: flex; flex-direction: column; gap: 1.1rem; }
 .gate-art-wrap { display: flex; justify-content: center; margin-top: 1.5rem; }
-.gate-art { width: 6.5rem; height: auto; color: var(--muted); opacity: 0.55; }
+.gate-art { width: 6.5rem; height: auto; color: var(--muted); opacity: 0.7; }
 .gate-art.senses-art { width: 13rem; }
 .step > .gate-art-wrap:first-child { margin-top: 0; }
 .step > .gate-art-wrap:first-child + h3 { margin-top: 1.5rem; }
