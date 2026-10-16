@@ -237,7 +237,6 @@
     return {
       eyebrow: "Gate 3", name: "Picture the charge",
       steps: [
-        '<h3>' + gate3h(P).h + '</h3>' +
         '<p>' + gate3h(P).p + '</p>' +
         (P.g3 && P.g3.note ? '<p>' + P.g3.note + '</p>' : '') +
         '<div class="ways">' +
