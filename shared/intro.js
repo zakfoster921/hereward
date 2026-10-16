@@ -52,7 +52,7 @@
         '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>',
 
-        CLOCK_ART +
+        CHAIN_ART +
         '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         '<p>Some people write for a set time, others for a set number of pages. <strong>Handwrite or type</strong>, whichever keeps you going.</p>',
 
