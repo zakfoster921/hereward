@@ -76,7 +76,7 @@
     if (svg) ratio = artRatio(svg);
     else { var im = mx.querySelector("img"); ratio = (im && +im.getAttribute("height")) ? +im.getAttribute("width") / +im.getAttribute("height") : 1; }
     var rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-    var minW = (svg ? 4.5 * Math.min(1, ratio) : 15) * rem, maxW = Math.min((svg ? 24 : 30) * rem, st.clientWidth, svg ? 0.45 * document.documentElement.clientWidth : 1e9);
+    var minW = (svg ? 4.5 * Math.min(1, ratio) : 15) * rem, maxW = Math.min((svg ? 24 : 30) * rem, st.clientWidth, svg ? (svg.classList.contains("map-art") ? st.clientWidth : 0.45 * document.documentElement.clientWidth) : 1e9);
     // the first screen of a gate also carries the gate's title above it
     var head = (gate && gate.querySelector(".step") === st) ? pageY(st) - pageY(gate) : 0;
     var avail = window.innerHeight - 48 - 84 - head; // scroll margin above, continue arrow below
