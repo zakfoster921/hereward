@@ -37,7 +37,7 @@
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
         '<div class="tips">' +
         '<p>Keep your <strong>hands moving</strong> the whole time.</p>' +
-        '<p>Don\u2019t worry about <strong>spelling, grammar, or neatness</strong>.</p>' +
+        '<p>Don\u2019t worry about <strong>spelling or neatness</strong>.</p>' +
         '<p><strong>Lists and sketches</strong> are also fine.</p>' +
         '<p>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
