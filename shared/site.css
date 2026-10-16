@@ -377,6 +377,7 @@ table.sense-chart { width: 100%; border-collapse: collapse; table-layout: fixed;
 body:has(.gate.closing:not([hidden])) { padding-bottom: 32rem; }
 .gate.closing .eyebrow { color: var(--on-ink); opacity: 0.7; }
 .gate.closing .gate-art { color: var(--on-ink); opacity: 0.6; width: 6.5rem; }
+.gate.closing .gate-art.closing-art { width: 10rem; }
 .gate.closing .cue { color: var(--on-ink); }
 .gate.closing .cue:hover { opacity: 0.8; }
 .gate.closing .cue:focus-visible { outline-color: var(--on-ink); }
