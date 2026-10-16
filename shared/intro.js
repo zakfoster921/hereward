@@ -25,10 +25,11 @@
         CHARGE_ART +
         '<h3>We\u2019ll use this word a lot <span class="big-word">\u2192 CHARGE</span></h3>' +
         '<p class="rule"><strong>A charge is the emotional current inside of a detail.</strong> It is what makes a memory, a place, or an object matter to you, beyond how it might look to others.</p>' +
-        '<p class="seq" style="--d:0.5s">For example, two people might each put a tree on their quilt. For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>. For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>',
+        '<p class="seq" style="--d:0.5s">For example, two people might each put a tree on their quilt. For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>. For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>' +
+        '<p class="seq" style="--d:1s">A charge does not have to be positive. It just has to be true.</p>',
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
-        '<h3>Why start with words</h3>' +
+        '<h3>Writing to Find the Charge</h3>' +
         '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would.</p>' +
         '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>',
 
@@ -51,7 +52,7 @@
         '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>',
 
-        '<p>Some people write for a set amount of time, others for a set number of pages. <strong>Handwrite or type</strong>, whichever keeps you going.</p>' +
+        '<p>Some people write for a <strong>set amount of time</strong>, others for a <strong>set number of pages</strong>. Handwrite or type, whichever keeps you going.</p>' +
         '<p><strong>Plan on about 15 minutes</strong> to work through all four gates.</p>' +
         MAP_ART,
 
