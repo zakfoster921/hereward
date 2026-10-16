@@ -59,7 +59,7 @@
     });
   }
   // Size every drawing to the room its screen has: as big as will fit with everything else on that screen
-  // (text, questions, the continue arrow) inside the viewport. Never smaller than 4.5rem or bigger than 20rem.
+  // (text, questions, the continue arrow) inside the viewport. Its longer side is never under 4.5rem, and its width never over 24rem.
   // Call after reserveSpace so the room held for the questions is counted.
   function artRatio(svg) {
     var vb = (svg.getAttribute("viewBox") || "").split(/[\s,]+/).map(Number);
@@ -76,12 +76,12 @@
     if (svg) ratio = artRatio(svg);
     else { var im = mx.querySelector("img"); ratio = (im && +im.getAttribute("height")) ? +im.getAttribute("width") / +im.getAttribute("height") : 1; }
     var rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-    var minW = (svg ? 4.5 : 15) * rem, maxW = Math.min((svg ? 24 : 30) * rem, st.clientWidth);
+    var minW = (svg ? 4.5 * Math.min(1, ratio) : 15) * rem, maxW = Math.min((svg ? 24 : 30) * rem, st.clientWidth);
     // the first screen of a gate also carries the gate's title above it
     var head = (gate && gate.querySelector(".step") === st) ? pageY(st) - pageY(gate) : 0;
     var avail = window.innerHeight - 48 - 84 - head; // scroll margin above, continue arrow below
     var other = st.offsetHeight - wrap.offsetHeight; // everything on the screen except the graphic
-    var w = Math.max(minW, Math.min(maxW, (avail - other) * ratio));
+    var w = Math.max(minW, Math.min(maxW, (avail - other - 2) * ratio));
     if (svg) svg.style.width = w + "px"; else mx.style.maxWidth = w + "px";
     checkFit(st, wrap, head);
   }
