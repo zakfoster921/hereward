@@ -36,6 +36,13 @@
 
         '<h3>New to free-writing?</h3>' +
         '<p class="lead rule">Write by hand or type, and keep writing.</p>' +
+        '<div class="asklist"><ul>' +
+        '<li><strong>Keep the pen moving.</strong> If you stall, make a bunch of curlicues.</li>' +
+        '<li><strong>Don\u2019t worry about spelling, grammar, or neatness.</strong> It\u2019s the ideas you\u2019re after.</li>' +
+        '<li><strong>Fragments, lists, and sketches are all fine.</strong></li>' +
+        '<li><strong>Follow what pulls you,</strong> even off topic.</li>' +
+        '<li><strong>Ignore any question that doesn\u2019t spark anything.</strong></li>' +
+        '</ul></div>' +
         '<p>Nothing here needs to be polished or shared. It just needs to be true. About one page is a good rhythm.</p>' +
         NOTEBOOK_ART,
 
