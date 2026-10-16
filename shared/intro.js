@@ -28,7 +28,7 @@
         '<p class="seq" style="--d:0.5s">For example, two people might each put a tree on their quilt. For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>. For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>',
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
-        '<h3>Why we write before we sew</h3>' +
+        '<h3>Why start with words</h3>' +
         '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would.</p>' +
         '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>',
 
