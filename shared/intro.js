@@ -30,7 +30,8 @@
         '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would.</p>',
 
         '<h3>The four gates</h3>' +
-        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong> Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
+        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong></p>' +
+        '<p>Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
         '<ol class="gate-list" aria-label="The four gates">' +
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
         '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
