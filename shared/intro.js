@@ -31,11 +31,6 @@
 
         '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         CLOCK_ART +
-        '<ol class="gate-list" aria-label="The four gates">' +
-        '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
-        '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
-        '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
-        '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>' +
         CHAIN_ART,
 
         '<h3>New to free-writing?</h3>' +
