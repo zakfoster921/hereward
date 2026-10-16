@@ -29,8 +29,8 @@
         '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong> Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"'),
 
-        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         CLOCK_ART +
+        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         '<ol class="gate-list" aria-label="The four gates">' +
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
         '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
