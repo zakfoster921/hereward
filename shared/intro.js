@@ -27,7 +27,8 @@
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
         '<h3>Why we write before we sew</h3>' +
-        '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would.</p>',
+        '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would.</p>' +
+        '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>',
 
         '<h3>The four gates</h3>' +
         '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong></p>' +
@@ -46,8 +47,7 @@
         '<p><strong>Lists and sketches</strong> are also fine.</p>' +
         '<p>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
-        '</div>' +
-        '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>',
+        '</div>',
 
         CLOCK_ART +
         '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
