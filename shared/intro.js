@@ -52,7 +52,7 @@
         '</div>',
 
         '<p>Some people write for a set amount of time, others for a set number of pages. <strong>Handwrite or type</strong>, whichever keeps you going.</p>' +
-        '<p><strong>Plan on 15 minutes</strong> to work through all four gates.</p>' +
+        '<p><strong>Plan on about 15 minutes</strong> to work through all four gates.</p>' +
         MAP_ART,
 
         '<h3>Try it once, then make it yours</h3>' +
