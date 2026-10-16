@@ -35,9 +35,11 @@
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
         '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
         '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
-        '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>' +
+        '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>',
+
         CLOCK_ART +
-        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>',
+        '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
+        '<p>Some people write for a set time, others for a set number of pages. <strong>Handwrite or type</strong>, whichever keeps you going.</p>',
 
         '<h3>New to free-writing?</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
