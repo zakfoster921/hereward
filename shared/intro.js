@@ -24,7 +24,8 @@
         '<p class="seq" style="--d:0.5s">For example, two people might each put a tree on their quilt. For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>. For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>',
 
         '<h3>Why we write before we sew</h3>' +
-        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong> Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
+        '<p>To find your charge, every prompt takes you through the same <strong>four gates</strong>, each with <strong>new questions.</strong> Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
+        NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"'),
 
         '<p class="lead rule">Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         '<ol class="gate-list" aria-label="The four gates">' +
@@ -43,8 +44,7 @@
         '<p>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>' +
-        '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>' +
-        NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"'),
+        '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>',
 
         '<h3>Try it once, then make it yours</h3>' +
         '<p class="lead rule">Try the full version of all four gates at least once. Go through each one in order, so you feel what each one does.</p>' +
