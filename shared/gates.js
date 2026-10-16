@@ -174,7 +174,7 @@
         '<p>' + gate2b(P).p + '</p>' +
         '<div class="reserve">' +
         asks([gate2b(P).a, '<em>' + gate2b(P).q + '</em>']) +
-        withTap(3, '<p>' + gate2note(P) + '</p>' + stuck("s-g2", "Make it concrete. What does this detail smell like, sound like, or feel like in your hands?")) +
+        withTap(3, '<p>' + gate2note(P) + '</p>' + stuck("s-g2", "Stay with the detail itself. What does it smell like, sound like, or feel like in your hands?")) +
         '</div>'
       ]
     };
