@@ -25,7 +25,7 @@
 
         '<h3>Why we write before we sew</h3>' +
         '<p>To help you find your charge for each prompt, you go through the same <strong>four gates</strong> each time. As you pass through each one, your charge will open up a little more: a memory, a feeling, an image you can sew.</p>' +
-        '<p>Plan on <strong>20 minutes</strong> to work through all four gates.</p>' +
+        '<p>Plan on <strong>15 minutes</strong> to work through all four gates.</p>' +
         '<ol class="gate-list" aria-label="The four gates">' +
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
         '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
