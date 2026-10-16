@@ -55,7 +55,7 @@
 
         '<h3>Try it once, then make it yours</h3>' +
         '<p class="lead rule">Try the full version of all four gates at least once, so you feel what each one does.</p>' +
-        '<p>After that, <strong>make this process your own.</strong> Skip a gate, stay in one longer, go on a tangent, or just go straight to your stash.</p>' +
+        '<p>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p>' +
         MAP_ART,
 
         '<div class="facts-screen"><p class="begin-text seq" style="--d:0.2s">Let\u2019s begin</p></div>'
