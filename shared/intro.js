@@ -36,12 +36,12 @@
 
         '<h3>New to free-writing?</h3>' +
         '<p class="lead rule">Write by hand or type, and keep writing.</p>' +
-        '<p>Nothing here needs to be polished or shared. It just needs to be true. About one page is a good rhythm.</p>',
+        '<p>Nothing here needs to be polished or shared. It just needs to be true. About one page is a good rhythm.</p>' +
+        NOTEBOOK_ART,
 
         '<h3>Try it once, then make it yours</h3>' +
         '<p class="lead rule">Try the full version of all four gates at least once. Go through each one in order, so you feel what each one does.</p>' +
-        '<p>After that, make it your own. Skip a gate, stay in one longer, or start directly from your fabric. Use whatever gets you to something good that you can sew.</p>' +
-        NOTEBOOK_ART,
+        '<p>After that, make it your own. Skip a gate, stay in one longer, or start directly from your fabric. Use whatever gets you to something good that you can sew.</p>',
 
         '<div class="facts-screen"><p class="begin-text seq" style="--d:0.2s">Let\u2019s begin</p></div>'
       ]
