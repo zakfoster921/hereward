@@ -5,16 +5,11 @@
   var CHARGE_ART = QA.CHARGE_ART;
   var NOTEBOOK_ART = QA.NOTEBOOK_ART;
   var SCISSORS_ART = QA.SCISSORS_ART;
-  var SENSES_ART = QA.SENSES_ART;
-  var DOODLE_ART = QA.DOODLE_ART;
 
   function gate1(P) {
-    var a = P.g1, b = P.g1b || {}, c = P.g1c;
-    var cols = b.cols || ["Hear", "Smell", "Touch"];
+    var a = P.g1;
     var n = a.asks.length;
     var lis = a.asks.map(function (q, i) { return '<li data-t="' + (i + 1) + '" hidden>' + q + '</li>'; }).join('');
-    var ths = cols.map(function (h) { return '<th scope="col">' + h + '</th>'; }).join('');
-    var row = '<tr>' + cols.map(function () { return '<td></td>'; }).join('') + '</tr>';
     return {
       prompt: P.n, eyebrow: "", name: P.name, aim: !!a.aim,
       steps: [
@@ -24,29 +19,27 @@
         '<div class="reserve">' +
         '<div class="asklist" data-t="1" hidden><ul>' + lis + '</ul></div>' +
         '<div data-t="' + n + '" hidden>' +
-        '<details class="note seq" style="--d:0.5s"><summary>New to free-writing?</summary><p>Write by hand or type, and keep writing. Nothing here needs to be polished or shared. It just needs to be true. About one page for each part is a good rhythm.</p></details>' +
+        '<details class="note seq" style="--d:0.5s"><summary>New to free-writing?</summary><p>Write by hand or type, and keep writing. Nothing here needs to be polished or shared. It just needs to be true. About one page is a good rhythm.</p></details>' +
         '<div class="seq" style="--d:1.1s">' +
         stuck("s-g1a", a.stuck) +
         '</div>' +
         '</div>' +
         '</div>' +
-        GATE_ART,
-
-        '<h3>' + (b.title || 'What You Sense') + ' <span class="time-hint">5 minutes</span></h3>' +
-        '<p>' + (b.intro || 'Fill each column with what you sense as you picture it.') + '</p>' +
-        '<table class="sense-chart"><thead><tr>' + ths + '</tr></thead><tbody>' + row + row + row + '</tbody></table>' +
-        '<p class="chart-note">' + (b.note || 'List at least three in each. Add anything else you’d like.') + '</p>' +
-        SENSES_ART,
-
-        DOODLE_ART +
-        '<h3>' + (c.title || 'What remains') + ' <span class="time-hint">2 minutes</span></h3>' +
-        '<p>' + c.intro + '</p>' +
-        '<div class="reserve">' +
-        asks(c.starters) +
-        withTap(c.starters.length, stuck("s-g1", c.stuck)) +
-        '</div>'
+        GATE_ART
       ].filter(function (x) { return x !== null; })
     };
+  }
+
+  // "Want more to work with?": the old "What remains" questions, now a tap-to-open link on Gate 2's first screen.
+  // Shown all at once (no step taps), so the starters are plain lines rather than the tap-by-tap asks().
+  function gate2more(P) {
+    var c = P.g1c;
+    if (!c) return '';
+    return '<details class="note more seq" style="--d:0.5s"><summary>Want more to work with?</summary>' +
+      '<p>' + c.intro + '</p>' +
+      '<p class="ask">' + c.starters.map(function (q) { return '<span class="q">' + q + '</span>'; }).join('') + '</p>' +
+      stuck("s-g2more", c.stuck) +
+      '</details>';
   }
 
   var GATE2_OPENERS = [
@@ -174,13 +167,14 @@
       eyebrow: "Gate 2", name: "Deepen the charge",
       steps: [
         '<p>' + gate2opener(P) + '</p>' +
+        gate2more(P) +
         GATE_ART.replace('class="gate-art"', 'class="gate-art fixed-art"'),
         '<h3>' + gate2b(P).h + '</h3>' +
         SIGNPOST_ART +
         '<p>' + gate2b(P).p + '</p>' +
         '<div class="reserve">' +
         asks([gate2b(P).a, '<em>' + gate2b(P).q + '</em>']) +
-        withTap(3, '<p>' + gate2note(P) + '</p>' + stuck("s-g2", "Finish this sentence: " + gate2b(P).s)) +
+        withTap(3, '<p>' + gate2note(P) + '</p>' + stuck("s-g2", "Make it concrete. What does this detail smell like, sound like, or feel like in your hands?")) +
         '</div>'
       ]
     };
@@ -290,7 +284,7 @@
 
         '<h3>' + g4pick(GATE4_HEAD, P, 1) + '</h3>' +
         '<div class="reserve">' +
-        '<ul class="iconlist">' + '<li class="seq" data-t="1" hidden style="--d:0s">' + g4pick(GATE4_PERSONAL, P, 1) + '</li>' + '<li class="seq" data-t="2" hidden style="--d:0s">' + g4pick(GATE4_STRONG, P, 3).replace('{link}', '<a href="#" class="steplink" data-g="0" data-s="' + (P.g1.aim ? 2 : 1) + '">sensory writing</a>') + '</li>' + (P.g4.sizeNote ? '<li class="seq" data-t="3" hidden style="--d:0s">' + P.g4.sizeNote + '</li>' : '') +
+        '<ul class="iconlist">' + '<li class="seq" data-t="1" hidden style="--d:0s">' + g4pick(GATE4_PERSONAL, P, 1) + '</li>' + '<li class="seq" data-t="2" hidden style="--d:0s">' + g4pick(GATE4_STRONG, P, 3).replace('{link}', '<a href="#" class="steplink" data-g="0" data-s="' + (P.g1.aim ? 1 : 0) + '">writing</a>') + '</li>' + (P.g4.sizeNote ? '<li class="seq" data-t="3" hidden style="--d:0s">' + P.g4.sizeNote + '</li>' : '') +
         '<li class="seq" data-t="3" hidden style="--d:0s">' + g4pick(GATE4_DONE, P, 1) + '</li>' + '</ul>' +
         (P.g4.collapse ? '<details class="seq ex-fold" data-t="4" hidden style="--d:0s"><summary>Want to see an example?</summary>' : '<div class="seq" data-t="4" hidden style="--d:0s">') + '<div class="example-card"><div class="ex-top"><p>' + P.g4.exampleTop + '</p></div><div class="ex-bottom"><p>' + P.g4.exampleBottom + '</p></div></div>' + (P.g4.collapse ? '</details>' : '</div>') +
         '</div>' +

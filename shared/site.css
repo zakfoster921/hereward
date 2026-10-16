@@ -227,6 +227,12 @@ body.is-prompt .gate[data-g="0"], body.is-prompt .gate[data-g="0"] .step[data-s=
 .note summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .note { text-align: right; }
 .gate .note p { margin-top: 0.6rem; text-align: left; font-style: italic; color: var(--muted); }
+/* "Want more to work with?" on Gate 2: opens to regular text and violet-line starters, not the muted italic of the small notes */
+.gate .note.more { margin-top: 1.1rem; }
+.gate .note.more p { font-style: normal; color: var(--ink); }
+.gate .note.more p.ask { margin-top: 0.9rem; font-size: 1.25rem; }
+.gate .note.more p.stuck-text { font-style: italic; color: var(--muted); }
+.note.more .stuck { margin-top: 0.4rem; }
 
 .stuck { padding-top: 0.25rem; text-align: right; }
 .stuck-btn {
