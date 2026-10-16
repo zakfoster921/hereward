@@ -154,11 +154,11 @@
   }
 
   var GATE2_NOTES = [
-    "Jot your ideas down with the rest of your writing.",
-    "Add this to the same page as your other writing.",
-    "Write this beneath what you already have, so it all stays together.",
-    "Keep it with your writing so far. You\u2019ll want it all in one place.",
-    "Put this down with your writing from Gate 1."
+    "Note what it points toward. A word, an image or a memory is enough.",
+    "Jot down where the detail leads, even if it\u2019s only a word or an image.",
+    "Write down what the signpost points to. A word, an image or a memory will do.",
+    "Capture where it points, on the same page as your other writing. A word is enough.",
+    "Add whatever it points toward to your writing, even if it\u2019s just a few words."
   ];
   function gate2note(P) { var n = (P && P.n) || 1; return GATE2_NOTES[(n - 1) % GATE2_NOTES.length]; }
 
