@@ -17,7 +17,7 @@
         '<p class="fact seq" style="--d:1s"><span class="num">1</span><span class="what">whole-cloth quilt</span></p></div></div></div>',
 
         CHARGE_ART +
-        '<h3>We\u2019ll use this word a lot <span class="big-word">\u2192 CHARGE</span></h3>' +
+        '<h3><span class="big-word">CHARGE</span>\u2191 We\u2019ll use this word a lot</h3>' +
         '<p>Every prompt in this quilt-along is designed to help you find the charge in any particular idea.</p>' +
         '<p class="rule"><strong>A charge is the emotional current inside a detail.</strong> It is what makes a memory, a place, or an object matter to you beyond how it might look to others.</p>' +
         '<p class="seq" style="--d:0.5s">For example, two people might each put a tree on their quilt. For one, it\u2019s <em>the tree they climbed as a kid</em>. For the other, it\u2019s <em>the tree that fell on their house</em>.</p>' +

@@ -109,7 +109,7 @@ h1.gate-title { font-size: 2.3rem; }
 .gate-title:focus { outline: none; }
 .prompt-tag { display: inline-block; background: var(--ink); color: var(--on-ink); font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.35rem 0.7rem; border-radius: 0.25rem; margin-bottom: 0.7rem; white-space: nowrap; }
 .gate.is-collapsed .prompt-tag { display: none; }
-.big-word { display: block; font-size: 3.4rem; line-height: 1.05; letter-spacing: 0.02em; margin-top: 0.3rem; }
+.big-word { display: block; font-size: 3.4rem; line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 0.3rem; }
 .gate.is-collapsed { padding-block: 1rem; }
 .gate.is-collapsed .gate-title, .gate.is-collapsed h1.gate-title { font-size: 1.1rem; margin-top: 0.1rem; }
 .gate.is-collapsed .steps, .gate.is-collapsed .go { display: none; }
