@@ -29,7 +29,7 @@
         '<ol class="gate-list" aria-label="The four gates">' +
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
         '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
-        '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Visualize the charge</li>' +
+        '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
         '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>' +
         '<p class="seq" style="--d:2.1s"><strong>Same four gates, new questions each time</strong> to fit the prompt you\'re working on.</p>' +
         GATE_ART,

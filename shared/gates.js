@@ -235,7 +235,7 @@
 
   function gate3(P) {
     return {
-      eyebrow: "Gate 3", name: "Visualize the charge",
+      eyebrow: "Gate 3", name: "Picture the charge",
       steps: [
         '<h3>' + gate3h(P).h + '</h3>' +
         '<p>' + gate3h(P).p + '</p>' +
