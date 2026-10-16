@@ -312,6 +312,7 @@ table.sense-chart { width: 100%; border-collapse: collapse; table-layout: fixed;
 .step > .gate-art-wrap:first-child + h3 { margin-top: 1.5rem; }
 /* A drawing that follows only a short paragraph or list (Gate 2, the intro, the closing card) gets extra room above it */
 .step > p + .gate-art-wrap, .step > ol + .gate-art-wrap { margin-top: 3rem; }
+.step > p + .gate-art-wrap.tight { margin-top: 1.5rem; }
 /* Keep the words clear of the black arrows: toward the outer edge, away from the center lines */
 .quad-blue, .quad-orange { padding-right: 1.5rem; padding-left: 0.6rem; }
 .quad-green, .quad-pink { padding-left: 1.5rem; padding-right: 0.6rem; }

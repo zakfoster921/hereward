@@ -43,7 +43,7 @@
         '<li><strong>Ignore any question that doesn\u2019t spark anything.</strong></li>' +
         '</ul></div>' +
         '<p>Nothing here needs to be polished or shared. It just needs to be true.</p>' +
-        NOTEBOOK_ART,
+        NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"'),
 
         '<h3>Try it once, then make it yours</h3>' +
         '<p class="lead rule">Try the full version of all four gates at least once. Go through each one in order, so you feel what each one does.</p>' +
