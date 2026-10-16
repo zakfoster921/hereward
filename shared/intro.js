@@ -42,7 +42,7 @@
         '<li><strong>Follow what pulls you,</strong> even off topic.</li>' +
         '<li><strong>Ignore any question that doesn\u2019t spark anything.</strong></li>' +
         '</ul></div>' +
-        '<p>Nothing here needs to be polished or shared. It just needs to be true. About one page is a good rhythm.</p>' +
+        '<p>Nothing here needs to be polished or shared. It just needs to be true.</p>' +
         NOTEBOOK_ART,
 
         '<h3>Try it once, then make it yours</h3>' +
