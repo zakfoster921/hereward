@@ -36,13 +36,13 @@
 
         '<h3>New to free-writing?</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
-        '<div class="asklist"><ul>' +
-        '<li><strong>Keep your hands moving, whether you\u2019re writing or typing.</strong></li>' +
-        '<li><strong>Don\u2019t worry about spelling, grammar, or neatness.</strong></li>' +
-        '<li><strong>Fragments, lists, and sketches are all fine.</strong></li>' +
-        '<li><strong>Follow what pulls you,</strong> even off topic.</li>' +
-        '<li><strong>Ignore any question that doesn\u2019t spark anything.</strong></li>' +
-        '</ul></div>' +
+        '<div class="tips">' +
+        '<p>Keep your <strong>hands moving</strong>, whether you\u2019re writing or typing.</p>' +
+        '<p>Don\u2019t worry about <strong>spelling, grammar, or neatness</strong>.</p>' +
+        '<p><strong>Fragments, lists, and sketches</strong> are all fine.</p>' +
+        '<p>Follow <strong>what pulls you</strong>, even off topic.</p>' +
+        '<p><strong>Ignore</strong> any question that doesn\u2019t spark anything.</p>' +
+        '</div>' +
         '<p>Nothing here needs to be polished or shared. It just needs to be true.</p>' +
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"'),
 

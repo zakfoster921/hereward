@@ -184,6 +184,7 @@ h1.gate-title { font-size: 2.3rem; }
   margin-block: 0.25rem;
   max-width: 30rem;
 }
+.gate .tips { display: grid; gap: 0.6rem; }
 .gate .asklist ul { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.5rem; }
 .gate .asklist li::marker { color: var(--thread); }
 .quote {
