@@ -492,7 +492,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .step > p.lead + .gate-list { margin-top: 1.75rem; }
 .verse { font-family: var(--font-display); font-weight: 500; font-size: 1.75rem; line-height: 1.3; margin: 0; text-align: center; color: var(--ink); text-wrap: balance; }
 @keyframes hum { 0%, 100% { transform: skewX(0deg); opacity: 1; } 50% { transform: skewX(-12deg); opacity: 0.6; } }
-.verse .hum { display: inline-block; transform-origin: left bottom; animation: hum 2.8s ease-in-out 5.6s infinite; }
+.verse .hum { display: inline-block; transform-origin: left bottom; animation: hum 2.8s ease-in-out 3s infinite; }
 @media (prefers-reduced-motion: reduce) { .verse .hum { animation: none; } }
-.verse .w { animation: fadein 0.9s ease both; animation-delay: var(--d, 0s); }
+.verse .w { animation: fadein 0.5s ease both; animation-delay: var(--d, 0s); }
 @media (prefers-reduced-motion: reduce) { .verse .w { animation: none; } }
