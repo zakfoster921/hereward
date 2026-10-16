@@ -37,7 +37,7 @@
         '<h3>New to free-writing?</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
         '<div class="asklist"><ul>' +
-        '<li><strong>Keep your hands moving, whether you\u2019re writing or typing.</strong> If you stall, make a bunch of curlicues or type a bunch of random letters.</li>' +
+        '<li><strong>Keep your hands moving, whether you\u2019re writing or typing.</strong></li>' +
         '<li><strong>Don\u2019t worry about spelling, grammar, or neatness.</strong> It\u2019s the ideas you\u2019re after.</li>' +
         '<li><strong>Fragments, lists, and sketches are all fine.</strong></li>' +
         '<li><strong>Follow what pulls you,</strong> even off topic.</li>' +
