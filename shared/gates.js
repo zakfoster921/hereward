@@ -183,43 +183,43 @@
   var GATE3H = [
   {
     "h": "Choose a way in",
-    "p": "Now turn your charge into an image for your quilt. Pick any starting point below."
+    "p": "Now <strong>turn your charge into an image</strong> for your quilt. Pick any starting point below."
   },
   {
     "h": "Pick a place to start",
-    "p": "Now turn your charge into an image for your quilt. Your writing has plenty to work from."
+    "p": "Now <strong>turn your charge into an image</strong> for your quilt. Your writing has plenty to work from."
   },
   {
     "h": "Where do you want to begin?",
-    "p": "Now shape your charge into an image for your quilt. Somewhere in your writing is something to start with."
+    "p": "Now <strong>shape your charge into an image</strong> for your quilt. Somewhere in your writing is something to start with."
   },
   {
     "h": "Find a way in",
-    "p": "Now turn your charge into an image for your quilt. Choose one way to begin."
+    "p": "Now <strong>turn your charge into an image</strong> for your quilt. Choose one way to begin."
   },
   {
     "h": "Start with what you have",
-    "p": "Now build an image of your charge for your quilt. Use the words, images and details in your writing."
+    "p": "Now <strong>build an image of your charge</strong> for your quilt. Use the words, images and details in your writing."
   },
   {
     "h": "Which way feels right today?",
-    "p": "Now turn your charge into an image for your quilt. Any of these can get you started."
+    "p": "Now <strong>turn your charge into an image</strong> for your quilt. Any of these can get you started."
   },
   {
     "h": "Three ways to start",
-    "p": "Now turn your charge into an image for your quilt. Pick the one that feels easiest."
+    "p": "Now <strong>turn your charge into an image</strong> for your quilt. Pick the one that feels easiest."
   },
   {
     "h": "Choose a way in",
-    "p": "Turn your charge into an image for your quilt."
+    "p": "<strong>Turn your charge into an image</strong> for your quilt."
   },
   {
     "h": "Pick a place to start",
-    "p": "Shape your charge into an image for your quilt. Choose whichever feels easiest."
+    "p": "<strong>Shape your charge into an image</strong> for your quilt. Choose whichever feels easiest."
   },
   {
     "h": "Where to begin?",
-    "p": "Build an image of your charge for your quilt. Start with whatever your writing gives you."
+    "p": "<strong>Build an image of your charge</strong> for your quilt. Start with whatever your writing gives you."
   }
 ];
 
