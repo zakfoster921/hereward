@@ -43,7 +43,7 @@
         '<p>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>' +
-        '<p>Nothing here needs to be polished or shared. It just needs to be true.</p>' +
+        '<p>Nothing here needs to be polished or shared. It just needs to be <em>true</em>.</p>' +
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"'),
 
         '<h3>Try it once, then make it yours</h3>' +
