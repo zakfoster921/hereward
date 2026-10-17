@@ -42,13 +42,13 @@
         '<h3>The four gates</h3>' +
         '<div class="swap-stack">' +
         '<p data-t="0" data-swap>To find your charge, every prompt takes you through the same <strong>four gates</strong>, with <strong>new questions</strong> each time.</p>' +
-        '<p data-t="1" data-swap hidden>Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
+        '<ol class="gate-list" data-t="1" data-swap hidden aria-label="The four gates">' +
+        '<li style="--d:0.8s"><span class="k">Gate 1</span>Uncover the charge</li>' +
+        '<li style="--d:1.2s"><span class="k">Gate 2</span>Deepen the charge</li>' +
+        '<li style="--d:1.6s"><span class="k">Gate 3</span>Picture the charge</li>' +
+        '<li style="--d:2.0s"><span class="k">Gate 4</span>Test the charge</li></ol>' +
         '</div>' +
-        '<ol class="gate-list" data-t="1" hidden aria-label="The four gates">' +
-        '<li class="seq" style="--d:1.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
-        '<li class="seq" style="--d:1.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
-        '<li class="seq" style="--d:2.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
-        '<li class="seq" style="--d:2.6s"><span class="k">Gate 4</span>Test the charge</li></ol>',
+        '<p class="seq" data-t="1" hidden style="--d:2.9s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
         '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
