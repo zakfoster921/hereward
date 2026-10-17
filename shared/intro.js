@@ -37,7 +37,7 @@
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
         '<h3>Finding the Charge</h3>' +
-        '<p>Writing\u2014like sewing\u2014helps us explore ideas because <span class="slow">it <strong>slows us down</strong></span>.</p><p class="seq" data-t="1" hidden style="--d:0.1s">It pulls our thoughts into a line, lets us follow a tangent, and keeps us with a moment a beat longer than our mind normally would.</p>',
+        '<p>Writing\u2014like sewing\u2014helps us explore ideas because <span class="slow">it <strong>slows us down</strong>.</span></p><p class="seq" data-t="1" hidden style="--d:0.1s">It pulls our thoughts into a line, lets us follow a tangent, and keeps us with a moment a beat longer than our mind normally would.</p>',
 
         GATE_ART +
         '<h3>The four gates</h3>' +
