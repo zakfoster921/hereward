@@ -584,8 +584,8 @@
 
 /* Try-it line trace: lit line travels through the four gates, pausing at each. Driven from JS (CSS animation inside an SVG mask does not repaint reliably in Safari). */
 (function () {
-  var KEYS = [[0, 100], [14.29, 78.5], [19.48, 78.5], [35.06, 60.7], [40.26, 60.7], [64.94, 28.8], [70.13, 28.8], [84.42, 9.2], [89.61, 9.2], [100, 0]];
-  var DUR = 7700, DELAY = 500;
+  var KEYS = [[0, 100], [100, 0]];
+  var DUR = 6500, DELAY = 500;
   function ease(x) { return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; }
   function offsetAt(p) {
     for (var i = 1; i < KEYS.length; i++) {
