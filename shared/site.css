@@ -574,3 +574,32 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .step:not([hidden]) .slow { animation: slowin 1.8s cubic-bezier(.25,.1,.25,1) 0.5s both; }
 @keyframes slowin { 0% { opacity: 0; filter: blur(5px); } 100% { opacity: 1; filter: blur(0); } }
 @media (prefers-reduced-motion: reduce) { .slow { opacity: 1; animation: none !important; } }
+
+/* free-writing tips: separate cards that land loosely on top of one another */
+.card-stack { display: grid; margin: 1.75rem 0 0.6rem; padding: 6px 5px; }
+.card-stack > * { grid-area: 1 / 1; }
+.card-stack > [data-t][hidden] { display: block !important; visibility: hidden; }
+.card-stack:not([hidden]) { animation: fadein 0.4s ease both; }
+.card-stack > .tip {
+  margin: 0; padding: 1.25rem 1.4rem; border-radius: 6px;
+  background: color-mix(in srgb, var(--thread) 15%, var(--bg));
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--thread) 40%, transparent), 0 8px 14px -10px color-mix(in srgb, var(--thread) 60%, transparent);
+  transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--r, 0deg));
+}
+.card-stack > .tip:nth-child(1) { --r: -1.2deg; --tx: -3px; --ty: 2px; }
+.card-stack > .tip:nth-child(2) { --r: 1.4deg; --tx: 4px; --ty: -1px; }
+.card-stack > .tip:nth-child(3) { --r: -0.7deg; --tx: -2px; --ty: 3px; }
+.card-stack > .tip:nth-child(4) { --r: 1.1deg; --tx: 3px; --ty: 0px; }
+.card-stack > .tip:nth-child(5) { --r: -1.5deg; --tx: -4px; --ty: 2px; }
+.card-stack > .tip:not([hidden]) { animation: cardin 0.6s cubic-bezier(.2,.8,.3,1) 0.25s both; }
+.card-stack > .tip[data-t="1"]:not([hidden]) { animation: none; }
+@keyframes cardin {
+  from { opacity: 0; transform: translate(var(--tx), calc(var(--ty) + 3.2rem)) rotate(calc(var(--r) * 3)); }
+  to { opacity: 1; transform: translate(var(--tx), var(--ty)) rotate(var(--r)); }
+}
+.card-stack + p { margin-top: 1.25rem; }
+/* a finished screen lays the cards out one under another so every tip can be read */
+.step.done .card-stack { display: block; }
+.step.done .card-stack > .tip { animation: none !important; opacity: 1; visibility: visible; transform: none; }
+.step.done .card-stack > .tip + .tip { margin-top: 0.7rem; }
+@media (prefers-reduced-motion: reduce) { .card-stack > .tip { animation: none !important; } }
