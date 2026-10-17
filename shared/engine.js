@@ -145,7 +145,13 @@
         var current = g === rg && si === rs - 1;
         [].slice.call(st.querySelectorAll("[data-t]")).forEach(function (el) {
           var t = +el.getAttribute("data-t");
-          el.hidden = current && (t > rt || (el.hasAttribute("data-swap") && t < rt));
+          var hide = current && (t > rt || (el.hasAttribute("data-swap") && t < rt));
+          if (hide && !el.hidden && el.hasAttribute("data-swap")) {
+            // a line being replaced fades out first, then steps aside
+            el.classList.add("leaving");
+            setTimeout(function () { if (el.classList.contains("leaving")) { el.hidden = true; el.classList.remove("leaving"); } }, 380);
+          } else if (!hide) { el.classList.remove("leaving"); el.hidden = false; }
+          else if (!el.classList.contains("leaving")) { el.hidden = true; }
         });
         if (current && rt === 0) { reserveSpace(st); fitArt(st); }
       });
