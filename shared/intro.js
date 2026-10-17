@@ -63,9 +63,11 @@
         '<p class="seq" data-t="6" hidden style="--d:0.1s">Remember, nothing you write has to be polished or shared. It\u2019s yours.</p>',
 
         '<div class="center-screen">' +
-        '<p>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
         MAP_ART +
-        '<div class="swap-stack plain"><p data-t="1" hidden>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p></div>' +
+        '<div class="swap-stack plain">' +
+        '<p data-t="0" data-swap>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
+        '<p data-t="1" data-swap hidden>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p>' +
+        '</div>' +
         '</div>',
 
         '<div class="facts-screen"><p class="begin-text seq" style="--d:0.2s">Let\u2019s begin</p></div>'
