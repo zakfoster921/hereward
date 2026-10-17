@@ -582,12 +582,40 @@
   sync();
 })();
 
-/* Start the Try-it line trace only once the graphic is on screen. */
+/* Try-it line trace: lit line travels through the four gates, pausing at each. Driven from JS (CSS animation inside an SVG mask does not repaint reliably in Safari). */
 (function () {
+  var KEYS = [[0, 100], [14.29, 78.5], [19.48, 78.5], [35.06, 60.7], [40.26, 60.7], [64.94, 28.8], [70.13, 28.8], [84.42, 9.2], [89.61, 9.2], [100, 0]];
+  var DUR = 7700, DELAY = 500;
+  function ease(x) { return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; }
+  function offsetAt(p) {
+    for (var i = 1; i < KEYS.length; i++) {
+      if (p <= KEYS[i][0]) {
+        var a = KEYS[i - 1], b = KEYS[i], f = (p - a[0]) / (b[0] - a[0]);
+        return a[1] + (b[1] - a[1]) * ease(f);
+      }
+    }
+    return 0;
+  }
+  function run(svg) {
+    var path = svg.querySelector('.map-reveal'), t0 = null;
+    if (!path) return;
+    function tick(now) {
+      if (svg.closest('.step.done')) return;
+      if (t0 === null) t0 = now + DELAY;
+      var p = Math.max(0, Math.min(1, (now - t0) / DUR)) * 100;
+      var o = offsetAt(p);
+      path.style.strokeDashoffset = o;
+      path.setAttribute('stroke-dashoffset', o); // nudge repaint
+      if (p < 100) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var t = setInterval(function () {
     var s = document.querySelector('.map-art');
-    if (!s || s.classList.contains('seen')) { if (s) clearInterval(t); return; }
+    if (!s) return;
+    if (reduce) { clearInterval(t); return; }
     var r = s.getBoundingClientRect(), h = window.innerHeight;
-    if (r.top > 0 && r.bottom < h * 0.95) s.classList.add('seen');
+    if (r.top > 0 && r.bottom < h) { clearInterval(t); s.classList.add('seen'); run(s); }
   }, 150);
 })();
