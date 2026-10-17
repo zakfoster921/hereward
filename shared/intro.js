@@ -51,21 +51,21 @@
         '</div>' +
         '<p class="seq" data-t="2" hidden style="--d:0.1s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
-        '<h3>Some thoughts on free-writing</h3>' +
-        '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
+        '<p class="verse verse-top"><span class="w" style="--d:0.1s">Free-writing can be messy.</span><br><span class="w" style="--d:0.7s">It can also be generative.</span></p>' +
+        '<p class="tips-intro">Here are a few ideas that might help:</p>' +
         '<div class="card-stack" data-t="1" hidden>' +
-        '<p class="tip" data-t="1">Keep your <strong>hands moving</strong> the whole time.</p>' +
-        '<p class="tip" data-t="2" hidden>Don\u2019t worry about <strong>spelling or neatness</strong>.</p>' +
-        '<p class="tip" data-t="3" hidden><strong>Lists and sketches</strong> are also fine.</p>' +
-        '<p class="tip" data-t="4" hidden>Follow <strong>what pulls you</strong>, even off topic.</p>' +
-        '<p class="tip" data-t="5" hidden><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
+        '<p class="tip" data-t="1"><span>Keep your <strong>hands moving</strong> the whole time.</span></p>' +
+        '<p class="tip" data-t="2" hidden><span>Don\u2019t worry about <strong>spelling or neatness</strong>.</span></p>' +
+        '<p class="tip" data-t="3" hidden><span><strong>Lists and sketches</strong> are also fine.</span></p>' +
+        '<p class="tip" data-t="4" hidden><span>Follow <strong>what pulls you</strong>, even off topic.</span></p>' +
+        '<p class="tip" data-t="5" hidden><span><strong>Skip</strong> questions that don\u2019t speak to you.</span></p>' +
         '</div>' +
         '<p class="seq" data-t="6" hidden style="--d:0.1s">Remember, nothing you write has to be polished or shared. It\u2019s yours.</p>',
 
         '<div class="center-screen">' +
         '<p>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
         MAP_ART +
-        '<div class="swap-stack"><p class="seq" data-t="1" data-swap hidden>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p></div>' +
+        '<div class="swap-stack plain"><p data-t="1" hidden>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p></div>' +
         '</div>',
 
         '<div class="facts-screen"><p class="begin-text seq" style="--d:0.2s">Let\u2019s begin</p></div>'
