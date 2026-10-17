@@ -173,8 +173,8 @@
   function gate2(P) {
     return {
       eyebrow: "Gate 2", name: "Deepen the charge",
-      topArt: GATE_ART.replace('class="gate-art"', 'class="gate-art fixed-art time-art"'),
       steps: [
+        GATE_ART.replace('class="gate-art"', 'class="gate-art fixed-art time-art"') +
         '<p>' + gate2opener(P) + '</p>' +
         gate2more(P),
         '<h3>' + gate2b(P).h + '</h3>' +
