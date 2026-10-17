@@ -51,7 +51,7 @@
         '</div>' +
         '<p class="seq" data-t="2" hidden style="--d:0.1s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
-        '<p class="verse verse-top left"><span class="w" style="--d:0.1s">Free-writing can be sloppy, raw, and incredibly generative.</span></p>' +
+        '<p class="verse verse-top left"><span class="w" style="--d:0.1s">Free-writing can be sloppy, raw, and incredibly <span class="hl hl-now" style="--hd:0.9s;--hu:0.6s">generative.</span></span></p>' +
         '<p class="seq tips-intro" data-t="1" hidden style="--d:0.1s">Here are a few ideas for getting the most out of it:</p>' +
         '<div class="card-stack" data-t="1" hidden>' +
         '<p class="tip" data-t="1"><span>Keep your <strong>hands moving</strong> the whole time.</span></p>' +
