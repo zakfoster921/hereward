@@ -186,15 +186,22 @@
       // The chevron shows whenever the next tap moves to a new screen (next step or next card), not while smaller reveals remain
       var wasHidden = go.hidden;
       go.hidden = g !== rg || (MODE === "prompt" && g === G.length - 1) || pendingTaps() > 0;
-      // when the last piece of text is still arriving, the chevron waits for it
+      // The chevron arrives together with the last thing to appear on the screen (not before it, and not after it)
       if (g === rg && !go.hidden) {
-        var cs = ge.querySelectorAll(".step")[rs - 1];
-        var late = cs && cs.querySelector("[data-go-delay]:not([hidden])");
-        if (late) {
-          go.style.setProperty("--gd", late.getAttribute("data-go-delay") + "s");
-          if (go._lateFor !== late || wasHidden) { go.removeAttribute("data-late"); void go.offsetWidth; go._lateFor = late; }
+        var cs = ge.querySelectorAll(".step")[rs - 1], d = 0;
+        if (cs) [].slice.call(cs.querySelectorAll(".seq, .w, .late")).forEach(function (el) {
+          if (el.closest("[hidden]") || el.classList.contains("leaving")) return;
+          var c = getComputedStyle(el);
+          if (c.animationName === "none") return;
+          var v = parseFloat(c.animationDelay) || 0;
+          if (v > d) d = v;
+        });
+        var key = rg + "|" + rs + "|" + rt;
+        if (d > 0.2) {
+          go.style.setProperty("--gd", d + "s");
+          if (go._lateKey !== key || wasHidden) { go.removeAttribute("data-late"); void go.offsetWidth; go._lateKey = key; }
           go.setAttribute("data-late", "");
-        } else { go._lateFor = null; go.removeAttribute("data-late"); }
+        } else { go._lateKey = key; go.removeAttribute("data-late"); }
       }
       if (g === rg) {
         var cue = go.firstChild;
