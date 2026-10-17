@@ -20,7 +20,7 @@
         '<p class="fact seq" style="--d:0.2s"><span class="num">24</span><span class="what">prompts over the course of a year</span></p>' +
         '<p class="fact seq" style="--d:1s"><span class="num">1</span><span class="what">whole-cloth quilt</span></p></div></div></div>',
 
-        '<div class="facts-screen"><p class="verse"><span class="w" style="--d:0.1s">We\u2019ll sort through</span> <span class="w" style="--d:0.6s">memories,</span> <span class="w" style="--d:1.1s">places</span> <span class="w" style="--d:1.6s">and objects,</span> <span class="w" style="--d:2.2s">looking for the ones that still <span class="hum">hum.</span></span></p></div>',
+        '<div class="facts-screen"><p class="verse"><span class="w" style="--d:0.1s">We\u2019ll sort through</span> <span class="w" style="--d:0.45s">memories,</span> <span class="w" style="--d:0.8s">places</span> <span class="w" style="--d:1.2s">and objects,</span> <span class="w" style="--d:1.65s">looking for the ones that still <span class="hum">hum.</span></span></p></div>',
 
         CHARGE_ART.replace('class="gate-art"', 'class="gate-art charge-art"') +
         '<h3>We\u2019ll use this word a lot <span class="big-word">\u2192CHARGE</span></h3>' +
