@@ -568,3 +568,9 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 
 /* tree drawing: thicken the thinnest outlines to match the notebook's line weight */
 .tree-art path { stroke: currentColor; stroke-width: 8; stroke-linejoin: round; }
+
+/* "it slows us down" arrives slowly: it drifts in out of a soft blur, 0.5s after the screen loads */
+.slow { opacity: 0; }
+.step:not([hidden]) .slow { animation: slowin 3s cubic-bezier(.25,.1,.25,1) 0.5s both; }
+@keyframes slowin { 0% { opacity: 0; filter: blur(5px); } 100% { opacity: 1; filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) { .slow { opacity: 1; animation: none !important; } }
