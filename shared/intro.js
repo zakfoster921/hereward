@@ -39,7 +39,7 @@
         '<h3>Finding the Charge</h3>' +
         '<p>Writing helps us explore ideas because it <strong>slows us down</strong>. It pulls our thoughts into a line, lets us follow a tangent, and keeps you with a moment a beat longer than our mind normally would.</p>',
 
-        GATE_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap left"') +
+        GATE_ART +
         '<h3>The four gates</h3>' +
         '<div class="swap-stack">' +
         '<p data-t="0" data-swap>To find your charge, every prompt takes you through the same <strong>four gates</strong>, with <strong>new questions</strong> each time.</p>' +
