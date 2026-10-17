@@ -544,13 +544,16 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .tips-card:not([hidden]) { animation: fadein 0.4s ease both; }
 .tips-card > [data-t="1"]:not([hidden]):not(.leaving) { animation: none; }
 
-/* the charge drawing gives one quick electric pulse as its screen arrives, then settles */
-.step:not([hidden]) .charge-art { transform-origin: 50% 55%; animation: zap 0.38s cubic-bezier(.2,.8,.3,1) 0.3s both; }
+/* the charge drawing gives one quick electric jolt as its screen arrives (movement only, no flash), then settles */
+.step:not([hidden]) .charge-art { transform-origin: 50% 55%; animation: zap 0.42s linear 0.3s both; }
 @keyframes zap {
-  0% { transform: none; filter: none; }
-  25% { transform: scale(1.012); filter: drop-shadow(0 0 2px currentColor); }
-  55% { transform: scale(1.004); filter: drop-shadow(0 0 1px currentColor); }
-  100% { transform: none; filter: none; }
+  0% { transform: none; }
+  12% { transform: translate(-1.5px, 0.5px) rotate(-0.9deg); }
+  26% { transform: translate(1.5px, -0.5px) rotate(0.9deg); }
+  40% { transform: translate(-1px, 0.5px) rotate(-0.6deg); }
+  56% { transform: translate(0.8px, -0.3px) rotate(0.4deg); }
+  75% { transform: translate(-0.3px, 0) rotate(-0.15deg); }
+  100% { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { .charge-art { animation: none !important; } }
 
