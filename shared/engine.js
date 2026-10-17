@@ -219,10 +219,35 @@
     fitTitle();
   }
 
+  // A slower, gentler scroll than the browser's own: eases in and out over about a second. The target is re-read every
+  // frame, so the page re-flowing while we travel (a finished screen laying itself out) can't throw it off.
+  var glideRaf = 0;
+  function targetTop(el) {
+    var sp = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+    var sm = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+    return el.getBoundingClientRect().top + window.scrollY - sp - sm;
+  }
+  function glideTo(el) {
+    if (glideRaf) cancelAnimationFrame(glideRaf);
+    var d0 = targetTop(el) - window.scrollY;
+    if (Math.abs(d0) < 2) return;
+    var dur = Math.max(900, Math.min(1900, 800 + Math.abs(d0) * 0.55)), t0 = 0;
+    function stop() { if (glideRaf) cancelAnimationFrame(glideRaf); glideRaf = 0; ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (n) { window.removeEventListener(n, stop); }); }
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (n) { window.addEventListener(n, stop, { passive: true }); });
+    function frame(ts) {
+      if (!t0) t0 = ts;
+      var k = Math.min(1, (ts - t0) / dur);
+      var e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; // ease in and out
+      window.scrollTo({ top: targetTop(el) - d0 * (1 - e), left: 0, behavior: "instant" });
+      if (k < 1) glideRaf = requestAnimationFrame(frame); else stop();
+    }
+    glideRaf = requestAnimationFrame(frame);
+  }
+
   function scrollTo(target, isGate) {
     requestAnimationFrame(function () {
       var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      try { target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); }
+      try { if (reduce) target.scrollIntoView({ behavior: "auto", block: "start" }); else glideTo(target); }
       catch (e) { target.scrollIntoView(); }
       var h = target.querySelector(isGate ? ".gate-title" : "h3");
       if (h) { h.setAttribute("tabindex", "-1"); try { h.focus({ preventScroll: true }); } catch (e) {} }
