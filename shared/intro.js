@@ -41,7 +41,7 @@
         '<p data-t="0" data-swap>To find your charge, every prompt takes you through the same <strong>four gates</strong>, with <strong>new questions</strong> each time.</p>' +
         '<p data-t="1" data-swap hidden>Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
         '</div>' +
-        '<ol class="gate-list" aria-label="The four gates">' +
+        '<ol class="gate-list" data-t="1" hidden aria-label="The four gates">' +
         '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
         '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
         '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
