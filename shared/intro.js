@@ -32,7 +32,7 @@
         '<div class="swap-stack">' +
         '<p data-t="1" data-swap hidden style="--d:0.1s">For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>.</p>' +
         '<p data-t="2" data-swap hidden style="--d:0.1s">For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>' +
-        '<p data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive. <span class="late">It just has to be <em>true</em>.</span></p>' +
+        '<p data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive. <span class="hl hl-swap" style="--hd:0.80s;--hu:0.18s">It </span><span class="hl hl-swap" style="--hd:0.98s;--hu:0.18s">just </span><span class="hl hl-swap" style="--hd:1.16s;--hu:0.18s">has </span><span class="hl hl-swap" style="--hd:1.34s;--hu:0.18s">to </span><span class="hl hl-swap" style="--hd:1.52s;--hu:0.18s">be </span><span class="hl hl-swap" style="--hd:1.70s;--hu:0.18s"><em>true</em>.</span></p>' +
         '</div>',
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
