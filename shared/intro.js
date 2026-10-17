@@ -30,8 +30,7 @@
         '<p class="seq" style="--d:0.1s">For example, two people might each put a <strong>tree</strong> on their quilt.</p>' +
         '<p class="seq" data-t="1" data-swap hidden style="--d:0.1s">For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>.</p>' +
         '<p class="seq" data-t="2" data-swap hidden style="--d:0.1s">For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>' +
-        '<p class="seq" data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive.</p>' +
-        '<p class="seq" data-t="3" data-swap hidden style="--d:1.1s">It just has to be <em>true</em>.</p>',
+        '<p class="seq" data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive. <span style="animation:fadein 0.7s ease both 1.1s">It just has to be <em>true</em>.</span></p>',
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
         '<h3>Writing to Find the Charge</h3>' +
