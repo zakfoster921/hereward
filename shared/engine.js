@@ -148,7 +148,15 @@
         if (current) { clearTimeout(st._ft); st._ft = 0; st.classList.add("live"); }
         var deferFinal = !current && show && st.classList.contains("live");
         if (deferFinal) {
-          if (!st._ft) st._ft = setTimeout(function () { st._ft = 0; st.classList.remove("live"); sync(); }, 1300);
+          if (!st._ft) st._ft = setTimeout(function () {
+            st._ft = 0; st.classList.remove("live");
+            // Laying out the finished screen changes its height; keep the screen being read exactly where it is
+            var cur = gateEls[rg] && gateEls[rg].querySelectorAll(".step")[rs - 1];
+            var before = cur ? cur.getBoundingClientRect().top : 0;
+            sync();
+            var after = cur ? cur.getBoundingClientRect().top : 0;
+            if (cur && Math.abs(after - before) > 0.5) window.scrollBy({ top: after - before, left: 0, behavior: "instant" });
+          }, 1300);
         } else {
           st.classList.toggle("done", show && !current);
         }
