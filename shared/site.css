@@ -569,22 +569,21 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 /* tree drawing: thicken the thinnest outlines to match the notebook's line weight */
 .tree-art path { stroke: currentColor; stroke-width: 8; stroke-linejoin: round; }
 
-/* "slows us down" gets a highlighter stroke drawn under it, 0.5s after the screen loads */
+/* "it slows us down" gets one highlighter stroke drawn left to right, word by word (so it carries on across a line break) */
 .hl {
-  padding: 0 0.12em; margin: 0 -0.12em; border-radius: 2px;
+  border-radius: 2px;
   background-image: linear-gradient(color-mix(in srgb, #ffd54a 50%, transparent), color-mix(in srgb, #ffd54a 50%, transparent));
   background-repeat: no-repeat; background-position: 0 85%; background-size: 0% 62%;
-  -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
-.step:not([hidden]) .hl { animation: hlstroke 1s cubic-bezier(.45,.05,.3,1) 0.5s forwards; }
+.step:not([hidden]) .hl { animation: hlstroke var(--hu, 0.3s) linear var(--hd, 0.5s) forwards; }
 @keyframes hlstroke { from { background-size: 0% 62%; } to { background-size: 100% 62%; } }
 @media (prefers-reduced-motion: reduce) { .hl { animation: none !important; background-size: 100% 62%; } }
 
 /* free-writing tips: separate cards that land loosely on top of one another */
-.card-stack { display: grid; margin: 1.75rem 0 0.6rem; padding: 6px 5px; }
+.card-stack { display: grid; margin: 1.75rem 0 0.3rem; padding: 6px 5px; }
 .card-stack > * { grid-area: 1 / 1; }
 .card-stack > [data-t][hidden] { display: block !important; visibility: hidden; }
-.card-stack:not([hidden]) { animation: fadein 0.4s ease both; }
+.card-stack:not([hidden]) { animation: fadein 0.4s ease both 0.5s; }
 .card-stack > .tip {
   margin: 0; padding: 1.25rem 1.4rem; border-radius: 6px;
   background: color-mix(in srgb, var(--thread) 15%, var(--bg));
@@ -601,19 +600,19 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
   from { opacity: 0; transform: translate(var(--tx), calc(var(--ty) + 3.2rem)) rotate(calc(var(--r) * 3)); }
   to { opacity: 1; transform: translate(var(--tx), var(--ty)) rotate(var(--r)); }
 }
-.card-stack + p { margin-top: 1.25rem; }
+.card-stack + p { margin-top: 0.75rem; }
 /* a finished screen lays the cards out one under another so every tip can be read */
 .step.done .card-stack { display: block; }
 .step.done .card-stack > .tip { animation: none !important; opacity: 1; visibility: visible; transform: none; }
-.step.done .card-stack > .tip + .tip { margin-top: 0.7rem; }
+.step.done .card-stack > .tip + .tip { margin-top: 0.5rem; }
 @media (prefers-reduced-motion: reduce) { .card-stack > .tip { animation: none !important; } }
 
 .verse.verse-top { margin: 0.5rem 0 0; text-wrap: wrap; font-size: 1.55rem; }
 .tips-intro { margin: 0; }
-.tips-intro + .card-stack { margin-top: 1rem; }
+.tips-intro + .card-stack { margin-top: 0.4rem; }
 .card-stack > .tip { display: flex; align-items: center; justify-content: center; text-align: center; }
 /* plain appear-on-tap inside a stack that only reserves room */
 .swap-stack.plain > [data-t]:not([hidden]) { animation: fadein 0.5s ease both; animation-delay: 0.05s; }
 .verse.verse-top.second { margin: 1.1rem 0 2rem; }
-.verse.verse-top.left { text-align: left; margin: 0.5rem 0 2rem; font-size: 1.75rem; }
+.verse.verse-top.left { text-align: left; margin: 0.25rem 0 1rem; font-size: 1.75rem; }
 .tips-intro.seq { animation: fadein 0.3s ease both; animation-delay: 0s; }
