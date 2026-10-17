@@ -37,7 +37,7 @@
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
         '<h3>Writing to Find the Charge</h3>' +
-        '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would.</p>',
+        '<p>Writing helps us explore ideas because it <strong>slows us down</strong>. It pulls our thoughts into a line, lets us follow a tangent, and keeps you with a moment a beat longer than our mind normally would.</p>',
 
         GATE_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap left"') +
         '<h3>The four gates</h3>' +
