@@ -459,7 +459,7 @@ body.aim-only .gate { padding-bottom: 4rem; }
 body.aim-only .gate-title, body.aim-only h1.gate-title { font-size: 3rem; }
 body.aim-only .steps { margin-top: 1.25rem; }
 /* When a new screen scrolls into place, the screen before it must be fully out of view */
-.step + .step { margin-top: 8.3rem; }
+.step + .step { margin-top: 38.5rem; }
 .gate { padding-bottom: 3.2rem; }
 .title-foot { display: flex; justify-content: center; gap: 1.75rem; }
 a.toggle { text-decoration: none; display: inline-block; }
