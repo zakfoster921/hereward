@@ -197,6 +197,7 @@
           if (v > d) d = v;
         });
         var key = rg + "|" + rs + "|" + rt;
+        d += 0.5; // chevron comes in half a second after the last thing appears
         if (d > 0.2) {
           go.style.setProperty("--gd", d + "s");
           if (go._lateKey !== key || wasHidden) { go.removeAttribute("data-late"); void go.offsetWidth; go._lateKey = key; }
@@ -331,6 +332,10 @@
     if (!svg) return;
     var NS = "http://www.w3.org/2000/svg";
     var STEP = 3, paths = [], builtW = 0, builtLen = 0;
+    // The part of the line the reader has already seen stays exactly where it is when the line is redrawn for a new screen.
+    var lastPts = null, lastW = 0, seenT = 0;
+    function markSeen() { var b = window.scrollY + window.innerHeight + 150; if (typeof cur === 'number' && cur + 100 > b) b = cur + 100; if (b > seenT) seenT = b; }
+    window.addEventListener('scroll', markSeen, { passive: true });
 
     function sm(x) { x = x < 0 ? 0 : (x > 1 ? 1 : x); return x * x * (3 - 2 * x); }
     function burst(t, f, ph) {
@@ -384,6 +389,7 @@
     document.addEventListener("click", function (e) { holdLine = !!(e.target && e.target.closest && e.target.closest(".ex-fold")); }, true);
     function build() {
       if (holdLine && paths.length) return;
+      markSeen();
       var w = document.documentElement.clientWidth, need = Math.max(6000, document.body.offsetHeight + 1500);
       var nobs = measure(), cl = document.querySelector(".gate.closing"), cRect = (cl && !cl.hidden) ? cl.getBoundingClientRect() : null;
       cEnd = (cRect && cRect.height > 4) ? Math.round(cRect.bottom + window.scrollY) : null;
@@ -410,6 +416,7 @@
           if (ok) { loops.push({ tc: tc, dir: dirn }); dirn = -dirn; lastTc = tc; }
         }
         var xs = [], hist = [];
+        var ptsNow = [], prevPts = (lastPts && lastW === w) ? lastPts : null;
         var pass, hw = 44, k, sum, cnt, ys, N2 = n + hw;
         for (i = 0; i <= N2; i++) xs.push(s.x(s.t0 + i * STEP)); // sampled a little past the end, so smoothing has no edge effect at the tip
         // Round off any sharp corners: a few passes of smoothing along the line, about 130px each way
@@ -434,6 +441,11 @@
               y -= lR * (1 - Math.cos(ph));
             }
           }
+          if (prevPts && i < prevPts.length) {
+            var fw = sm((t - seenT) / 320);
+            x = prevPts[i][0] * (1 - fw) + x * fw; y = prevPts[i][1] * (1 - fw) + y * fw;
+          }
+          ptsNow.push([x, y]);
           d += (i === 0 ? "M" : "L") + x.toFixed(1) + " " + y.toFixed(1);
           if (i > 0) { len += Math.sqrt((x - px) * (x - px) + (y - py) * (y - py)); cum.push(len); }
           px = x; py = y; hist.push(x, y);
@@ -486,6 +498,7 @@
             '<ellipse cx="0" cy="-3" rx="2.4" ry="9" style="fill:none;stroke:currentColor;stroke-width:3;opacity:0.55"/>';
           bits.appendChild(g);
         }
+        lastPts = ptsNow; lastW = w;
         var el = document.createElementNS(NS, "path");
         el.setAttribute("d", d);
         el.style.strokeWidth = String(s.sw);

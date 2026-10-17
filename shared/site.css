@@ -503,7 +503,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 
 /* Intro map drawing, larger than the standard gate art */
 .gate-art-wrap:has(> .map-art) { display: block; }
-.gate-art.map-art { display: block; width: 100%; max-width: 34rem; margin-inline: auto; }
+.gate-art.map-art { display: block; width: 90%; max-width: 30.6rem; margin-inline: 0 auto; }
 .step > p + .gate-art-wrap:has(> .tree-art) { margin-top: -2px; }
 
 .swap-stack { display: grid; }
