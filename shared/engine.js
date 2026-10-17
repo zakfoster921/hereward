@@ -82,6 +82,7 @@
     var avail = window.innerHeight - 48 - 84 - head; // scroll margin above, continue arrow below
     var other = st.offsetHeight - wrap.offsetHeight; // everything on the screen except the graphic
     var w = Math.max(minW, Math.min(maxW, (avail - other - 2) * ratio));
+    if (svg && svg.classList.contains("sign-art")) w = Math.min(maxW, w * 1.15); // signpost drawn 15% larger
     if (svg) svg.style.width = w + "px"; else mx.style.maxWidth = w + "px";
     checkFit(st, wrap, head);
   }
