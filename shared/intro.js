@@ -63,7 +63,7 @@
 
         '<p>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
         MAP_ART +
-        '<p>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p>',
+        '<p class="seq" data-t="1" data-go-delay="0.8" hidden style="--d:0.1s">After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t.</p>',
 
         '<div class="facts-screen"><p class="begin-text seq" style="--d:0.2s">Let\u2019s begin</p></div>'
       ]
