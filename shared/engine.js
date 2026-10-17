@@ -190,8 +190,11 @@
       if (g === rg && !go.hidden) {
         var cs = ge.querySelectorAll(".step")[rs - 1];
         var late = cs && cs.querySelector("[data-go-delay]:not([hidden])");
-        if (late) { go.style.setProperty("--gd", late.getAttribute("data-go-delay") + "s"); go.setAttribute("data-late", ""); }
-        else { go.removeAttribute("data-late"); }
+        if (late) {
+          go.style.setProperty("--gd", late.getAttribute("data-go-delay") + "s");
+          if (go._lateFor !== late || wasHidden) { go.removeAttribute("data-late"); void go.offsetWidth; go._lateFor = late; }
+          go.setAttribute("data-late", "");
+        } else { go._lateFor = null; go.removeAttribute("data-late"); }
       }
       if (g === rg) {
         var cue = go.firstChild;
