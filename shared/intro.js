@@ -38,6 +38,7 @@
         '<h3>Writing to Find the Charge</h3>' +
         '<p>Writing <strong>slows you down</strong>. It pulls your thoughts into a line, lets you follow a tangent, and keeps you with a moment a beat longer than your mind would.</p>',
 
+        GATE_ART +
         '<h3>The four gates</h3>' +
         '<div class="swap-stack">' +
         '<p data-t="0" data-swap>To find your charge, every prompt takes you through the same <strong>four gates</strong>, with <strong>new questions</strong> each time.</p>' +
@@ -51,15 +52,13 @@
 
         '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
-        '<div class="tips-card swap-stack" data-t="1" hidden>' +
+        '<div class="tips-card swap-stack">' +
         '<p data-t="1" data-swap>Keep your <strong>hands moving</strong> the whole time.</p>' +
         '<p data-t="2" data-swap hidden>Don\u2019t worry about <strong>spelling or neatness</strong>.</p>' +
         '<p data-t="3" data-swap hidden><strong>Lists and sketches</strong> are also fine.</p>' +
         '<p data-t="4" data-swap hidden>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p data-t="5" data-swap hidden><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>',
-
-        '<p>Some people write for a <strong>set amount of time</strong>, others for a <strong>set number of pages</strong>. Handwrite or type, whichever keeps you going.</p>',
 
         '<p>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
         MAP_ART +

@@ -145,8 +145,16 @@
         var current = g === rg && si === rs - 1;
         [].slice.call(st.querySelectorAll("[data-t]")).forEach(function (el) {
           var t = +el.getAttribute("data-t");
-          var hide = current && (t > rt || (el.hasAttribute("data-swap") && t < rt));
-          if (hide && !el.hidden && el.hasAttribute("data-swap")) {
+          var swap = el.hasAttribute("data-swap");
+          if (swap && !current) {
+            // lines that replace each other: a finished screen keeps only the last one; a screen not reached yet shows none
+            el.classList.remove("leaving");
+            el.hidden = !(show && !el.nextElementSibling);
+            return;
+          }
+          var replaced = current && swap && t < rt;
+          var hide = current && (t > rt || replaced);
+          if (replaced && !el.hidden) {
             // a line being replaced fades out first, then steps aside
             el.classList.add("leaving");
             setTimeout(function () { if (el.classList.contains("leaving")) { el.hidden = true; el.classList.remove("leaving"); } }, 420);
