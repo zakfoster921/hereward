@@ -303,10 +303,9 @@
   function closing(P) {
     return {
       eyebrow: "All gates completed", name: "Time to sew!", closing: true,
-      afterArt: CLOSING_ART,
       steps: [
         '<p class="big">' + (P.closing && P.closing.line ? P.closing.line : 'Add your ' + P.subject + ' image to your quilt.') + '</p>' +
-        '<p>' + (P.closing && P.closing.note ? P.closing.note + ' ' : '') + (P.closing && P.closing.guide ? P.closing.guide : 'Keep your charge in mind as you sew, and look for chances to heighten the charge even more.') + '</p>'
+        '<p class="closing-note">' + CLOSING_ART.replace('<div class="gate-art-wrap">', '<span class="gate-art-wrap">').replace(/<\/div>$/, '</span>') + (P.closing && P.closing.note ? P.closing.note + ' ' : '') + (P.closing && P.closing.guide ? P.closing.guide : 'Keep your charge in mind as you sew, and look for chances to heighten the charge even more.') + '</p>'
       ]
     };
   }

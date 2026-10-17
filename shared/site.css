@@ -382,6 +382,10 @@ body:has(.gate.closing:not([hidden])) { padding-bottom: 32rem; }
 .gate.closing .gate-art { color: var(--on-ink); opacity: 0.6; width: 6.5rem; }
 .after-art { display: none; }
 .gate.closing:not([hidden]) + .after-art { display: block; }
+/* the scissors sit inside the card, bottom-right, with the closing note wrapping around them */
+.gate.closing .closing-note .gate-art-wrap { float: right; margin: 0.4rem 0 0 1rem; }
+.gate.closing .gate-art.closing-art { width: 5.6rem; }
+.gate.closing .step::after { content: ""; display: block; clear: both; }
 /* the scissors hang below the dark card, on the page background, so they take the same lavender as the other drawings */
 .after-art .gate-art-wrap { margin-top: 1.75rem; }
 .after-art .gate-art.closing-art { width: 6.6rem; color: var(--muted); opacity: 0.7; }
