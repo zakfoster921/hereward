@@ -166,7 +166,15 @@
       });
       var go = ge.querySelector(".go");
       // The chevron shows whenever the next tap moves to a new screen (next step or next card), not while smaller reveals remain
+      var wasHidden = go.hidden;
       go.hidden = g !== rg || (MODE === "prompt" && g === G.length - 1) || pendingTaps() > 0;
+      // when the last piece of text is still arriving, the chevron waits for it
+      if (g === rg && !go.hidden) {
+        var cs = ge.querySelectorAll(".step")[rs - 1];
+        var late = cs && cs.querySelector("[data-go-delay]:not([hidden])");
+        if (late) { go.style.setProperty("--gd", late.getAttribute("data-go-delay") + "s"); go.setAttribute("data-late", ""); }
+        else { go.removeAttribute("data-late"); }
+      }
       if (g === rg) {
         var cue = go.firstChild;
         cue.querySelector(".sr").textContent = label();

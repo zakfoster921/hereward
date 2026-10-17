@@ -31,7 +31,7 @@
         '<div class="swap-stack">' +
         '<p data-t="1" data-swap hidden style="--d:0.1s">For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>.</p>' +
         '<p data-t="2" data-swap hidden style="--d:0.1s">For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>' +
-        '<p data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive. <span class="late">It just has to be <em>true</em>.</span></p>' +
+        '<p data-t="3" data-swap data-go-delay="2.1" hidden style="--d:0.1s">A charge does not have to be positive. <span class="late">It just has to be <em>true</em>.</span></p>' +
         '</div>',
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
@@ -48,18 +48,18 @@
         '<li><span class="k">Gate 3</span>Picture the charge</li>' +
         '<li><span class="k">Gate 4</span>Test the charge</li></ol>' +
         '</div>' +
-        '<p class="seq" data-t="1" hidden style="--d:1.6s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
+        '<p class="seq" data-t="1" data-go-delay="2.4" hidden style="--d:1.6s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
         '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
-        '<div class="tips-card swap-stack">' +
+        '<div class="tips-card swap-stack" data-t="1" hidden>' +
         '<p data-t="1" data-swap>Keep your <strong>hands moving</strong> the whole time.</p>' +
         '<p data-t="2" data-swap hidden>Don\u2019t worry about <strong>spelling or neatness</strong>.</p>' +
         '<p data-t="3" data-swap hidden><strong>Lists and sketches</strong> are also fine.</p>' +
         '<p data-t="4" data-swap hidden>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p data-t="5" data-swap hidden><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>' +
-        '<p class="seq" data-t="5" hidden style="--d:0.8s">Nothing you write has to be polished or shared. It\u2019s yours.</p>',
+        '<p class="seq" data-t="5" data-go-delay="1.6" hidden style="--d:0.8s">Nothing you write has to be polished or shared. It\u2019s yours.</p>',
 
         '<p>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
         MAP_ART +

@@ -538,3 +538,8 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .step.done .swap-stack > p + p, .step.done .swap-stack > p + .gate-list { margin-top: 0.9rem; }
 
 .tips-card + p { margin-top: 1.25rem; }
+
+.go[data-late]:not([hidden]) { animation: fadein 0.5s ease both; animation-delay: var(--gd, 0s); }
+
+.tips-card:not([hidden]) { animation: fadein 0.4s ease both; }
+.tips-card > [data-t="1"]:not([hidden]) { animation-delay: 0.15s; }
