@@ -143,11 +143,20 @@
         st.hidden = !show;
         st.classList.toggle("is-past", g === rg && si < rs - 1);
         var current = g === rg && si === rs - 1;
-        st.classList.toggle("done", show && !current);
+        // A screen that was just left lays out all its rotated lines only after the scroll away from it has finished,
+        // so the change happens off screen.
+        if (current) { clearTimeout(st._ft); st._ft = 0; st.classList.add("live"); }
+        var deferFinal = !current && show && st.classList.contains("live");
+        if (deferFinal) {
+          if (!st._ft) st._ft = setTimeout(function () { st._ft = 0; st.classList.remove("live"); sync(); }, 1300);
+        } else {
+          st.classList.toggle("done", show && !current);
+        }
         [].slice.call(st.querySelectorAll("[data-t]")).forEach(function (el) {
           var t = +el.getAttribute("data-t");
           var swap = el.hasAttribute("data-swap");
           if (swap && !current) {
+            if (deferFinal) return;
             // lines that replace each other: a finished screen lays them all out in order; a screen not reached yet shows none
             el.classList.remove("leaving");
             el.hidden = !show;
