@@ -607,6 +607,7 @@
       var o = offsetAt(p);
       path.style.strokeDashoffset = o;
       path.setAttribute('stroke-dashoffset', o); // nudge repaint
+      if (p >= 50) { var cs = svg.closest('.center-screen'); if (cs) cs.classList.add('half'); } // the text below arrives when the line is halfway
       if (p < 100) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
