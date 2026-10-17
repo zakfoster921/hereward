@@ -569,11 +569,16 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 /* tree drawing: thicken the thinnest outlines to match the notebook's line weight */
 .tree-art path { stroke: currentColor; stroke-width: 8; stroke-linejoin: round; }
 
-/* "it slows us down" arrives slowly: it drifts in out of a soft blur, 0.5s after the screen loads */
-.slow { opacity: 0; }
-.step:not([hidden]) .slow { animation: slowin 1.8s cubic-bezier(.25,.1,.25,1) 0.5s both; }
-@keyframes slowin { 0% { opacity: 0; filter: blur(5px); } 100% { opacity: 1; filter: blur(0); } }
-@media (prefers-reduced-motion: reduce) { .slow { opacity: 1; animation: none !important; } }
+/* "slows us down" gets a highlighter stroke drawn under it, 0.5s after the screen loads */
+.hl {
+  padding: 0 0.12em; margin: 0 -0.12em; border-radius: 2px;
+  background-image: linear-gradient(color-mix(in srgb, #ffd54a 50%, transparent), color-mix(in srgb, #ffd54a 50%, transparent));
+  background-repeat: no-repeat; background-position: 0 85%; background-size: 0% 62%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.step:not([hidden]) .hl { animation: hlstroke 1s cubic-bezier(.45,.05,.3,1) 0.5s forwards; }
+@keyframes hlstroke { from { background-size: 0% 62%; } to { background-size: 100% 62%; } }
+@media (prefers-reduced-motion: reduce) { .hl { animation: none !important; background-size: 100% 62%; } }
 
 /* free-writing tips: separate cards that land loosely on top of one another */
 .card-stack { display: grid; margin: 1.75rem 0 0.6rem; padding: 6px 5px; }
