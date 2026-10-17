@@ -43,12 +43,12 @@
         '<div class="swap-stack">' +
         '<p data-t="0" data-swap>To find your charge, every prompt takes you through the same <strong>four gates</strong>, with <strong>new questions</strong> each time.</p>' +
         '<ol class="gate-list" data-t="1" data-swap hidden aria-label="The four gates">' +
-        '<li style="--d:0.8s"><span class="k">Gate 1</span>Uncover the charge</li>' +
-        '<li style="--d:1.2s"><span class="k">Gate 2</span>Deepen the charge</li>' +
-        '<li style="--d:1.6s"><span class="k">Gate 3</span>Picture the charge</li>' +
-        '<li style="--d:2.0s"><span class="k">Gate 4</span>Test the charge</li></ol>' +
+        '<li><span class="k">Gate 1</span>Uncover the charge</li>' +
+        '<li><span class="k">Gate 2</span>Deepen the charge</li>' +
+        '<li><span class="k">Gate 3</span>Picture the charge</li>' +
+        '<li><span class="k">Gate 4</span>Test the charge</li></ol>' +
         '</div>' +
-        '<p class="seq" data-t="1" hidden style="--d:2.9s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
+        '<p class="seq" data-t="1" hidden style="--d:1.6s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
         '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
@@ -58,7 +58,8 @@
         '<p data-t="3" data-swap hidden><strong>Lists and sketches</strong> are also fine.</p>' +
         '<p data-t="4" data-swap hidden>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p data-t="5" data-swap hidden><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
-        '</div>',
+        '</div>' +
+        '<p class="seq" data-t="5" hidden style="--d:0.8s">Nothing you write has to be polished or shared. It\u2019s yours.</p>',
 
         '<p>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
         MAP_ART +

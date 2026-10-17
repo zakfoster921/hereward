@@ -143,13 +143,14 @@
         st.hidden = !show;
         st.classList.toggle("is-past", g === rg && si < rs - 1);
         var current = g === rg && si === rs - 1;
+        st.classList.toggle("done", show && !current);
         [].slice.call(st.querySelectorAll("[data-t]")).forEach(function (el) {
           var t = +el.getAttribute("data-t");
           var swap = el.hasAttribute("data-swap");
           if (swap && !current) {
-            // lines that replace each other: a finished screen keeps only the last one; a screen not reached yet shows none
+            // lines that replace each other: a finished screen lays them all out in order; a screen not reached yet shows none
             el.classList.remove("leaving");
-            el.hidden = !(show && !el.nextElementSibling);
+            el.hidden = !show;
             return;
           }
           var replaced = current && swap && t < rt;
