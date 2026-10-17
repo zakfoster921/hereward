@@ -31,7 +31,7 @@
         '<div class="swap-stack">' +
         '<p data-t="1" data-swap hidden style="--d:0.1s">For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>.</p>' +
         '<p data-t="2" data-swap hidden style="--d:0.1s">For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>' +
-        '<p data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive. <span style="animation:fadein 0.7s ease both 1.1s">It just has to be <em>true</em>.</span></p>' +
+        '<p data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive. <span class="late">It just has to be <em>true</em>.</span></p>' +
         '</div>',
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
@@ -44,10 +44,10 @@
         '<p data-t="1" data-swap hidden>Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>' +
         '</div>' +
         '<ol class="gate-list" data-t="1" hidden aria-label="The four gates">' +
-        '<li class="seq" style="--d:0.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
-        '<li class="seq" style="--d:0.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
-        '<li class="seq" style="--d:1.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
-        '<li class="seq" style="--d:1.6s"><span class="k">Gate 4</span>Test the charge</li></ol>',
+        '<li class="seq" style="--d:1.4s"><span class="k">Gate 1</span>Uncover the charge</li>' +
+        '<li class="seq" style="--d:1.8s"><span class="k">Gate 2</span>Deepen the charge</li>' +
+        '<li class="seq" style="--d:2.2s"><span class="k">Gate 3</span>Picture the charge</li>' +
+        '<li class="seq" style="--d:2.6s"><span class="k">Gate 4</span>Test the charge</li></ol>',
 
         '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
