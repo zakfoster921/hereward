@@ -581,3 +581,13 @@
   if (MODE === "prompt") flowEl.hidden = false;
   sync();
 })();
+
+/* Start the Try-it line trace only once the graphic is on screen. */
+(function () {
+  var t = setInterval(function () {
+    var s = document.querySelector('.map-art');
+    if (!s || s.classList.contains('seen')) { if (s) clearInterval(t); return; }
+    var r = s.getBoundingClientRect(), h = window.innerHeight;
+    if (r.top > 0 && r.bottom < h * 0.95) s.classList.add('seen');
+  }, 150);
+})();

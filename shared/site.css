@@ -624,7 +624,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 /* the line on the Try-it graphic is traced through the four gates one at a time: the drawing lights up along the route, pausing at each gate */
 .map-lit { color: var(--thread); fill: var(--thread); }
 .map-reveal { stroke-dasharray: 100; stroke-dashoffset: 100; }
-.step:not([hidden]) .map-reveal { animation: maptrace 7.7s linear 0.5s forwards; }
+.map-art.seen .map-reveal { animation: maptrace 7.7s linear 0.5s forwards; }
 @keyframes maptrace {
   0.00% { animation-timing-function: ease-in-out; stroke-dashoffset: 100.0; }
   14.29% { animation-timing-function: ease-in-out; stroke-dashoffset: 78.5; }
