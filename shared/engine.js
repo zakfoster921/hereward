@@ -155,6 +155,7 @@
             var before = cur ? cur.getBoundingClientRect().top : 0;
             sync();
             var after = cur ? cur.getBoundingClientRect().top : 0;
+            if (cur && Math.abs(after - before) > 0.5 && window.__noodleShift) window.__noodleShift(after - before);
             if (cur && Math.abs(after - before) > 0.5) window.scrollBy({ top: after - before, left: 0, behavior: "instant" });
           }, 1300);
         } else {
@@ -333,8 +334,10 @@
     var NS = "http://www.w3.org/2000/svg";
     var STEP = 3, paths = [], builtW = 0, builtLen = 0;
     // The part of the line the reader has already seen stays exactly where it is when the line is redrawn for a new screen.
-    var lastPts = null, lastW = 0, seenT = 0;
-    function markSeen() { var b = window.scrollY + window.innerHeight + 150; if (typeof cur === 'number' && cur + 100 > b) b = cur + 100; if (b > seenT) seenT = b; }
+    var lastPts = null, lastW = 0, seenT = 0, yoff = 0;
+    // When a finished screen above lays out taller and the page is scrolled to compensate, the line moves down with the content
+    window.__noodleShift = function (dy) { yoff += dy; paths.forEach(function (p) { p.el.style.transform = 'translateY(' + yoff + 'px)'; }); };
+    function markSeen() { var b = window.scrollY - yoff + window.innerHeight + 150; if (typeof cur === 'number' && cur + 100 > b) b = cur + 100; if (b > seenT) seenT = b; }
     window.addEventListener('scroll', markSeen, { passive: true });
 
     function sm(x) { x = x < 0 ? 0 : (x > 1 ? 1 : x); return x * x * (3 - 2 * x); }
@@ -346,7 +349,7 @@
     // Drawings the line must stay clear of (measured live, in page coordinates).
     var obs = [], obsSig = "", cEnd = null;
     function measure() {
-      var list = [], sy = window.scrollY, sx = window.scrollX;
+      var list = [], sy = window.scrollY - yoff, sx = window.scrollX;
       Array.prototype.forEach.call(document.querySelectorAll(".gate-art, img.matrix, .sense-chart"), function (el) {
         var r = el.getBoundingClientRect();
         if (r.width < 4 || r.height < 4) return;
@@ -392,7 +395,7 @@
       markSeen();
       var w = document.documentElement.clientWidth, need = Math.max(6000, document.body.offsetHeight + 1500);
       var nobs = measure(), cl = document.querySelector(".gate.closing"), cRect = (cl && !cl.hidden) ? cl.getBoundingClientRect() : null;
-      cEnd = (cRect && cRect.height > 4) ? Math.round(cRect.bottom + window.scrollY) : null;
+      cEnd = (cRect && cRect.height > 4) ? Math.round(cRect.bottom + window.scrollY - yoff) : null;
       var sig = cEnd + "|" + JSON.stringify(nobs.map(function (o) { return [o.top, o.bottom, o.left, o.right].map(Math.round); }));
       if (w === builtW && need <= builtLen && sig === obsSig) return;
       obs = nobs; obsSig = sig;
@@ -503,6 +506,7 @@
         el.setAttribute("d", d);
         el.style.strokeWidth = String(s.sw);
         el.style.opacity = String(s.op);
+        el.style.transform = 'translateY(' + yoff + 'px)';
         el.style.transition = "none";
         el.style.strokeDasharray = len + " " + len;
         el.style.strokeDashoffset = String(len);
