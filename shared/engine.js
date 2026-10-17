@@ -619,3 +619,14 @@
     if (r.top > 0 && r.bottom < h) { clearInterval(t); s.classList.add('seen'); run(s); }
   }, 150);
 })();
+
+/* Charge drawing: play its jolt once the drawing is actually on screen (the screen unlocks before the scroll arrives). */
+(function () {
+  var t = setInterval(function () {
+    var s = document.querySelector('.charge-art');
+    if (!s) return;
+    if (s.classList.contains('seen')) { clearInterval(t); return; }
+    var r = s.getBoundingClientRect(), h = window.innerHeight;
+    if (r.top > 0 && r.bottom < h) s.classList.add('seen');
+  }, 150);
+})();
