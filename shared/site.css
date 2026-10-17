@@ -575,7 +575,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
   background-image: linear-gradient(color-mix(in srgb, var(--thread) 38%, transparent), color-mix(in srgb, var(--thread) 38%, transparent));
   background-repeat: no-repeat; background-position: 0 85%; background-size: 0% 62%;
 }
-.step:not([hidden]) .hl { animation: hlstroke var(--hu, 0.3s) linear var(--hd, 0.5s) forwards; }
+.step:not([hidden]):has(.plain-in:not([hidden])) .hl { animation: hlstroke var(--hu, 0.3s) linear var(--hd, 0.5s) forwards; }
 @keyframes hlstroke { from { background-size: 0% 62%; } to { background-size: 100% 62%; } }
 @media (prefers-reduced-motion: reduce) { .hl { animation: none !important; background-size: 100% 62%; } }
 
@@ -583,7 +583,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .card-stack { display: grid; margin: 1.75rem 0 0.3rem; padding: 6px 5px; }
 .card-stack > * { grid-area: 1 / 1; }
 .card-stack > [data-t][hidden] { display: block !important; visibility: hidden; }
-.card-stack:not([hidden]) { animation: popin 0.01s step-end 0.5s both; }
+.card-stack:not([hidden]) { animation: none; }
 @keyframes popin { from { opacity: 0; } to { opacity: 1; } }
 .card-stack > .tip {
   margin: 0; padding: 1.25rem 1.4rem; border-radius: 6px;
@@ -619,3 +619,4 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .tips-intro.seq { animation: fadein 0.3s ease both; animation-delay: 0s; }
 .seq.plain-in { animation: fadein 0.3s ease both; animation-delay: 0s; }
 .card-stack > .tip strong { font-weight: inherit; }
+.step.done .hl { animation: none !important; background-size: 100% 62%; }
