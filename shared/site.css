@@ -572,7 +572,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 /* "it slows us down" gets one highlighter stroke drawn left to right, word by word (so it carries on across a line break) */
 .hl {
   border-radius: 2px;
-  background-image: linear-gradient(color-mix(in srgb, #ffd54a 50%, transparent), color-mix(in srgb, #ffd54a 50%, transparent));
+  background-image: linear-gradient(color-mix(in srgb, var(--thread) 38%, transparent), color-mix(in srgb, var(--thread) 38%, transparent));
   background-repeat: no-repeat; background-position: 0 85%; background-size: 0% 62%;
 }
 .step:not([hidden]) .hl { animation: hlstroke var(--hu, 0.3s) linear var(--hd, 0.5s) forwards; }
@@ -583,7 +583,8 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .card-stack { display: grid; margin: 1.75rem 0 0.3rem; padding: 6px 5px; }
 .card-stack > * { grid-area: 1 / 1; }
 .card-stack > [data-t][hidden] { display: block !important; visibility: hidden; }
-.card-stack:not([hidden]) { animation: fadein 0.4s ease both 0.5s; }
+.card-stack:not([hidden]) { animation: popin 0.01s step-end 0.5s both; }
+@keyframes popin { from { opacity: 0; } to { opacity: 1; } }
 .card-stack > .tip {
   margin: 0; padding: 1.25rem 1.4rem; border-radius: 6px;
   background: color-mix(in srgb, var(--thread) 15%, var(--bg));
@@ -594,7 +595,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .card-stack > .tip:nth-child(3) { --r: -0.7deg; --tx: -2px; --ty: 3px; }
 .card-stack > .tip:nth-child(4) { --r: 1.1deg; --tx: 3px; --ty: 0px; }
 .card-stack > .tip:nth-child(5) { --r: -1.5deg; --tx: -4px; --ty: 2px; }
-.card-stack > .tip:not([hidden]) { animation: fadein 0.3s ease both; }
+.card-stack > .tip:not([hidden]) { animation: none; }
 .card-stack > .tip[data-t="1"]:not([hidden]) { animation: none; }
 @keyframes cardin {
   from { opacity: 0; transform: translate(var(--tx), calc(var(--ty) + 3.2rem)) rotate(calc(var(--r) * 3)); }
