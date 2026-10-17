@@ -632,3 +632,19 @@
     if (r.top > 0 && r.bottom < h) s.classList.add('seen');
   }, 150);
 })();
+
+
+/* Highlight strokes start once their screen has scrolled fully into place (in view and no longer moving). */
+(function () {
+  var lastY = null, still = 0;
+  setInterval(function () {
+    var y = window.scrollY;
+    still = (y === lastY) ? still + 1 : 0; lastY = y;
+    if (still < 2) return; // ~250ms without scrolling
+    var h = window.innerHeight;
+    [].forEach.call(document.querySelectorAll(".hl:not(.go)"), function (el) {
+      var st = el.closest(".facts-screen, .center-screen, .step") || el, r = el.getBoundingClientRect(), s = st.getBoundingClientRect();
+      if (r.height > 0 && r.top >= 0 && r.bottom <= h && s.top < h * 0.5) el.classList.add("go");
+    });
+  }, 125);
+})();
