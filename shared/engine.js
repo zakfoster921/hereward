@@ -144,7 +144,8 @@
         st.classList.toggle("is-past", g === rg && si < rs - 1);
         var current = g === rg && si === rs - 1;
         [].slice.call(st.querySelectorAll("[data-t]")).forEach(function (el) {
-          el.hidden = current && +el.getAttribute("data-t") > rt;
+          var t = +el.getAttribute("data-t");
+          el.hidden = current && (t > rt || (el.hasAttribute("data-swap") && t < rt));
         });
         if (current && rt === 0) { reserveSpace(st); fitArt(st); }
       });
