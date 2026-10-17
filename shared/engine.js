@@ -149,7 +149,7 @@
           if (hide && !el.hidden && el.hasAttribute("data-swap")) {
             // a line being replaced fades out first, then steps aside
             el.classList.add("leaving");
-            setTimeout(function () { if (el.classList.contains("leaving")) { el.hidden = true; el.classList.remove("leaving"); } }, 560);
+            setTimeout(function () { if (el.classList.contains("leaving")) { el.hidden = true; el.classList.remove("leaving"); } }, 420);
           } else if (!hide) { el.classList.remove("leaving"); el.hidden = false; }
           else if (!el.classList.contains("leaving")) { el.hidden = true; }
         });
