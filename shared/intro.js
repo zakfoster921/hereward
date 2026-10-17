@@ -51,12 +51,12 @@
 
         '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +
-        '<div class="tips">' +
-        '<p>Keep your <strong>hands moving</strong> the whole time.</p>' +
-        '<p>Don\u2019t worry about <strong>spelling or neatness</strong>.</p>' +
-        '<p><strong>Lists and sketches</strong> are also fine.</p>' +
-        '<p>Follow <strong>what pulls you</strong>, even off topic.</p>' +
-        '<p><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
+        '<div class="tips-card swap-stack" data-t="1" hidden>' +
+        '<p data-t="1" data-swap>Keep your <strong>hands moving</strong> the whole time.</p>' +
+        '<p data-t="2" data-swap hidden>Don\u2019t worry about <strong>spelling or neatness</strong>.</p>' +
+        '<p data-t="3" data-swap hidden><strong>Lists and sketches</strong> are also fine.</p>' +
+        '<p data-t="4" data-swap hidden>Follow <strong>what pulls you</strong>, even off topic.</p>' +
+        '<p data-t="5" data-swap hidden><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>',
 
         '<p>Some people write for a <strong>set amount of time</strong>, others for a <strong>set number of pages</strong>. Handwrite or type, whichever keeps you going.</p>',
