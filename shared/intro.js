@@ -59,7 +59,7 @@
         '<p data-t="4" data-swap hidden>Follow <strong>what pulls you</strong>, even off topic.</p>' +
         '<p data-t="5" data-swap hidden><strong>Skip</strong> questions that don\u2019t speak to you.</p>' +
         '</div>' +
-        '<p class="seq" data-t="5" data-go-delay="1.6" hidden style="--d:0.8s">Nothing you write has to be polished or shared. It\u2019s yours.</p>',
+        '<p class="seq" data-t="5" data-go-delay="1.6" hidden style="--d:0.8s">Remember, nothing you write has to be polished or shared. It\u2019s yours.</p>',
 
         '<p>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
         MAP_ART +
