@@ -49,7 +49,7 @@
         '<li><span class="k">Gate 3</span>Picture the charge</li>' +
         '<li><span class="k">Gate 4</span>Test the charge</li></ol>' +
         '</div>' +
-        '<p class="seq" data-t="1" data-go-delay="2.4" hidden style="--d:1.6s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
+        '<p class="seq" data-t="2" data-go-delay="0.8" hidden style="--d:0.1s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
         '<h3>Some thoughts on free-writing</h3>' +
         '<p class="lead rule">Free-writing is getting your thoughts onto the page as they come, in rough form.</p>' +

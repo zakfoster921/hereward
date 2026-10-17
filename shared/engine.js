@@ -153,7 +153,8 @@
             el.hidden = !show;
             return;
           }
-          var replaced = current && swap && t < rt;
+          var nx = el.nextElementSibling;
+          var replaced = current && swap && !!nx && nx.hasAttribute("data-swap") && +nx.getAttribute("data-t") <= rt;
           var hide = current && (t > rt || replaced);
           if (replaced && !el.hidden) {
             // a line being replaced fades out first, then steps aside
