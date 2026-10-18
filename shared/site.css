@@ -636,6 +636,6 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 /* the line on the Try-it graphic is traced through the four gates one at a time: the drawing lights up along the route, pausing at each gate */
 .map-gates { opacity: 0.7; color: var(--muted); fill: var(--muted); }
 .map-line { fill: color-mix(in srgb, var(--thread) 55%, var(--ink)); }
-.map-reveal { stroke-dasharray: 100; stroke-dashoffset: 100; }
+.map-reveal { stroke-dasharray: 100 300; stroke-dashoffset: 100; }
 .step.done .map-reveal { stroke-dashoffset: 0 !important; }
 @media (prefers-reduced-motion: reduce) { .map-reveal { stroke-dashoffset: 0 !important; } }
