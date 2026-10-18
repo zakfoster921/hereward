@@ -291,13 +291,18 @@
     var flow = document.getElementById("flow");
     if (reduce || !QA.dest || !flow) { QA.goToPrompt(); return; }
     try { sessionStorage.setItem("qa-rise", String(Date.now())); } catch (err) {}
-    var sp = document.createElement("div");
-    sp.setAttribute("aria-hidden", "true"); sp.style.height = "100vh"; sp.style.height = "100dvh";
-    flow.appendChild(sp);
-    var fired = false;
+    // One continuous motion: this screen accelerates up and away, and the prompt page decelerates into place from below.
+    var y0 = window.scrollY, dist = window.innerHeight, t0 = 0, DUR = 650, fired = false;
+    flow.style.paddingBottom = dist + "px"; // room to scroll into
     function go() { if (fired) return; fired = true; QA.goToPrompt(); }
-    try { glideTo(sp, go); } catch (err) { go(); }
-    setTimeout(go, 2300);
+    function frame(ts) {
+      if (!t0) t0 = ts;
+      var k = Math.min(1, (ts - t0) / DUR);
+      window.scrollTo({ top: y0 + dist * k * k, left: 0, behavior: "instant" });
+      if (k < 1) requestAnimationFrame(frame); else go();
+    }
+    requestAnimationFrame(frame);
+    setTimeout(go, 1500);
   }
 
   function advance() {
@@ -694,14 +699,19 @@
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var w = document.querySelector(".wrap");
   if (!w) return;
-  var h = window.innerHeight, DUR = 1100, t0 = 0;
+  var h = window.innerHeight, DUR = 800, t0 = 0;
   w.style.transform = "translateY(" + h + "px)";
-  function ease(k) { return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; }
   function frame(ts) {
     if (!t0) t0 = ts;
-    var k = Math.min(1, (ts - t0) / DUR);
-    w.style.transform = k < 1 ? "translateY(" + Math.round(h * (1 - ease(k))) + "px)" : "";
+    var k = Math.min(1, (ts - t0) / DUR), inv = 1 - k;
+    w.style.transform = k < 1 ? "translateY(" + Math.round(h * inv * inv * inv) + "px)" : "";
     if (k < 1) requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+})();
+
+/* Landing page: warm the prompt page in the cache so it opens instantly after "Let's begin". */
+(function () {
+  if (!window.QA || QA.mode !== "landing" || !QA.dest) return;
+  setTimeout(function () { try { fetch(QA.dest, { credentials: "same-origin" }).catch(function () {}); } catch (err) {} }, 1500);
 })();
