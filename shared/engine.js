@@ -642,9 +642,9 @@
     still = (y === lastY) ? still + 1 : 0; lastY = y;
     if (still < 2) return; // ~250ms without scrolling
     var h = window.innerHeight;
-    [].forEach.call(document.querySelectorAll(".hl:not(.go)"), function (el) {
+    [].forEach.call(document.querySelectorAll(".hl:not(.hl-go)"), function (el) {
       var st = el.closest(".facts-screen, .center-screen, .step") || el, r = el.getBoundingClientRect(), s = st.getBoundingClientRect();
-      if (r.height > 0 && r.top >= 0 && r.bottom <= h && s.top < h * 0.5) el.classList.add("go");
+      if (r.height > 0 && r.top >= 0 && r.bottom <= h && s.top < h * 0.5) el.classList.add("hl-go");
     });
   }, 125);
 })();
