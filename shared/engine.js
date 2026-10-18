@@ -133,10 +133,29 @@
   window.addEventListener("resize", remeasure);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
 
+  var aimT = 0;
   function sync() {
     var topBar = document.querySelector(".top");
     if (topBar) topBar.classList.toggle("is-off", MODE === "landing");
-    document.body.classList.toggle("aim-only", MODE === "prompt" && rg === 0 && rs === 1 && !!G[0].aim);
+    // The big opening-screen sizing stays until that screen has scrolled off the top, so nothing visibly shrinks mid-scroll.
+    var aimWant = MODE === "prompt" && rg === 0 && rs === 1 && !!G[0].aim, bd = document.body;
+    if (aimWant) { if (aimT) { clearInterval(aimT); aimT = 0; } bd.classList.add("aim-only"); }
+    else if (bd.classList.contains("aim-only") && !aimT) {
+      var aimT0 = Date.now(), aimFirst = gateEls[0] && gateEls[0].querySelector(".step");
+      aimT = setInterval(function () {
+        var off = !aimFirst || aimFirst.getBoundingClientRect().bottom <= 0;
+        if (!off && Date.now() - aimT0 < 2600) return;
+        clearInterval(aimT); aimT = 0;
+        var cur = gateEls[rg] && gateEls[rg].querySelectorAll(".step")[rs - 1];
+        var before = cur ? cur.getBoundingClientRect().top : 0;
+        bd.classList.remove("aim-only");
+        var after = cur ? cur.getBoundingClientRect().top : 0;
+        if (cur && Math.abs(after - before) > 0.5) {
+          if (window.__noodleShift) window.__noodleShift(after - before);
+          window.scrollBy({ top: after - before, left: 0, behavior: "instant" });
+        }
+      }, 50);
+    }
     gateEls.forEach(function (ge, g) {
       ge.hidden = g > rg;
       [].slice.call(ge.querySelectorAll(".step")).forEach(function (st, si) {
@@ -228,7 +247,7 @@
     var sm = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
     return el.getBoundingClientRect().top + window.scrollY - sp - sm;
   }
-  function glideTo(el) {
+  function glideTo(el, done) {
     if (glideRaf) cancelAnimationFrame(glideRaf);
     var d0 = targetTop(el) - window.scrollY;
     if (Math.abs(d0) < 2) return;
@@ -240,7 +259,7 @@
       var k = Math.min(1, (ts - t0) / dur);
       var e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; // ease in and out
       window.scrollTo({ top: targetTop(el) - d0 * (1 - e), left: 0, behavior: "instant" });
-      if (k < 1) glideRaf = requestAnimationFrame(frame); else stop();
+      if (k < 1) glideRaf = requestAnimationFrame(frame); else { stop(); if (done) done(); }
     }
     glideRaf = requestAnimationFrame(frame);
   }
@@ -263,6 +282,24 @@
     return max - rt;
   }
 
+  // From "Let's begin" into the prompt: scroll the screen up and away like every other transition, then open the prompt page,
+  // which rises into place from below (see the arrival block at the end of this file).
+  var leaving = false;
+  function leaveUp() {
+    if (leaving) return; leaving = true;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var flow = document.getElementById("flow");
+    if (reduce || !QA.dest || !flow) { QA.goToPrompt(); return; }
+    try { sessionStorage.setItem("qa-rise", String(Date.now())); } catch (err) {}
+    var sp = document.createElement("div");
+    sp.setAttribute("aria-hidden", "true"); sp.style.height = "100vh"; sp.style.height = "100dvh";
+    flow.appendChild(sp);
+    var fired = false;
+    function go() { if (fired) return; fired = true; QA.goToPrompt(); }
+    try { glideTo(sp, go); } catch (err) { go(); }
+    setTimeout(go, 2300);
+  }
+
   function advance() {
     var g = G[rg];
     if (pendingTaps() > 0) {
@@ -276,7 +313,7 @@
       sync();
       scrollTo(gateEls[rg].querySelectorAll(".step")[rs - 1], false);
     } else if (MODE === "landing") {
-      QA.goToPrompt();
+      leaveUp();
     } else if (rg < G.length - 1) {
       rg++;
       rs = 1;
@@ -634,17 +671,37 @@
 })();
 
 
-/* Highlight strokes start once their screen has scrolled fully into place (in view and no longer moving). */
+/* Highlight strokes start as soon as their screen reaches the top of the viewport. */
 (function () {
-  var lastY = null, still = 0;
-  setInterval(function () {
-    var y = window.scrollY;
-    still = (y === lastY) ? still + 1 : 0; lastY = y;
-    if (still < 2) return; // ~250ms without scrolling
-    var h = window.innerHeight;
+  function check() {
     [].forEach.call(document.querySelectorAll(".hl:not(.hl-go)"), function (el) {
-      var st = el.closest(".facts-screen, .center-screen, .step") || el, r = el.getBoundingClientRect(), s = st.getBoundingClientRect();
-      if (r.height > 0 && r.top >= 0 && r.bottom <= h && s.top < h * 0.5) el.classList.add("hl-go");
+      var st = el.closest(".step") || el;
+      var r = st.getBoundingClientRect();
+      if (r.height > 0 && r.top <= 90 && r.bottom > 0) el.classList.add("hl-go");
     });
-  }, 125);
+  }
+  setInterval(check, 60);
+  window.addEventListener("scroll", check, { passive: true });
+})();
+
+
+
+/* Arriving from "Let's begin": the prompt rises up into place from below, continuing the scroll the landing page started. */
+(function () {
+  var t = 0;
+  try { t = +sessionStorage.getItem("qa-rise") || 0; sessionStorage.removeItem("qa-rise"); } catch (err) {}
+  if (!t || Date.now() - t > 8000 || !window.QA || QA.mode !== "prompt") return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var w = document.querySelector(".wrap");
+  if (!w) return;
+  var h = window.innerHeight, DUR = 1100, t0 = 0;
+  w.style.transform = "translateY(" + h + "px)";
+  function ease(k) { return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; }
+  function frame(ts) {
+    if (!t0) t0 = ts;
+    var k = Math.min(1, (ts - t0) / DUR);
+    w.style.transform = k < 1 ? "translateY(" + Math.round(h * (1 - ease(k))) + "px)" : "";
+    if (k < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();
