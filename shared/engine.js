@@ -677,7 +677,7 @@
     [].forEach.call(document.querySelectorAll(".hl:not(.hl-go)"), function (el) {
       var st = el.closest(".step") || el;
       var r = st.getBoundingClientRect();
-      if (r.height > 0 && r.top <= 90 && r.bottom > 0) el.classList.add("hl-go");
+      if (r.height > 0 && r.top <= 160 && r.bottom > 0) el.classList.add("hl-go");
     });
   }
   setInterval(check, 60);

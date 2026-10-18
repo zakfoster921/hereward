@@ -20,7 +20,7 @@
         '<p class="fact seq" style="--d:0.2s"><span class="num">24</span><span class="what">prompts over the course of a year</span></p>' +
         '<p class="fact seq" style="--d:1s"><span class="num">1</span><span class="what">whole-cloth quilt</span></p></div></div></div>',
 
-        '<div class="facts-screen"><p class="verse"><span class="w" style="--d:0.1s">We\u2019ll sort through <span class="hl hl-now" style="--hd:0.3s;--hu:0.5s">memories</span>, <span class="hl hl-now" style="--hd:0.9s;--hu:0.5s">places</span> and <span class="hl hl-now" style="--hd:1.5s;--hu:0.5s">objects</span>, looking for the ones that still <span class="hum">hum.</span></span></p></div>',
+        '<div class="facts-screen"><p class="verse"><span class="w" style="--d:0.1s">We\u2019ll sort through <span class="hl hl-now" style="--hd:0s;--hu:0.45s">memories</span>, <span class="hl hl-now" style="--hd:0.45s;--hu:0.45s">places</span> and <span class="hl hl-now" style="--hd:0.9s;--hu:0.45s">objects</span>, looking for the ones that still <span class="hum">hum.</span></span></p></div>',
 
         CHARGE_ART.replace('class="gate-art"', 'class="gate-art charge-art"') +
         '<h3>We\u2019ll use this word a lot <span class="big-word">\u2192CHARGE</span></h3>' +
@@ -32,7 +32,7 @@
         '<div class="swap-stack">' +
         '<p data-t="1" data-swap hidden style="--d:0.1s">For one, <strong><em>it\u2019s the tree they climbed as a kid</em></strong>.</p>' +
         '<p data-t="2" data-swap hidden style="--d:0.1s">For the other, <strong><em>it\u2019s the tree that fell on their house</em></strong>.</p>' +
-        '<p data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive. <span class="hl hl-swap" style="--hd:0.80s;--hu:0.18s">It </span><span class="hl hl-swap" style="--hd:0.98s;--hu:0.18s">just </span><span class="hl hl-swap" style="--hd:1.16s;--hu:0.18s">has </span><span class="hl hl-swap" style="--hd:1.34s;--hu:0.18s">to </span><span class="hl hl-swap" style="--hd:1.52s;--hu:0.18s">be </span><span class="hl hl-swap" style="--hd:1.70s;--hu:0.18s"><em>true</em>.</span></p>' +
+        '<p data-t="3" data-swap hidden style="--d:0.1s">A charge does not have to be positive. <span class="hl hl-swap" style="--hd:0.35s;--hu:0.14s">It </span><span class="hl hl-swap" style="--hd:0.49s;--hu:0.14s">just </span><span class="hl hl-swap" style="--hd:0.63s;--hu:0.14s">has </span><span class="hl hl-swap" style="--hd:0.77s;--hu:0.14s">to </span><span class="hl hl-swap" style="--hd:0.91s;--hu:0.14s">be </span><span class="hl hl-swap" style="--hd:1.05s;--hu:0.14s"><em>true</em>.</span></p>' +
         '</div>',
 
         NOTEBOOK_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
@@ -51,7 +51,7 @@
         '</div>' +
         '<p class="seq" data-t="2" hidden style="--d:0.1s">Your charge will open up a little more at each one: a memory, a feeling, an image you can sew.</p>',
 
-        '<p class="verse verse-top left"><span class="w" style="--d:0.1s">Free-writing can be sloppy, raw, and incredibly <span class="hl hl-now" style="--hd:0.3s;--hu:0.6s">generative.</span></span></p>' +
+        '<p class="verse verse-top left"><span class="w" style="--d:0.1s">Free-writing can be sloppy, raw, and incredibly <span class="hl hl-now" style="--hd:0s;--hu:0.5s">generative.</span></span></p>' +
         '<p class="seq tips-intro" data-t="1" hidden style="--d:0.1s">Here are a few ideas for getting the most out of it:</p>' +
         '<div class="card-stack" data-t="1" hidden>' +
         '<p class="tip" data-t="1"><span>Keep your <strong>hands moving</strong> the whole time.</span></p>' +
