@@ -332,6 +332,7 @@
   cascade.addEventListener("click", function (e) {
     var go = e.target.closest(".go .cue");
     if (go) { advance(); return; }
+    if (e.target.closest("a.skiplink")) { e.preventDefault(); return; }
     var sl = e.target.closest("a.steplink");
     if (sl) {
       e.preventDefault();

@@ -22,7 +22,7 @@
     return {
       prompt: P.n, eyebrow: "", name: P.name, aim: !!a.aim,
       steps: [
-        (a.aim ? '<p class="lead rule">' + a.aim + '</p>' + (a.aimNote ? '<p>' + a.aimNote + '</p>' : '') : null),
+        (a.aim ? '<p class="lead rule">' + a.aim + '</p>' + (a.aimNote ? '<p>' + a.aimNote + '</p>' : '') + '<p class="skip-prompt"><a href="#" class="skiplink">Want to skip this prompt?</a></p>' : null),
         (a.title ? '<div><p class="eyebrow">Gate 1</p><h3 class="step-title">' + a.title + ' <span class="time-hint">10 minutes</span></h3></div>' : '') +
         '<p class="lead rule">' + a.lead + '</p>' +
         GATE1_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
