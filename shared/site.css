@@ -74,7 +74,7 @@ body {
 .top .gates { transition: opacity .5s ease, visibility .5s; }
 .top.is-off .gates { opacity: 0; visibility: hidden; }
 /* While the page rises into place, the bar travels with it instead of sticking to the viewport */
-body.rising .top { position: relative; }
+body.rising .top { position: relative; top: 0; }
 .top {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
