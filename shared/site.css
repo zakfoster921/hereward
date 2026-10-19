@@ -72,6 +72,8 @@ body {
 
 /* Sticky progress: one line, divided by gate */
 .top .gates { transition: opacity .5s ease, visibility .5s; }
+/* The progress bar rises and fades in with the first screen, instead of sitting there already */
+.top .gates { animation: rise 0.7s ease backwards; animation-delay: 0.15s; }
 .top.is-off .gates { opacity: 0; visibility: hidden; }
 .top {
   position: sticky;
