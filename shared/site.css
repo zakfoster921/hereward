@@ -569,8 +569,6 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .center-screen.half .swap-stack, .step.done .center-screen .swap-stack { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .center-screen:has(.map-art) .swap-stack { opacity: 1; } }
 
-/* tree drawing: thicken the thinnest outlines to match the notebook's line weight */
-.tree-art path { stroke: currentColor; stroke-width: 8; stroke-linejoin: round; }
 
 /* "it slows us down" gets one highlighter stroke drawn left to right, word by word (so it carries on across a line break) */
 .hl {
