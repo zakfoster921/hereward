@@ -475,10 +475,12 @@
   if (!w) return;
   var h = window.innerHeight, DUR = 800, t0 = 0;
   w.style.transform = "translateY(" + h + "px)";
+  document.body.classList.add("rising");
   function frame(ts) {
     if (!t0) t0 = ts;
     var k = Math.min(1, (ts - t0) / DUR), inv = 1 - k;
     w.style.transform = k < 1 ? "translateY(" + Math.round(h * inv * inv * inv) + "px)" : "";
+    if (k >= 1) document.body.classList.remove("rising");
     if (k < 1) requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
