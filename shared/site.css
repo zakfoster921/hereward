@@ -20,7 +20,7 @@
   :root:not([data-theme="light"]) {
     --bg: #262320;
     --paper: #302C28;
-    --ink: #EEE9E2;
+    --ink: #D9D2C8;
     --muted: #ADA69C;
     --line: #4A453F;
     --thread: #B8AD9A;
@@ -35,7 +35,7 @@
 :root[data-theme="dark"] {
   --bg: #262320;
   --paper: #302C28;
-  --ink: #EEE9E2;
+  --ink: #D9D2C8;
   --muted: #ADA69C;
   --line: #4A453F;
   --thread: #B8AD9A;
