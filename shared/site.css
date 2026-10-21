@@ -2,13 +2,13 @@
 /* Layout: one scrolling column of gate cards. Steps inside a gate reveal on tap and stay above, faded.
    When a gate is passed, it folds into a slim row and the next gate opens with its own card. */
 :root {
-  --bg: #ECE7F1;
-  --paper: #F7F4FA;
-  --ink: #3B3050;
-  --muted: #74698A;
-  --line: #D3CBE0;
-  --thread: #7A62A3;
-  --on-ink: #F7F4FA;
+  --bg: #F0EEE6;
+  --paper: #FAF9F5;
+  --ink: #1F1E1D;
+  --muted: #6B6A64;
+  --line: #DDD9CC;
+  --thread: #4A4943;
+  --on-ink: #FAF9F5;
   --blue: #a5dbec;
   --green: #b8d2b2;
   --orange: #f7dcba;
@@ -326,7 +326,7 @@ table.sense-chart { width: 100%; border-collapse: collapse; table-layout: fixed;
 .quad-green, .quad-pink { padding-left: 1.5rem; padding-right: 0.6rem; }
 .quad-blue, .quad-green { padding-bottom: 1rem; }
 .quad-orange, .quad-pink { padding-top: 1rem; }
-.quad-text { display: none; font-family: var(--font-display); font-size: clamp(0.78rem, 4vw, 1rem); line-height: 1.3; text-align: center; color: #2A2233; animation: fadein 0.4s ease both; pointer-events: none; }
+.quad-text { display: none; font-family: var(--font-display); font-size: clamp(0.78rem, 4vw, 1rem); line-height: 1.3; text-align: center; color: #1F1E1D; animation: fadein 0.4s ease both; pointer-events: none; }
 .quad[aria-pressed="true"] .quad-text { display: block; }
 .quad-row { display: grid; grid-template-columns: 0.9rem 1fr; gap: 0.7rem; align-items: baseline; animation: fadein 0.4s ease both; }
 .gate .quad-slot p.invite { color: var(--muted); font-style: italic; animation: fadein 0.4s ease both; }
@@ -573,7 +573,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 /* "it slows us down" gets one highlighter stroke drawn left to right, word by word (so it carries on across a line break) */
 .hl {
   border-radius: 2px; padding: 0.1em 0.05em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
-  background-image: linear-gradient(#b3ccf5, #b3ccf5);
+  background-image: linear-gradient(#F5D76E, #F5D76E);
   background-repeat: no-repeat; background-position: 0 50%; background-size: 0% 100%;
 }
 .step:not([hidden]) .hl.hl-now.hl-go { animation: hlstroke var(--hu, 0.3s) linear var(--hd, 0.5s) forwards, hlink var(--hu, 0.3s) linear var(--hd, 0.5s) forwards; }
@@ -581,9 +581,9 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .hl.hl-swap { padding-left: 0; padding-right: 0; border-radius: 0; }
 .swap-stack > :not([hidden]):not(.leaving) .hl.hl-swap.hl-go { animation: hlstroke var(--hu, 0.3s) linear var(--hd, 0.5s) forwards, hlink var(--hu, 0.3s) linear var(--hd, 0.5s) forwards; }
 /* highlighted words turn dark as the stroke passes, so they stay readable on the light blue in night mode */
-@keyframes hlink { to { color: #3B3050; } }
+@keyframes hlink { to { color: #1F1E1D; } }
 @keyframes hlstroke { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
-@media (prefers-reduced-motion: reduce) { .hl { animation: none !important; background-size: 100% 100%; color: #3B3050; } }
+@media (prefers-reduced-motion: reduce) { .hl { animation: none !important; background-size: 100% 100%; color: #1F1E1D; } }
 
 /* free-writing tips: separate cards that land loosely on top of one another */
 .card-stack { display: grid; margin: 1.75rem 0 0.3rem; padding: 6px 5px; }
@@ -625,7 +625,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .tips-intro.seq { animation: fadein 0.3s ease both; animation-delay: 0s; }
 .seq.plain-in { animation: fadein 0.3s ease both; animation-delay: 0s; }
 .card-stack > .tip strong { font-weight: inherit; }
-.step.done .hl { animation: none !important; background-size: 100% 100%; color: #3B3050; }
+.step.done .hl { animation: none !important; background-size: 100% 100%; color: #1F1E1D; }
 
 /* the line on the Try-it graphic is traced through the four gates one at a time: the drawing lights up along the route, pausing at each gate */
 .map-gates { opacity: 0.7; color: var(--muted); fill: var(--muted); }
