@@ -46,7 +46,6 @@
     return '<details class="note more seq" style="--d:0.5s"><summary>Want more to work with?</summary>' +
       '<p>' + c.intro + '</p>' +
       '<p class="ask">' + c.starters.map(function (q) { return '<span class="q">' + q + '</span>'; }).join('') + '</p>' +
-      stuck("s-g2more", c.stuck) +
       '</details>';
   }
 
