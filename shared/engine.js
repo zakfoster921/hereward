@@ -161,7 +161,7 @@
         var show = g < rg ? true : (g === rg && si < rs);
         st.hidden = !show;
         st.classList.toggle("is-past", g === rg && si < rs - 1);
-        st.classList.toggle("tight", g === rg && (si < rs - 1 || (si === rs - 1 && !!st._landed)));
+        st.classList.toggle("tight", g < rg || (g === rg && (si < rs - 1 || (si === rs - 1 && !!st._landed))));
         var current = g === rg && si === rs - 1;
         // A screen that was just left lays out all its rotated lines only after the scroll away from it has finished,
         // so the change happens off screen.
@@ -266,10 +266,11 @@
 
   // Keep one element exactly where it is on screen while layout above it changes (gaps collapsing)
   function holdSteady(el, change) {
-    var before = el ? el.getBoundingClientRect().top : 0;
+    var seen = !!(el && el.getClientRects().length);
+    var before = seen ? el.getBoundingClientRect().top : 0;
     change();
-    var after = el ? el.getBoundingClientRect().top : 0;
-    if (el && Math.abs(after - before) > 0.5) {
+    var after = (seen && el.getClientRects().length) ? el.getBoundingClientRect().top : before;
+    if (seen && Math.abs(after - before) > 0.5) {
       if (window.__noodleShift) window.__noodleShift(after - before);
       window.scrollBy({ top: after - before, left: 0, behavior: "instant" });
     }
@@ -340,9 +341,10 @@
     } else if (MODE === "landing") {
       leaveUp();
     } else if (rg < G.length - 1) {
+      var leftLast = gateEls[rg].querySelectorAll(".step")[rs - 1];
       rg++;
       rs = 1;
-      sync();
+      holdSteady(leftLast, sync);
       scrollTo(gateEls[rg], true);
     } else {
       window.scrollTo(0, 0);
