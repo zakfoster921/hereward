@@ -316,6 +316,7 @@ table.sense-chart { width: 100%; border-collapse: collapse; table-layout: fixed;
 .gate-art { width: 6.5rem; height: auto; color: var(--muted); opacity: 0.7; }
 .gate-art.senses-art { width: 13rem; }
 .gate-art.gate4-art { width: 7.8rem; }
+.gate-art.signpost-art { width: 5rem; }
 .step > .gate-art-wrap:first-child { margin-top: 0; }
 .step > .gate-art-wrap:first-child + h3 { margin-top: 1.5rem; }
 /* A drawing that follows only a short paragraph or list (Gate 2, the intro, the closing card) gets extra room above it */
