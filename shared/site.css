@@ -643,3 +643,6 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .gate .skip-prompt { margin-top: 1.25rem; font-size: 0.95rem; }
 .gate a.skiplink { color: var(--muted); text-decoration: underline dashed; text-decoration-color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
 .gate a.skiplink:hover { color: var(--thread); }
+/* "or press space" only where there is a mouse and keyboard */
+.kb-hint { display: none; }
+@media (hover: hover) and (pointer: fine) { .kb-hint { display: inline; } }
