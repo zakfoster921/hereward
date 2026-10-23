@@ -19,7 +19,7 @@
         '<div class="facts-text">' +
         '<p class="fact seq" style="--d:0.2s"><span class="num">24</span><span class="what">prompts over the course of a year</span></p>' +
         '<p class="fact seq" style="--d:1s"><span class="num">1</span><span class="what">single quilt</span></p></div></div>' +
-        '<p class="fact-note seq" style="--d:1.9s">Skip any prompt that doesn\u2019t call to you.</p></div>',
+        '<p class="fact-note seq" style="--d:1.9s">Feel free to skip or adjust any prompt that doesn\u2019t call to you.<span>What matters most is engaging, not completing every prompt.</span></p></div>',
 
         '<div class="facts-screen"><p class="verse"><span class="w" style="--d:0.1s">We\u2019ll sort through <span class="hl hl-now" style="--hd:0s;--hu:0.45s">memories</span>, <span class="hl hl-now" style="--hd:0.45s;--hu:0.45s">places</span> and <span class="hl hl-now" style="--hd:0.9s;--hu:0.45s">objects</span>, looking for the ones that still <span class="hum">hum.</span></span></p></div>',
 
