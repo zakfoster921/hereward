@@ -325,11 +325,37 @@
     setTimeout(go, 1500);
   }
 
+  // Screen readers: announce text that appears after a tap (a polite live region), since nothing else tells them it arrived
+  var live = document.createElement("div");
+  live.className = "sr"; live.setAttribute("role", "status"); live.setAttribute("aria-live", "polite");
+  document.body.appendChild(live);
+  function announce(t) {
+    t = (t || "").replace(/\s+/g, " ").trim();
+    if (!t) return;
+    live.textContent = "";
+    setTimeout(function () { live.textContent = t; }, 60);
+  }
+  function announceScreen() { // the whole screen we just moved to, once it has had time to show
+    setTimeout(function () {
+      var st = gateEls[rg] && gateEls[rg].querySelectorAll(".step")[rs - 1];
+      if (st) announce(st.innerText);
+    }, 900);
+  }
+  // True when this screen's content runs below the bottom of the window, so Space and Down arrow should scroll instead of advance
+  function moreBelow() {
+    var st = gateEls[rg] && gateEls[rg].querySelectorAll(".step")[rs - 1];
+    if (!st) return false;
+    var r = document.createRange(); r.selectNodeContents(st);
+    return r.getBoundingClientRect().bottom > window.innerHeight - 4;
+  }
+
   function advance() {
     var g = G[rg];
     if (pendingTaps() > 0) {
       rt++;
       sync();
+      var stR = gateEls[rg].querySelectorAll(".step")[rs - 1];
+      announce([].slice.call(stR.querySelectorAll('[data-t="' + rt + '"]')).map(function (el) { return el.innerText; }).join(" "));
       return;
     }
     rt = 0;
@@ -338,6 +364,7 @@
       rs++;
       holdSteady(leftEl, sync);
       scrollTo(gateEls[rg].querySelectorAll(".step")[rs - 1], false);
+      announceScreen();
     } else if (MODE === "landing") {
       leaveUp();
     } else if (rg < G.length - 1) {
@@ -346,6 +373,7 @@
       rs = 1;
       holdSteady(leftLast, sync);
       scrollTo(gateEls[rg], true);
+      announceScreen();
     } else {
       window.scrollTo(0, 0);
     }
@@ -430,6 +458,7 @@
       return;
     }
     if (MODE === "prompt" && rg >= G.length - 1) return;
+    if (e.key !== "Enter" && moreBelow()) return; // more to read below: let the key scroll
     e.preventDefault();
     setTimeout(advance, 0); // after this key press finishes, so the scroll glide is not cancelled by it
   });
@@ -443,6 +472,7 @@
     flowEl.hidden = false;
     sync();
     scrollTo(gateEls[rg], true);
+    announceScreen();
   }
   var skipBtn = document.getElementById("skip");
   if (skipBtn) skipBtn.addEventListener("click", function () { enter(true); });
