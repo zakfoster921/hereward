@@ -357,7 +357,7 @@ table.sense-chart { width: 100%; border-collapse: collapse; table-layout: fixed;
 .cue:hover { color: var(--ink); }
 .cue:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
 .cue-icon { display: inline-flex; animation: nudge 2.4s ease-in-out infinite; }
-.cue svg { height: 2.4rem; width: auto; fill: currentColor; stroke: none; }
+.cue svg { height: 3.6rem; width: auto; fill: currentColor; stroke: none; }
 .cue.up svg { transform: rotate(180deg); }
 @keyframes nudge {
   0%, 100% { transform: translateY(0); opacity: 0.5; }
