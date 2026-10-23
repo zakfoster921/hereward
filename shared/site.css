@@ -66,7 +66,7 @@ body {
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink);
   margin: 0;
 }
 
@@ -119,7 +119,7 @@ h1.gate-title { font-size: 2.3rem; }
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--ink);
   background: none;
   border: 0;
   border-bottom: 1px dashed var(--muted);
@@ -170,7 +170,7 @@ h1.gate-title { font-size: 2.3rem; }
 .fact-notes { align-items: center; gap: 0.6rem; }
 .lead { font-weight: 600; }
 .gate p.rule { border-left: 3px solid var(--thread); padding-left: 1rem; }
-.quiet { color: var(--muted); }
+.quiet { color: var(--ink); }
 .gate p.ask {
   font-family: var(--font-display);
   font-weight: 500;
@@ -198,12 +198,12 @@ h1.gate-title { font-size: 2.3rem; }
   padding: 1rem 1.1rem;
   background: var(--paper);
   border-radius: 4px;
-  color: var(--muted);
+  color: var(--ink);
   font-style: italic;
 }
 .gate-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; font-family: var(--font-display); font-weight: 500; }
 .gate-list li { display: flex; gap: 0.75rem; align-items: baseline; }
-.gate-list .k { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; min-width: 4.2rem; }
+.gate-list .k { color: var(--ink); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; min-width: 4.2rem; }
 
 /* The intro card and its opening text simply appear; only the gate list and goal build in */
 body.is-landing .gate[data-g="0"], body.is-landing .gate[data-g="0"] .step,
@@ -221,7 +221,7 @@ body.is-prompt .gate[data-g="0"], body.is-prompt .gate[data-g="0"] .step[data-s=
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 .note summary {
-  color: var(--muted);
+  color: var(--ink);
   display: inline-block;
   list-style: none;
   cursor: pointer;
@@ -236,12 +236,12 @@ body.is-prompt .gate[data-g="0"], body.is-prompt .gate[data-g="0"] .step[data-s=
 .note summary:hover { border-bottom-style: solid; color: var(--ink); }
 .note summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .note { text-align: right; }
-.gate .note p { margin-top: 0.6rem; text-align: left; font-style: italic; color: var(--muted); }
+.gate .note p { margin-top: 0.6rem; text-align: left; font-style: italic; color: var(--ink); }
 /* "Want more to work with?" on Gate 2: opens to regular text and violet-line starters, not the muted italic of the small notes */
 .gate .note.more { margin-top: 1.1rem; }
 .gate .note.more p { font-style: normal; color: var(--ink); }
 .gate .note.more p.ask { margin-top: 0.9rem; font-family: var(--font-body); font-size: inherit; font-weight: 700; line-height: inherit; letter-spacing: normal; }
-.gate .note.more p.stuck-text { font-style: italic; color: var(--muted); }
+.gate .note.more p.stuck-text { font-style: italic; color: var(--ink); }
 .note.more .stuck { margin-top: 0.4rem; }
 
 .stuck { padding-top: 0.25rem; text-align: right; }
@@ -252,14 +252,14 @@ body.is-prompt .gate[data-g="0"], body.is-prompt .gate[data-g="0"] .step[data-s=
   font-style: italic;
   font-size: 1rem;
   background: none;
-  color: var(--muted);
+  color: var(--ink);
   border: 0;
   border-bottom: 1px dashed var(--muted);
   padding: 0.1rem 0;
   cursor: pointer;
 }
 .stuck-btn:hover { border-bottom-style: solid; color: var(--ink); }
-.gate p.stuck-text { margin-top: 0.6rem; text-align: left; font-style: italic; color: var(--muted); }
+.gate p.stuck-text { margin-top: 0.6rem; text-align: left; font-style: italic; color: var(--ink); }
 
 .ways { border-top: 1px solid var(--line); }
 .ways details { border-bottom: 1px solid var(--line); }
@@ -277,7 +277,7 @@ body.is-prompt .gate[data-g="0"], body.is-prompt .gate[data-g="0"] .step[data-s=
   gap: 1rem;
 }
 .ways summary::-webkit-details-marker { display: none; }
-.ways summary::after { content: "+"; color: var(--muted); font-weight: 500; }
+.ways summary::after { content: "+"; color: var(--ink); font-weight: 500; }
 .ways details[open] summary::after { content: "\2013"; }
 .ways summary:hover { color: var(--ink); }
 .ways details p { padding-bottom: 1rem; color: var(--ink); }
@@ -305,14 +305,14 @@ body.is-prompt .gate[data-g="0"], body.is-prompt .gate[data-g="0"] .step[data-s=
 .example-card { text-align: center; font-family: var(--font-display); line-height: 1.5; }
 .example-card p { margin: 0; }
 .example-card .ex-top { background: color-mix(in srgb, var(--thread) 16%, var(--bg)); padding: 1.1rem 1.1rem 1.2rem; }
-.example-card .ex-label { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-bottom: 0.35rem; }
+.example-card .ex-label { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; }
 .example-card .ex-bottom { background: var(--ink); color: var(--on-ink); padding: 1.2rem 1.1rem 1.3rem; }
 table.sense-chart { width: 100%; border-collapse: collapse; table-layout: fixed; margin: 1.1rem 0 0.7rem; }
-.sense-chart th { font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--muted); text-align: left; padding: 0 0.5rem 0.5rem; border-bottom: 2px solid var(--thread); }
+.sense-chart th { font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--ink); text-align: left; padding: 0 0.5rem 0.5rem; border-bottom: 2px solid var(--thread); }
 .sense-chart td { height: 2.6rem; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); }
 .sense-chart td:last-child { border-right: 0; }
 .sense-chart th + th, .sense-chart td + td { padding-left: 0.5rem; }
-.chart-note { font-size: 0.92rem; color: var(--muted); }
+.chart-note { font-size: 0.92rem; color: var(--ink); }
 .step > .chart-note + .gate-art-wrap { margin-top: 1rem; }
 .reserve { display: flex; flex-direction: column; gap: 1.1rem; }
 .gate-art-wrap { display: flex; justify-content: center; margin-top: 1.5rem; }
@@ -333,10 +333,10 @@ table.sense-chart { width: 100%; border-collapse: collapse; table-layout: fixed;
 .quad-text { display: none; font-family: var(--font-display); font-size: clamp(0.78rem, 4vw, 1rem); line-height: 1.3; text-align: center; color: #1F1E1D; animation: fadein 0.4s ease both; pointer-events: none; }
 .quad[aria-pressed="true"] .quad-text { display: block; }
 .quad-row { display: grid; grid-template-columns: 0.9rem 1fr; gap: 0.7rem; align-items: baseline; animation: fadein 0.4s ease both; }
-.gate .quad-slot p.invite { color: var(--muted); font-style: italic; animation: fadein 0.4s ease both; }
+.gate .quad-slot p.invite { color: var(--ink); font-style: italic; animation: fadein 0.4s ease both; }
 .matrix text { font-family: var(--font-display); font-size: 12px; fill: var(--muted); }
 .matrix .axis { stroke: var(--muted); stroke-width: 1.2; }
-.ph-note { font-size: 0.82rem; text-align: center; color: var(--muted); font-style: italic; }
+.ph-note { font-size: 0.82rem; text-align: center; color: var(--ink); font-style: italic; }
 .key { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; font-size: 1rem; }
 .key li { display: grid; grid-template-columns: 0.9rem 1fr; gap: 0.7rem; align-items: baseline; min-width: 0; }
 .swatch { width: 0.9rem; height: 0.9rem; border-radius: 1px; transform: translateY(0.12rem); }
@@ -424,7 +424,7 @@ body:has(.gate.closing:not([hidden])) { padding-bottom: 32rem; }
 .title h1:focus { outline: none; }
 .title-word { display: block; width: min(17rem, 80vw); height: auto; margin: 0 auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.title .sub { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; color: var(--muted); margin: 0; text-wrap: balance; }
+.title .sub { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; color: var(--ink); margin: 0; text-wrap: balance; }
 .title .gate-art-wrap { margin-top: 0; }
 .title .gate-art { width: 5.44rem; opacity: 0.7; }
 .gate-btn { background: none; border: 0; padding: 0.5rem 1rem; margin: 0; cursor: pointer; color: inherit; display: block; -webkit-tap-highlight-color: transparent; }
@@ -455,7 +455,7 @@ body:has(.gate.closing:not([hidden])) { padding-bottom: 32rem; }
 }
 /* Landing: prompt number label and the no-link message */
 .title-main .prompt-tag { margin: 1.3rem 0 0; font-size: 1.5rem; letter-spacing: 0.12em; padding: 0.6rem 1.25rem; border-radius: 0.3rem; }
-.nolink { max-width: 22rem; margin: 1.5rem auto 0; text-align: center; color: var(--muted); }
+.nolink { max-width: 22rem; margin: 1.5rem auto 0; text-align: center; color: var(--ink); }
 
 /* Opening "what you're adding" screen: centered in the viewport */
 body.aim-only #flow { min-height: calc(100dvh - 3.3rem); display: flex; flex-direction: column; }
@@ -477,10 +477,10 @@ a.toggle { text-decoration: none; display: inline-block; }
 .past li { margin: 0 0 1.1rem; }
 .past li a { display: block; text-decoration: none; color: var(--ink); font-family: var(--font-display); font-size: 1.15rem; line-height: 1.3; }
 .past li a:hover .past-name { border-bottom-style: solid; }
-.past-n { display: block; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-bottom: 0.15rem; }
+.past-n { display: block; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--ink); margin-bottom: 0.15rem; }
 .past-name { border-bottom: 1px dashed var(--muted); }
 .past a.toggle { margin-top: 0.5rem; }
-.ex-fold summary { cursor: pointer; list-style: none; font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--muted); display: inline-block; border-bottom: 1px dashed var(--muted); padding: 0.1rem 0; }
+.ex-fold summary { cursor: pointer; list-style: none; font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--ink); display: inline-block; border-bottom: 1px dashed var(--muted); padding: 0.1rem 0; }
 .ex-fold summary::-webkit-details-marker { display: none; }
 .ex-fold summary:hover { border-bottom-style: solid; color: var(--ink); }
 .ex-fold[open] summary { margin-bottom: 0.8rem; }
@@ -493,7 +493,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .gate[data-g="0"] .step[data-s="1"] { scroll-margin-top: 1rem; }
 
 /* Suggested times: same light purple, same size as body copy, beside the part titles */
-.time-hint { display: inline-block; margin-left: 0.6rem; font-family: var(--font-body); font-size: 1.125rem; font-weight: 400; font-style: normal; letter-spacing: 0; line-height: 1.6; color: var(--muted); opacity: 0.8; white-space: nowrap; vertical-align: baseline; }
+.time-hint { display: inline-block; margin-left: 0.6rem; font-family: var(--font-body); font-size: 1.125rem; font-weight: 400; font-style: normal; letter-spacing: 0; line-height: 1.6; color: var(--ink); white-space: nowrap; vertical-align: baseline; }
 @media (max-width: 480px) { .time-hint { font-size: 1.05rem; } }
 .step > .gate-art-wrap + p.lead { margin-top: 1.5rem; }
 .step > .gate-list + .gate-art-wrap { margin-top: 1.75rem; }
@@ -646,9 +646,9 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 .gate .skip-prompt { margin-top: 1.25rem; font-size: 0.95rem; }
 /* "Want to skip this prompt?" inside the Stuck reveal: same look as the Stuck? button, right-aligned */
 .gate .stuck-text .skip-prompt { display: block; margin-top: 0.9rem; text-align: right; font-size: 1rem; }
-.gate .stuck-text a.skiplink { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 1rem; color: var(--muted); text-decoration: none; border-bottom: 1px dashed var(--muted); padding: 0.1rem 0; }
+.gate .stuck-text a.skiplink { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 1rem; color: var(--ink); text-decoration: none; border-bottom: 1px dashed var(--muted); padding: 0.1rem 0; }
 .gate .stuck-text a.skiplink:hover { border-bottom-style: solid; color: var(--ink); }
-.gate a.skiplink { color: var(--muted); text-decoration: underline dashed; text-decoration-color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
+.gate a.skiplink { color: var(--ink); text-decoration: underline dashed; text-decoration-color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
 .gate a.skiplink:hover { color: var(--thread); }
 /* Title-screen note: "Tap anywhere" on touch screens, "Click anywhere or press space" where there is a mouse and keyboard */
 .t-desk { display: none; }
