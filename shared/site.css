@@ -259,7 +259,9 @@ body.is-prompt .gate[data-g="0"], body.is-prompt .gate[data-g="0"] .step[data-s=
   cursor: pointer;
 }
 .stuck-btn:hover { border-bottom-style: solid; color: var(--ink); }
-.gate p.stuck-text { margin-top: 0.6rem; text-align: left; font-style: italic; color: var(--ink); }
+.gate p.stuck-text, .gate div.stuck-text { margin-top: 0.6rem; text-align: left; font-style: italic; color: var(--ink); }
+.stuck-text ul { margin: 0.3rem 0 0; padding-left: 1.3rem; }
+.stuck-text li { margin-top: 0.3rem; }
 
 .ways { border-top: 1px solid var(--line); }
 .ways details { border-bottom: 1px solid var(--line); }

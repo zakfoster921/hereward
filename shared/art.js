@@ -14,7 +14,7 @@
 
   function stuck(id, text, label) {
     return '<div class="stuck"><button class="stuck-btn" type="button" aria-expanded="false" aria-controls="' + id + '">' + (label || "Stuck?") + '</button>' +
-      '<p class="stuck-text" id="' + id + '" hidden>' + text + '</p></div>';
+      '<' + (/<ul/.test(text) ? 'div' : 'p') + ' class="stuck-text" id="' + id + '" hidden>' + text + '</' + (/<ul/.test(text) ? 'div' : 'p') + '></div>';
   }
 
   // The gate drawing that closes the first screen of every gate
