@@ -551,8 +551,8 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 
 .tips-card + p { margin-top: 1.25rem; }
 
-@keyframes appear { from { visibility: hidden; } to { visibility: visible; } }
-.go[data-late]:not([hidden]) { animation: appear 0.01s step-end both; animation-delay: var(--gd, 0s); }
+@keyframes appear { 0% { visibility: hidden; } 1%, 100% { visibility: visible; } }
+.go[data-late]:not([hidden]) { animation: appear 0.1s linear both; animation-delay: var(--gd, 0s); }
 
 .tips-card:not([hidden]) { animation: fadein 0.4s ease both; }
 .tips-card > [data-t="1"]:not([hidden]):not(.leaving) { animation: none; }
