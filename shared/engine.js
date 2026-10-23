@@ -401,9 +401,37 @@
     }
     if (e.target.closest("button, summary, a, input, textarea, select, label")) return;
     if (stage === "title" || (MODE === "prompt" && rg >= G.length - 1)) return;
-    var sel = window.getSelection && String(window.getSelection());
-    if (sel) return;
+    // A selection this tap just made (a drag, a double-tap) is left alone. A leftover one from before is cleared and the tap goes through.
+    var s = window.getSelection && window.getSelection();
+    if (s && String(s)) {
+      var dragged = tapDown && Math.hypot(e.clientX - tapDown.x, e.clientY - tapDown.y) > 6;
+      if (dragged || !tapDown || !tapDown.sel) return;
+      s.removeAllRanges();
+    }
     advance();
+  });
+
+  // Remember where each tap began, and whether text was already selected then
+  var tapDown = null;
+  document.addEventListener("pointerdown", function (e) {
+    var s = window.getSelection && window.getSelection();
+    tapDown = { x: e.clientX, y: e.clientY, sel: !!(s && String(s)) };
+  }, true);
+
+  // Keyboard: Space, Enter or Down arrow moves forward, like a tap. Buttons, links and form fields keep their own keys.
+  document.addEventListener("keydown", function (e) {
+    if (e.defaultPrevented || e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
+    if (e.key !== " " && e.key !== "Enter" && e.key !== "ArrowDown") return;
+    if (e.target.closest && e.target.closest("button, summary, a, input, textarea, select, [contenteditable]")) return;
+    if (stage === "title") {
+      if (!QA.dest) return;
+      e.preventDefault();
+      setTimeout(function () { enter(false); }, 0);
+      return;
+    }
+    if (MODE === "prompt" && rg >= G.length - 1) return;
+    e.preventDefault();
+    setTimeout(advance, 0); // after this key press finishes, so the scroll glide is not cancelled by it
   });
 
   function enter(skip) {
