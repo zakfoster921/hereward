@@ -12,8 +12,8 @@
     return '<div class="seq" data-t="' + n + '" hidden style="--d:0.5s">' + html + '</div>';
   }
 
-  function stuck(id, text) {
-    return '<div class="stuck"><button class="stuck-btn" type="button" aria-expanded="false" aria-controls="' + id + '">Stuck?</button>' +
+  function stuck(id, text, label) {
+    return '<div class="stuck"><button class="stuck-btn" type="button" aria-expanded="false" aria-controls="' + id + '">' + (label || "Stuck?") + '</button>' +
       '<p class="stuck-text" id="' + id + '" hidden>' + text + '</p></div>';
   }
 
