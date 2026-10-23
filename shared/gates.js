@@ -22,7 +22,7 @@
     return {
       prompt: P.n, eyebrow: "", name: P.name, aim: !!a.aim,
       steps: [
-        (a.aim ? '<p class="lead rule">' + a.aim + '</p>' + (a.aimNote ? '<p>' + a.aimNote + '</p>' : '') + '<p class="skip-prompt"><a href="#" class="skiplink">Want to skip this prompt?</a></p>' : null),
+        (a.aim ? '<p class="lead rule">' + a.aim + '</p>' + (a.aimNote ? '<p>' + a.aimNote + '</p>' : '') : null),
         (a.title ? '<div><p class="eyebrow">Gate 1</p><h3 class="step-title">' + a.title + ' <span class="time-hint">10 minutes</span></h3></div>' : '') +
         '<p class="lead rule">' + a.lead + '</p>' +
         GATE1_ART.replace('class="gate-art-wrap"', 'class="gate-art-wrap tight"') +
@@ -30,7 +30,7 @@
         '<div class="asklist" data-t="1" hidden><ul>' + lis + '</ul></div>' +
         '<div data-t="' + n + '" hidden>' +
         '<div class="seq" style="--d:0.5s">' +
-        stuck("s-g1a", a.stuck) +
+        stuck("s-g1a", a.stuck + (a.aim ? '<span class="skip-prompt"><a href="#" class="skiplink">Want to skip this prompt?</a></span>' : '')) +
         '</div>' +
         '</div>' +
         '</div>'
@@ -171,7 +171,7 @@
 
   function gate2(P) {
     return {
-      eyebrow: "Gate 2", name: "Deepen the charge",
+      eyebrow: "Gate 2", name: "Deepen the charge", time: "2 minutes",
       steps: [
         GATE_ART.replace('class="gate-art"', 'class="gate-art fixed-art time-art"') +
         '<p>' + gate2opener(P) + '</p>' +
@@ -242,7 +242,7 @@
 
   function gate3(P) {
     return {
-      eyebrow: "Gate 3", name: "Picture the charge",
+      eyebrow: "Gate 3", name: "Picture the charge", time: "2 minutes",
       topArt: GATE3_ART.replace('class="gate-art"', 'class="gate-art fixed-art pic-art"'),
       steps: [
         '<p>' + gate3h(P).p + '</p>' +
@@ -282,7 +282,7 @@
 
   function gate4(P) {
     return {
-      eyebrow: "Gate 4", name: "Test the charge",
+      eyebrow: "Gate 4", name: "Test the charge", time: "2 minutes",
       steps: [
         '<p>' + gate4intro(P) + '</p>' +
         MATRIX +

@@ -641,6 +641,7 @@ body.aim-only .gate p.lead { font-size: 1.5rem; line-height: 1.3; margin-bottom:
 @media (prefers-reduced-motion: reduce) { .map-reveal { stroke-dashoffset: 0 !important; } }
 
 .gate .skip-prompt { margin-top: 1.25rem; font-size: 0.95rem; }
+.gate .stuck-text .skip-prompt { display: block; margin-top: 0.9rem; font-style: normal; }
 .gate a.skiplink { color: var(--muted); text-decoration: underline dashed; text-decoration-color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
 .gate a.skiplink:hover { color: var(--thread); }
 /* Title-screen note: "Tap anywhere" on touch screens, "Click anywhere or press space" where there is a mouse and keyboard */

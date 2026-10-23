@@ -18,7 +18,7 @@
     var t = g.tag || "h2";
     return '<section class="gate' + (g.closing ? " closing" : "") + '" data-g="' + gi + '" hidden>' + (g.topArt || '') +
       '<div class="gate-top"><div>' + (g.prompt ? '<span class="prompt-tag">Prompt ' + g.prompt + '</span>' : '') + (g.eyebrow ? '<p class="eyebrow">' + g.eyebrow + '</p>' : '') +
-      (g.name ? '<' + t + ' class="gate-title">' + g.name + '</' + t + '>' : '') + '</div></div>' +
+      (g.name ? '<' + t + ' class="gate-title">' + g.name + (g.time ? ' <span class="time-hint">' + g.time + '</span>' : '') + '</' + t + '>' : '') + '</div></div>' +
       '<div class="steps">' +
       g.steps.map(function (h, si) { return '<div class="step" data-s="' + si + '" hidden>' + h + '</div>'; }).join("") +
       '</div>' +
