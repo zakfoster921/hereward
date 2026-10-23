@@ -230,7 +230,7 @@
   }
 ];
 
-  var GATE3_THING = ["Which image in your writing holds your charge best? Sketch it or imagine it.", "Is there an object in your writing that holds your charge? Sketch it or picture it.", "Pick the object or image that feels most loaded. Draw it or hold it in your mind."], GATE3_FABRIC = ["Look through what you have. Which one feels like it can carry your charge? What about it: color, texture, pattern?", "Spread out some fabrics. Which one feels right for your charge? What is it about it?", "Handle your fabrics for a minute. Which one gets your attention, and why?"], GATE3_WORD = ["Choose a specific, personal word you wrote or that comes to mind. What makes this <em>your</em> word? How would you stitch it: what style, what size, what color?", "Pick a word from your writing that matters to you. How would it look in thread?", "Find a word that holds your charge. What size, color and style would you stitch it in?"], GATE3_STUCK = "Still no image? Go back to your writing and find the physical noun closest to the charge you underlined.<br><br><strong>Want to refine?</strong><br><strong>Subtract:</strong> Remove everything that isn\u2019t essential.<br><strong>Squint:</strong> Squint and note the two or three biggest shapes.<br><strong>Good enough to start:</strong> Choose your fabric and trust the process to guide you.";
+  var GATE3_THING = ["Which image in your writing holds your charge best? Sketch it or imagine it.", "Is there an object in your writing that holds your charge? Sketch it or picture it.", "Pick the object or image that feels most loaded. Draw it or hold it in your mind."], GATE3_FABRIC = ["Look through what you have. Which one feels like it can carry your charge? What about it: color, texture, pattern?", "Spread out some fabrics. Which one feels right for your charge? What is it about it?", "Handle your fabrics for a minute. Which one gets your attention, and why?"], GATE3_WORD = ["Choose a specific, personal word you wrote or that comes to mind. What makes this <em>your</em> word? How would you stitch it: what style, what size, what color?", "Pick a word from your writing that matters to you. How would it look in thread?", "Find a word that holds your charge. What size, color and style would you stitch it in?"], GATE3_STUCK = "<strong>Still no image?</strong> Go back to your writing and find the physical noun closest to the charge you underlined.<br><br><strong>Want to refine?</strong><br><strong>Subtract:</strong> Remove everything that isn\u2019t essential.<br><strong>Squint:</strong> Squint and note the two or three biggest shapes.<br><strong>Good enough to start:</strong> Choose your fabric and trust the process to guide you.";
 
   function gate3h(P) {
     var n = (P && P.n) || 1, i = n - 1, L = 7; // seven full versions, then the shorter ones cycle
@@ -253,7 +253,7 @@
         '<details class="seq" style="--d:1.7s" name="way"><summary>Start with a word</summary><p>' + pick3(GATE3_WORD, P) + '</p></details>' +
         '</div>' +
         '<div class="seq" style="--d:2.3s">' +
-        stuck("s-g3", GATE3_STUCK, "No image yet?") +
+        stuck("s-g3", GATE3_STUCK) +
         '</div>'
       ]
     };
