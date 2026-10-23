@@ -409,6 +409,8 @@
   function enter(skip) {
     if (skip) { QA.goToPrompt(); return; }
     stage = "flow"; skipped = false;
+    var tapNote = document.getElementById("tap-note");
+    if (tapNote) tapNote.innerHTML = "Scroll up any time<br>to revisit earlier screens";
     rg = 0; rs = 1; rt = 0;
     flowEl.hidden = false;
     sync();
