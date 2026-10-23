@@ -67,7 +67,7 @@
         MAP_ART +
         '<div class="swap-stack plain">' +
         '<p data-t="0" data-swap>Try the full version of all four gates at least once, so you feel what each one does.</p>' +
-        '<p data-t="1" data-swap hidden>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t, even a whole prompt.</p>' +
+        '<p data-t="1" data-swap hidden>After that, <strong>make this process your own.</strong> Keep what works, skip what doesn\u2019t, even if that means skipping a whole prompt.</p>' +
         '</div>' +
         '</div>',
 
