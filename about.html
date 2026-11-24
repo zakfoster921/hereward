@@ -77,12 +77,15 @@ body { background: #E8DED0; padding-bottom: 0; }
 .about .hd + .gate-art-wrap { margin-top: -2rem; }
 .about .video-wrap { display: flex; justify-content: center; margin-top: 0.5rem; }
 .about .video-wrap video { display: block; width: min(100%, 20rem); height: auto; border-radius: 0.4rem; background: #E8DED0; }
-.about .try-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.about .try-row { position: relative; width: 16.5rem; max-width: 100%; margin: 0 auto; }
 .about .try-row a { display: block; }
-.about .try-row img { display: block; height: auto; transition: transform .2s ease; }
-.about .mockup-link img { width: 10.5rem; }
-.about .pdf-link img { width: 6.5rem; box-shadow: 0 1px 4px rgba(31,30,29,.18); border-radius: 2px; }
-.about .try-row a:hover img, .about .try-row a:focus-visible img { transform: translateY(-3px); }
+.about .try-row img { display: block; height: auto; transition: transform .25s ease; }
+.about .mockup-link { position: relative; z-index: 2; width: 10.5rem; }
+.about .mockup-link img { width: 100%; }
+.about .pdf-link { position: absolute; z-index: 1; right: 0; top: 3rem; width: 8.5rem; transform: rotate(6deg); transition: transform .25s ease; }
+.about .pdf-link img { width: 100%; box-shadow: 0 2px 8px rgba(31,30,29,.22); border-radius: 2px; }
+.about .pdf-link:hover, .about .pdf-link:focus-visible { transform: rotate(8deg) translateX(0.4rem); }
+.about .mockup-link:hover img, .about .mockup-link:focus-visible img { transform: translateY(-3px); }
 .about .squares-art { display: block; width: 21rem; max-width: 100%; height: auto; }
 .about .gate-art { display: block; width: 8.5rem; height: auto; opacity: 0.7; }
 </style>
