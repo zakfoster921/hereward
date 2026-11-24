@@ -105,7 +105,32 @@ body { background: #E8DED0; padding-bottom: 0; }
     <li><strong>One quilt all year.</strong> Every prompt adds another layer to the same quilt, so it deepens as the year goes on.</li>
     <li><strong>I'll sew along with you.</strong> I'm making my own quilt one prompt at a time, in real time, right along with you.</li>
   </ul>
-  <div class="video-wrap"><video controls playsinline preload="metadata" poster="hereward-welcome-poster.jpg" aria-label="A short walk-and-talk video from Zak about HEREWARD"><source src="hereward-welcome.mp4" type="video/mp4"></video></div>
+  <div class="video-wrap"><video controls playsinline muted preload="metadata" poster="hereward-welcome-poster.jpg" aria-label="A short walk-and-talk video from Zak about HEREWARD"><source src="hereward-welcome.mp4" type="video/mp4"></video></div>
+  <script>
+  (function () {
+    var v = document.querySelector('.video-wrap video');
+    if (!v || !('IntersectionObserver' in window)) return;
+    var done = false;
+    v.muted = true;
+    v.addEventListener('click', function () { done = true; });
+    v.addEventListener('keydown', function () { done = true; });
+    v.addEventListener('volumechange', function () { if (!v.muted) done = true; });
+    v.addEventListener('ended', function () { done = true; });
+    var warm = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { v.preload = 'auto'; warm.disconnect(); }
+    }, { rootMargin: '900px 0px' });
+    warm.observe(v);
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var io = new IntersectionObserver(function (es) {
+      var e = es[0];
+      if (done) return;
+      if (e.isIntersecting && e.intersectionRatio >= 0.6) {
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      } else { v.pause(); }
+    }, { threshold: [0, 0.6] });
+    io.observe(v);
+  })();
+  </script>
 
   <div class="hd"><h2>You’ll be in good company</h2><svg class="h-line" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M3 7 C36 11 70 4 106 8 S166 11 197 6"/></svg></div>
   <p><span class="brand">HEREWARD</span> happens inside the QUILTY NOOK, our international community of makers pushing themselves to make work that is true to their own voice.</p>
